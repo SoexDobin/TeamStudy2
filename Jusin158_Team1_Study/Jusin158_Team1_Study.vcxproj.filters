@@ -61,7 +61,7 @@
       <Filter>01. Object\01.Monster</Filter>
     </ClInclude>
     <ClInclude Include="CPlayer.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>01. Object\00.Player</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -84,7 +84,7 @@
       <Filter>01. Object\01.Monster</Filter>
     </ClCompile>
     <ClCompile Include="CPlayer.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>01. Object\00.Player</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
