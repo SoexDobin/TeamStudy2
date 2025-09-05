@@ -3,7 +3,7 @@
 ### 출근 시간 13:00 / 퇴근 시각 21:00
 
 ## 코드 규칙
-함수는 카멜법 사용            ```GetPlayerPosition()``` <br>
+함수는 파스칼 표기법 사용     ```GetPlayerPosition()``` <br>
 클래스에는 헝가리안 C 붙이기  ```CObject``` <br>
 Vector2는 헝가리안으로 v      ```Vector2 m_vPosition``` <br>
 함수 매개변수에는  _붙이기    ```GetPos(Vector2 _vPos)``` <br>
