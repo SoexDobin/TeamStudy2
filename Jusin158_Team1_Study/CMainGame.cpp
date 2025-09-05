@@ -81,5 +81,3 @@ void CMainGame::Release()
 				}
 			});
 }
-
-// test
