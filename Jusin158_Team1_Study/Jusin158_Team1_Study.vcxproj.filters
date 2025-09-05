@@ -51,6 +51,9 @@
     <ClInclude Include="Define.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Temp.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Jusin158_Team1_Study.cpp">
@@ -67,6 +70,9 @@
     </ClCompile>
     <ClCompile Include="Vector2.cpp">
       <Filter>소스 파일\Vector2</Filter>
+    </ClCompile>
+    <ClCompile Include="Temp.cpp">
+      <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

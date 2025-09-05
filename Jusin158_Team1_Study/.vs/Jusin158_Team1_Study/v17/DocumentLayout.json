@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\a9018\\Desktop\\TeamStudy2\\Jusin158_Team1_Study\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{46070800-E683-4D83-8A66-E0182804BF97}|Jusin158_Team1_Study.vcxproj|C:\\Users\\a9018\\Desktop\\TeamStudy2\\Jusin158_Team1_Study\\Jusin158_Team1_Study.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{46070800-E683-4D83-8A66-E0182804BF97}|Jusin158_Team1_Study.vcxproj|solutionrelative:Jusin158_Team1_Study.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{46070800-E683-4D83-8A66-E0182804BF97}|Jusin158_Team1_Study.vcxproj|C:\\Users\\a9018\\Desktop\\TeamStudy2\\Jusin158_Team1_Study\\CMainGame.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{46070800-E683-4D83-8A66-E0182804BF97}|Jusin158_Team1_Study.vcxproj|solutionrelative:CMainGame.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -11,12 +15,16 @@
       "RelativeMoniker": "D:0:0:{46070800-E683-4D83-8A66-E0182804BF97}|Jusin158_Team1_Study.vcxproj|solutionrelative:CMainGame.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{46070800-E683-4D83-8A66-E0182804BF97}|Jusin158_Team1_Study.vcxproj|C:\\Users\\a9018\\Desktop\\TeamStudy2\\Jusin158_Team1_Study\\CObject.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{46070800-E683-4D83-8A66-E0182804BF97}|Jusin158_Team1_Study.vcxproj|solutionrelative:CObject.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{46070800-E683-4D83-8A66-E0182804BF97}|Jusin158_Team1_Study.vcxproj|C:\\Users\\a9018\\Desktop\\TeamStudy2\\Jusin158_Team1_Study\\CObject.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{46070800-E683-4D83-8A66-E0182804BF97}|Jusin158_Team1_Study.vcxproj|solutionrelative:CObject.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{46070800-E683-4D83-8A66-E0182804BF97}|Jusin158_Team1_Study.vcxproj|C:\\Users\\a9018\\Desktop\\TeamStudy2\\Jusin158_Team1_Study\\CObject.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{46070800-E683-4D83-8A66-E0182804BF97}|Jusin158_Team1_Study.vcxproj|solutionrelative:CObject.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{46070800-E683-4D83-8A66-E0182804BF97}|Jusin158_Team1_Study.vcxproj|C:\\Users\\a9018\\Desktop\\TeamStudy2\\Jusin158_Team1_Study\\Temp.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{46070800-E683-4D83-8A66-E0182804BF97}|Jusin158_Team1_Study.vcxproj|solutionrelative:Temp.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{46070800-E683-4D83-8A66-E0182804BF97}|Jusin158_Team1_Study.vcxproj|C:\\Users\\a9018\\Desktop\\TeamStudy2\\Jusin158_Team1_Study\\Vector2.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -25,10 +33,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{46070800-E683-4D83-8A66-E0182804BF97}|Jusin158_Team1_Study.vcxproj|C:\\Users\\a9018\\Desktop\\TeamStudy2\\Jusin158_Team1_Study\\Define.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{46070800-E683-4D83-8A66-E0182804BF97}|Jusin158_Team1_Study.vcxproj|solutionrelative:Define.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{46070800-E683-4D83-8A66-E0182804BF97}|Jusin158_Team1_Study.vcxproj|C:\\Users\\a9018\\Desktop\\TeamStudy2\\Jusin158_Team1_Study\\Jusin158_Team1_Study.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{46070800-E683-4D83-8A66-E0182804BF97}|Jusin158_Team1_Study.vcxproj|solutionrelative:Jusin158_Team1_Study.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\a9018\\Desktop\\jusinTeamProject_1\\WinAPI-AirForce1945\\CMainGame.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
@@ -45,23 +49,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 206,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
+              "Title": "Temp.h",
+              "DocumentMoniker": "C:\\Users\\a9018\\Desktop\\TeamStudy2\\Jusin158_Team1_Study\\Temp.h",
+              "RelativeDocumentMoniker": "Temp.h",
+              "ToolTip": "C:\\Users\\a9018\\Desktop\\TeamStudy2\\Jusin158_Team1_Study\\Temp.h",
+              "RelativeToolTip": "Temp.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-09-05T11:38:40.506Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "CMainGame.h",
               "DocumentMoniker": "C:\\Users\\a9018\\Desktop\\TeamStudy2\\Jusin158_Team1_Study\\CMainGame.h",
               "RelativeDocumentMoniker": "CMainGame.h",
               "ToolTip": "C:\\Users\\a9018\\Desktop\\TeamStudy2\\Jusin158_Team1_Study\\CMainGame.h",
               "RelativeToolTip": "CMainGame.h",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAnwBUAAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-09-05T10:48:55.835Z"
+              "WhenOpened": "2025-09-05T10:48:55.835Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "CObject.cpp",
               "DocumentMoniker": "C:\\Users\\a9018\\Desktop\\TeamStudy2\\Jusin158_Team1_Study\\CObject.cpp",
               "RelativeDocumentMoniker": "CObject.cpp",
@@ -69,7 +87,8 @@
               "RelativeToolTip": "CObject.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-09-05T10:46:44.951Z"
+              "WhenOpened": "2025-09-05T10:46:44.951Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -81,24 +100,25 @@
               "RelativeToolTip": "CObject.h",
               "ViewState": "AgIAAAwAAAAAAAAAAAAAABkAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-09-05T10:44:48.061Z"
+              "WhenOpened": "2025-09-05T10:44:48.061Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "CMainGame.cpp",
               "DocumentMoniker": "C:\\Users\\a9018\\Desktop\\TeamStudy2\\Jusin158_Team1_Study\\CMainGame.cpp",
               "RelativeDocumentMoniker": "CMainGame.cpp",
               "ToolTip": "C:\\Users\\a9018\\Desktop\\TeamStudy2\\Jusin158_Team1_Study\\CMainGame.cpp",
               "RelativeToolTip": "CMainGame.cpp",
-              "ViewState": "AgIAAC4AAAAAAAAAAAAAAD8AAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-09-05T10:41:52.695Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "Vector2.h",
               "DocumentMoniker": "C:\\Users\\a9018\\Desktop\\TeamStudy2\\Jusin158_Team1_Study\\Vector2.h",
               "RelativeDocumentMoniker": "Vector2.h",
@@ -110,7 +130,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "CMainGame.cpp",
               "DocumentMoniker": "C:\\Users\\a9018\\Desktop\\jusinTeamProject_1\\WinAPI-AirForce1945\\CMainGame.cpp",
               "RelativeDocumentMoniker": "..\\..\\jusinTeamProject_1\\WinAPI-AirForce1945\\CMainGame.cpp",
@@ -122,7 +142,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "Define.h",
               "DocumentMoniker": "C:\\Users\\a9018\\Desktop\\TeamStudy2\\Jusin158_Team1_Study\\Define.h",
               "RelativeDocumentMoniker": "Define.h",
@@ -134,19 +154,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "Jusin158_Team1_Study.cpp",
               "DocumentMoniker": "C:\\Users\\a9018\\Desktop\\TeamStudy2\\Jusin158_Team1_Study\\Jusin158_Team1_Study.cpp",
               "RelativeDocumentMoniker": "Jusin158_Team1_Study.cpp",
               "ToolTip": "C:\\Users\\a9018\\Desktop\\TeamStudy2\\Jusin158_Team1_Study\\Jusin158_Team1_Study.cpp",
               "RelativeToolTip": "Jusin158_Team1_Study.cpp",
-              "ViewState": "AgIAABAAAAAAAAAAAAAAAGgAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAuwDgAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-09-05T10:26:25.466Z"
+              "WhenOpened": "2025-09-05T10:26:25.466Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "pch.h",
               "DocumentMoniker": "C:\\Users\\a9018\\Desktop\\TeamStudy2\\Jusin158_Team1_Study\\pch.h",
               "RelativeDocumentMoniker": "pch.h",
