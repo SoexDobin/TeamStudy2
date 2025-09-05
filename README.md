@@ -11,7 +11,7 @@ Vector2는 헝가리안으로 v      ```Vector2 m_vPosition``` <br>
 # 09/04일자 회의 
 - 플렛포머 게임 제작 목표
 
-# 09/04일자 회의 
+# 09/05일자 회의 
     1. 김준 : LineTo, LineManager 
     2. 이순재 : Player, Monster 헤더 작성
     3. 최재욱 : Collision,  
