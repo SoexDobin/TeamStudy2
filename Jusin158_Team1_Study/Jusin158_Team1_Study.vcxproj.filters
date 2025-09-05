@@ -22,6 +22,12 @@
     <Filter Include="소스 파일\Vector2">
       <UniqueIdentifier>{2e1e52b4-d9f1-4d34-a786-746fe6ca7786}</UniqueIdentifier>
     </Filter>
+    <Filter Include="01. Object\00.Player">
+      <UniqueIdentifier>{289dd3d7-a13d-4463-9f17-e6ef56671bb5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Object\01.Monster">
+      <UniqueIdentifier>{e8eba61d-b5bc-469d-a536-49d342c32f51}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -51,6 +57,12 @@
     <ClInclude Include="Vector2.h">
       <Filter>소스 파일\Vector2</Filter>
     </ClInclude>
+    <ClInclude Include="CMonster.h">
+      <Filter>01. Object\01.Monster</Filter>
+    </ClInclude>
+    <ClInclude Include="CPlayer.h">
+      <Filter>01. Object\00.Player</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Jusin158_Team1_Study.cpp">
@@ -67,6 +79,12 @@
     </ClCompile>
     <ClCompile Include="Vector2.cpp">
       <Filter>소스 파일\Vector2</Filter>
+    </ClCompile>
+    <ClCompile Include="CMonster.cpp">
+      <Filter>01. Object\01.Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="CPlayer.cpp">
+      <Filter>01. Object\00.Player</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
