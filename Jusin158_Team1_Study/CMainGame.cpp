@@ -63,6 +63,9 @@ void CMainGame::Render()
 		for (auto& obj : list)
 			obj->Render(m_hDC);
 
+	// dc 사용 시 m_hDCBack 멤버 변수 사용할 것
+	// 백버퍼 시점 dc를 따로 복사해서 사용해야 함
+	
 	// 여기서 충돌검사를 실행
 }
 
