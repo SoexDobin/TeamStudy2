@@ -134,7 +134,9 @@
     <ClInclude Include="CLine.h" />
     <ClInclude Include="CLineManager.h" />
     <ClInclude Include="CMainGame.h" />
+    <ClInclude Include="CMonster.h" />
     <ClInclude Include="CObject.h" />
+    <ClInclude Include="CPlayer.h" />
     <ClInclude Include="Define.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="Jusin158_Team1_Study.h" />
@@ -147,7 +149,9 @@
     <ClCompile Include="CLine.cpp" />
     <ClCompile Include="CLineManager.cpp" />
     <ClCompile Include="CMainGame.cpp" />
+    <ClCompile Include="CMonster.cpp" />
     <ClCompile Include="CObject.cpp" />
+    <ClCompile Include="CPlayer.cpp" />
     <ClCompile Include="Jusin158_Team1_Study.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

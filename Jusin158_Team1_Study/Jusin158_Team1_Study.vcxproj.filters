@@ -30,6 +30,11 @@
     </Filter>
     <Filter Include="02.Design\96.LineManager\Line">
       <UniqueIdentifier>{25826ffb-4fdd-4b3f-aa83-ff9fca182dd2}</UniqueIdentifier>
+    <Filter Include="01. Object\00.Player">
+      <UniqueIdentifier>{289dd3d7-a13d-4463-9f17-e6ef56671bb5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Object\01.Monster">
+      <UniqueIdentifier>{e8eba61d-b5bc-469d-a536-49d342c32f51}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -65,6 +70,11 @@
     </ClInclude>
     <ClInclude Include="CLine.h">
       <Filter>02.Design\96.LineManager\Line</Filter>
+    <ClInclude Include="CMonster.h">
+      <Filter>01. Object\01.Monster</Filter>
+    </ClInclude>
+    <ClInclude Include="CPlayer.h">
+      <Filter>01. Object\00.Player</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -88,6 +98,11 @@
     </ClCompile>
     <ClCompile Include="CLine.cpp">
       <Filter>02.Design\96.LineManager\Line</Filter>
+    <ClCompile Include="CMonster.cpp">
+      <Filter>01. Object\01.Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="CPlayer.cpp">
+      <Filter>01. Object\00.Player</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
