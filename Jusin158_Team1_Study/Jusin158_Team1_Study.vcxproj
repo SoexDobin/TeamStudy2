@@ -131,10 +131,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CLine.h" />
+    <ClInclude Include="CLineManager.h" />
     <ClInclude Include="CMainGame.h" />
+    <ClInclude Include="CMonster.h" />
     <ClInclude Include="CObject.h" />
     <ClInclude Include="CObjectManager.h" />
     <ClInclude Include="CSceneManager.h" />
+    <ClInclude Include="CPlayer.h" />
     <ClInclude Include="Define.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="Jusin158_Team1_Study.h" />
@@ -144,10 +148,14 @@
     <ClInclude Include="Vector2.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CLine.cpp" />
+    <ClCompile Include="CLineManager.cpp" />
     <ClCompile Include="CMainGame.cpp" />
+    <ClCompile Include="CMonster.cpp" />
     <ClCompile Include="CObject.cpp" />
     <ClCompile Include="CObjectManager.cpp" />
     <ClCompile Include="CSceneManager.cpp" />
+    <ClCompile Include="CPlayer.cpp" />
     <ClCompile Include="Jusin158_Team1_Study.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
