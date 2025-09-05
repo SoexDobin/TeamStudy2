@@ -22,6 +22,15 @@
     <Filter Include="소스 파일\Vector2">
       <UniqueIdentifier>{2e1e52b4-d9f1-4d34-a786-746fe6ca7786}</UniqueIdentifier>
     </Filter>
+    <Filter Include="02.Design">
+      <UniqueIdentifier>{d8304da0-e939-41bf-bebf-d39b14b7a94d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.Design\96.LineManager">
+      <UniqueIdentifier>{b482df0a-e5a7-4b64-9a44-df2268e21ab5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.Design\96.LineManager\Line">
+      <UniqueIdentifier>{25826ffb-4fdd-4b3f-aa83-ff9fca182dd2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -51,6 +60,12 @@
     <ClInclude Include="Vector2.h">
       <Filter>소스 파일\Vector2</Filter>
     </ClInclude>
+    <ClInclude Include="CLineManager.h">
+      <Filter>02.Design\96.LineManager</Filter>
+    </ClInclude>
+    <ClInclude Include="CLine.h">
+      <Filter>02.Design\96.LineManager\Line</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Jusin158_Team1_Study.cpp">
@@ -67,6 +82,12 @@
     </ClCompile>
     <ClCompile Include="Vector2.cpp">
       <Filter>소스 파일\Vector2</Filter>
+    </ClCompile>
+    <ClCompile Include="CLineManager.cpp">
+      <Filter>02.Design\96.LineManager</Filter>
+    </ClCompile>
+    <ClCompile Include="CLine.cpp">
+      <Filter>02.Design\96.LineManager\Line</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
