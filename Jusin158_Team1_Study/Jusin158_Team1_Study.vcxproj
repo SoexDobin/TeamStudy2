@@ -133,8 +133,8 @@
   <ItemGroup>
     <ClInclude Include="CMainGame.h" />
     <ClInclude Include="CObject.h" />
-    <ClInclude Include="CObjManager.h" />
-    <ClInclude Include="CStageManager.h" />
+    <ClInclude Include="CObjectManager.h" />
+    <ClInclude Include="CSceneManager.h" />
     <ClInclude Include="Define.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="Jusin158_Team1_Study.h" />
@@ -146,8 +146,8 @@
   <ItemGroup>
     <ClCompile Include="CMainGame.cpp" />
     <ClCompile Include="CObject.cpp" />
-    <ClCompile Include="CObjManager.cpp" />
-    <ClCompile Include="CStageManager.cpp" />
+    <ClCompile Include="CObjectManager.cpp" />
+    <ClCompile Include="CSceneManager.cpp" />
     <ClCompile Include="Jusin158_Team1_Study.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

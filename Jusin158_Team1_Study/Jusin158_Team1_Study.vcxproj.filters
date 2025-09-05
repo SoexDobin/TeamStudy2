@@ -22,6 +22,12 @@
     <Filter Include="소스 파일\Vector2">
       <UniqueIdentifier>{2e1e52b4-d9f1-4d34-a786-746fe6ca7786}</UniqueIdentifier>
     </Filter>
+    <Filter Include="99. SceneManager">
+      <UniqueIdentifier>{90573290-bf15-4e8a-9da2-c95161defe0e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="98. ObjectManager">
+      <UniqueIdentifier>{06901751-2d7a-4cdc-b909-d5a516ae386f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -51,11 +57,11 @@
     <ClInclude Include="Vector2.h">
       <Filter>소스 파일\Vector2</Filter>
     </ClInclude>
-    <ClInclude Include="CStageManager.h">
-      <Filter>헤더 파일</Filter>
+    <ClInclude Include="CSceneManager.h">
+      <Filter>99. SceneManager</Filter>
     </ClInclude>
-    <ClInclude Include="CObjManager.h">
-      <Filter>헤더 파일</Filter>
+    <ClInclude Include="CObjectManager.h">
+      <Filter>98. ObjectManager</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -74,11 +80,11 @@
     <ClCompile Include="Vector2.cpp">
       <Filter>소스 파일\Vector2</Filter>
     </ClCompile>
-    <ClCompile Include="CStageManager.cpp">
-      <Filter>소스 파일</Filter>
+    <ClCompile Include="CSceneManager.cpp">
+      <Filter>99. SceneManager</Filter>
     </ClCompile>
-    <ClCompile Include="CObjManager.cpp">
-      <Filter>소스 파일</Filter>
+    <ClCompile Include="CObjectManager.cpp">
+      <Filter>98. ObjectManager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
