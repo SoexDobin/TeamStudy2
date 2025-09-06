@@ -8,8 +8,8 @@ void CCollisionManager::Collision(list<CObject*> _Src1, list<CObject*> _Src2, CO
 	{
 	case RECT_TO_RECT: RTRCollision(_Src1, _Src2); break;
 	case CIRCLE_TO_CIRCLE: CTCCollision(_Src1, _Src2); break;
-	case RECT_TO_CIRCLE: CTCCollision(_Src1, _Src2); break;
-	case CIRCLE_TO_RECT: CTCCollision(_Src1, _Src2); break;
+	case RECT_TO_CIRCLE: RTRCollision(_Src1, _Src2); break;
+	case CIRCLE_TO_RECT: RTRCollision(_Src1, _Src2); break;
 	default: break;
 	}
 }
@@ -36,27 +36,31 @@ void CCollisionManager::RTRCollision(list<CObject*> _Src1, list<CObject*> _Src2)
 				Src2->SetCollision(true);
 				// 반지름의 합 - 중점 사이 거리
 				Vector2 vDifference = fSumHalfSize - vFromSize;
-				
+				vDifference = Vector2(fabsf(vDifference.x), fabsf(vDifference.y));
 				if (vDifference.x > vDifference.y) // To(Src)기준 상하 충돌
 				{
 					if (vFrom.y < vTo.y) // 상 충돌
 					{
-						
+						Src1->OnCollision(Src2, vDifference);
+						Src2->OnCollision(Src1, vDifference);
 					}
 					else if (vFrom.y >= vTo.y) // 하 충돌
 					{
-
+						Src1->OnCollision(Src2, vDifference);
+						Src2->OnCollision(Src1, vDifference);
 					}
 				}
 				else if (vDifference.x <= vDifference.y) // To(Src)의 좌우 충돌
 				{
 					if (vFrom.x < vTo.x) // 우 충돌
 					{
-
+						Src1->OnCollision(Src2, vDifference);
+						Src2->OnCollision(Src1, vDifference);
 					}
 					else if (vFrom.x >= vTo.x) // 좌 충돌
 					{
-
+						Src1->OnCollision(Src2, vDifference);
+						Src2->OnCollision(Src1, vDifference);
 					}
 				}
 			}
@@ -81,8 +85,8 @@ void CCollisionManager::CTCCollision(list<CObject*> _Src1, list<CObject*> _Src2)
 			{
 				Src1->SetCollision(true);
 				Src2->SetCollision(true);
-				Src1->OnCollision(Src2);
-				Src2->OnCollision(Src1);
+				Src1->OnCollision(Src2, Vector2::UnitX);
+				Src2->OnCollision(Src1, Vector2::UnitX);
 			}
 			else
 			{

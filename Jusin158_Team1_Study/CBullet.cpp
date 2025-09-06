@@ -42,6 +42,6 @@ void CBullet::Release()
 {
 }
 
-void CBullet::OnCollision(CObject* _pColObj)
+void CBullet::OnCollision(CObject* _pColObj, Vector2 _vColSize)
 {
 }
