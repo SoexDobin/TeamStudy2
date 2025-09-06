@@ -1,6 +1,9 @@
 #pragma once
 #include "Define.h"
 
+#include "CPlayer.h"
+#include "CBUllet.h"
+
 class CObject;
 class CMainGame
 {
