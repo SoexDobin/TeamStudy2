@@ -42,6 +42,7 @@ void CMainGame::Update()
 				++iter;
 		}
 	}
+
 }
 
 void CMainGame::LateUpdate()
@@ -67,6 +68,7 @@ void CMainGame::Render()
 	// 백버퍼 시점 dc를 따로 복사해서 사용해야 함
 	
 	// 여기서 충돌검사를 실행
+
 }
 
 void CMainGame::Release()
