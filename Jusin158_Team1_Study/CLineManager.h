@@ -34,4 +34,6 @@ public:
 			m_pInstance = nullptr;
 		}
 	}
+
+	bool Collision_Line(float _fX, float _fY, float* _pY);
 };

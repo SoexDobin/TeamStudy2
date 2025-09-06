@@ -1,6 +1,8 @@
 #include "pch.h"
 #include "CLineManager.h"
 
+CLineManager* CLineManager::m_pInstance = nullptr;
+
 CLineManager::CLineManager()
 {
 }
@@ -28,4 +30,12 @@ void CLineManager::Render(HDC hDC)
 void CLineManager::Release()
 {
 
+}
+
+bool CLineManager::Collision_Line(float _fX, float _fY, float* _pY)
+{
+	if (vecLine.empty())
+	{
+
+	}
 }
