@@ -1,5 +1,5 @@
 ﻿#include "pch.h"
-// 
+
 #include "CMainGame.h"
 #include "CObject.h"
 #include "CPlayer.h"
@@ -9,8 +9,6 @@
 #include "CAbstractFactory.h"
 #include "CSceneManager.h"
 #include "CObjectManager.h"
-#include "CAbstractFactory.h"
-#include "CPlayer.h"
 #include "CScene04.h"
 #include "CKeyManager.h"
 
@@ -79,6 +77,7 @@ void CMainGame::Render()
 
 void CMainGame::Release()
 {
+	CKeyManager::Destroy_Instance();
 	CLineManager::DestroyInstance();
 	CObjectManager::DestroyInstance();
 	CSceneManager::DestroyInstance();
