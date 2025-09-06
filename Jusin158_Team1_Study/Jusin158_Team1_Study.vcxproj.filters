@@ -93,6 +93,12 @@
     <ClInclude Include="CCollisionManager.h">
       <Filter>97. CollisionManager</Filter>
     </ClInclude>
+    <ClInclude Include="CAbstractFactory.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CScene.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Jusin158_Team1_Study.cpp">
@@ -130,6 +136,9 @@
     </ClCompile>
     <ClCompile Include="CCollisionManager.cpp">
       <Filter>97. CollisionManager</Filter>
+    </ClCompile>
+    <ClCompile Include="CScene.cpp">
+      <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -16,6 +16,7 @@ void CLineManager::Initialize()
 int	CLineManager::Update()
 {
 
+	return OBJ_NOEVENT;
 }
 void CLineManager::Late_Update()
 {
