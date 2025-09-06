@@ -101,6 +101,7 @@
     </ClInclude>
     <ClInclude Include="CScene.h">
       <Filter>헤더 파일</Filter>
+	</ClInclude>
     <ClInclude Include="CBullet.h">
       <Filter>01. Object\02.Bullet</Filter>
     </ClInclude>
@@ -144,6 +145,7 @@
     </ClCompile>
     <ClCompile Include="CScene.cpp">
       <Filter>소스 파일</Filter>
+	</ClCompile>
     <ClCompile Include="CBullet.cpp">
       <Filter>01. Object\02.Bullet</Filter>
     </ClCompile>
