@@ -2,11 +2,11 @@
 
 #include "CObject.h"
 
-class CPlayer : public CObject
+class CBullet : public CObject
 {
 public:
-	CPlayer();
-	virtual ~CPlayer();
+	CBullet();
+	virtual ~CBullet();
 
 public:
 	void	Initialize()					override;
@@ -15,8 +15,4 @@ public:
 	void	Render(HDC _hDC)				override;
 	void	Release()						override;
 	void	OnCollision(CObject* _pColObj)	override;
-
-private:
-	void	Key_Input();
-
 };

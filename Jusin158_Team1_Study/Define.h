@@ -16,7 +16,7 @@ enum OBJECT
 	PLAYER,
 	MONSTER,
 	BULLET,
-	LINE,
+	//LINE,
 
 	OBJ_END
 };
@@ -74,4 +74,12 @@ enum LINESTATE {
 	LEFT,
 	RIGHT,
 	LINECHECK
+};
+
+enum SCENENUMBER {
+	SCENE1 = 1,
+	SCENE2,
+	SCENE3,
+	SCENE4,
+	SCENE_END
 };

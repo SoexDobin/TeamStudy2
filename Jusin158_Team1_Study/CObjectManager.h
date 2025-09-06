@@ -6,10 +6,13 @@ class CObjectManager
 private:
 
 	CObjectManager();
+	CObjectManager(const CObjectManager& rhs) = delete;
+	CObjectManager& operator=(CObjectManager& rManager) = delete;
 	~CObjectManager();
 
 public:
 	void AddObject(OBJECT _eID, CObject* _pObject);
+	void Initialize();
 	int Update();
 	void LateUpdate();
 	void Render(HDC hdc);
