@@ -44,7 +44,7 @@ public:
 private:
 	static CSceneManager* m_pInstance;
 	CScene* m_pScene;
-	CObject* m_pPlayer;
+	//CObject* m_pPlayer;
 	int m_iSceneNumber;
 };
 
