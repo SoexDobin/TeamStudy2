@@ -46,6 +46,9 @@
     <Filter Include="01. Object\02.Bullet">
       <UniqueIdentifier>{4421b703-853a-41d7-b3ea-9a0e81566014}</UniqueIdentifier>
     </Filter>
+    <Filter Include="03. Scene">
+      <UniqueIdentifier>{71ac03e4-6ca4-46bb-b5b4-a04328f682fe}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -99,11 +102,23 @@
     <ClInclude Include="CAbstractFactory.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="CScene.h">
-      <Filter>헤더 파일</Filter>
-	</ClInclude>
     <ClInclude Include="CBullet.h">
       <Filter>01. Object\02.Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="CScene04.h">
+      <Filter>03. Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="CScene01.h">
+      <Filter>03. Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="CScene02.h">
+      <Filter>03. Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="CScene03.h">
+      <Filter>03. Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="CScene.h">
+      <Filter>03. Scene</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -143,11 +158,23 @@
     <ClCompile Include="CCollisionManager.cpp">
       <Filter>97. CollisionManager</Filter>
     </ClCompile>
-    <ClCompile Include="CScene.cpp">
-      <Filter>소스 파일</Filter>
-	</ClCompile>
     <ClCompile Include="CBullet.cpp">
       <Filter>01. Object\02.Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="CScene01.cpp">
+      <Filter>03. Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="CScene03.cpp">
+      <Filter>03. Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="CScene02.cpp">
+      <Filter>03. Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="CScene04.cpp">
+      <Filter>03. Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="CScene.cpp">
+      <Filter>03. Scene</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

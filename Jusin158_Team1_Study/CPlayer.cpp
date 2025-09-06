@@ -27,6 +27,8 @@ int CPlayer::Update()
 
 	__super::UpdateRect();
 
+	Key_Input();
+
 	return OBJ_NOEVENT;
 }
 

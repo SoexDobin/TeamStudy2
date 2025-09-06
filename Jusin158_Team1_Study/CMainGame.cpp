@@ -5,6 +5,7 @@
 #include "CObjectManager.h"
 #include "CAbstractFactory.h"
 #include "CPlayer.h"
+#include "CScene04.h"
 
 CMainGame::CMainGame() : m_hDC(nullptr)
 {
@@ -25,30 +26,17 @@ void CMainGame::Initialize()
 		HBITMAP prev = (HBITMAP)::SelectObject(m_hDCBack, m_bmpBack);
 		DeleteObject(prev);
 	}
-
 	CObjectManager::GetInstance()->AddObject(PLAYER, AbstractFactory<CPlayer>::Create());
+	CSceneManager::GetInstance()->ChangeScene(SCENE02);
+	
 
 }
 
 void CMainGame::Update()
 {
-	CObjectManager::GetInstance()->Update();
-	bool bIsDestroy(false);
-	for (int i = 0; i < OBJ_END; ++i)
-	{
-		for (auto iter = m_ObjectList[i].begin(); iter != m_ObjectList[i].end();)
-		{
-			bIsDestroy = (*iter)->Update();
 
-			if (bIsDestroy)
-			{
-				SafeDelete<CObject*>((*iter));
-				iter = m_ObjectList[i].erase(iter);
-			}
-			else
-				++iter;
-		}
-	}
+	CObjectManager::GetInstance()->Update();
+	CSceneManager::GetInstance()->Update();
 
 }
 
@@ -56,8 +44,6 @@ void CMainGame::LateUpdate()
 {
 	CObjectManager::GetInstance()->LateUpdate();
 }
-
-
 
 void CMainGame::Render()
 {
@@ -68,17 +54,18 @@ void CMainGame::Render()
 	}
 
 
-	CObjectManager::GetInstance()->Render(m_hDC);
+	CObjectManager::GetInstance()->Render(m_hDCBack);
 	// dc 사용 시 m_hDCBack 멤버 변수 사용할 것
 	// 백버퍼 시점 dc를 따로 복사해서 사용해야 함
 	
 	// 여기서 충돌검사를 실행
-
+	TCHAR szBuff[32] = L"";
+	swprintf_s(szBuff, L" 스테이지 : %d", CSceneManager::GetInstance()->GetNumber());
+	TextOut(m_hDCBack, 50, 200, szBuff, lstrlen(szBuff));
 }
 
 void CMainGame::Release()
 {
-	CObjectManager::GetInstance()->Release();
 	CObjectManager::DestroyInstance();
 	CSceneManager::DestroyInstance();
 }

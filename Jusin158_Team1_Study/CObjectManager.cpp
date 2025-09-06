@@ -9,6 +9,7 @@ CObjectManager::CObjectManager()
 }
 CObjectManager::~CObjectManager()
 {
+	Release();
 }
 void CObjectManager::AddObject(OBJECT _eID, CObject* _pObject)
 {

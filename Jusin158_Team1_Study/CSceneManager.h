@@ -41,10 +41,15 @@ public:
 	void Render(HDC hdc);
 	void Release();
 
+
+public:
+	int ChangeScene(SCENENUMBER _eSceneNumber);
+	SCENENUMBER GetNumber() { return m_SceneNumber; }
+
 private:
 	static CSceneManager* m_pInstance;
+
 	CScene* m_pScene;
-	//CObject* m_pPlayer;
-	int m_iSceneNumber;
+	SCENENUMBER m_SceneNumber;
 };
 
