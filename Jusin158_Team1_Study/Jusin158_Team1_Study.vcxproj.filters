@@ -46,6 +46,9 @@
     <Filter Include="01. Object\02.Bullet">
       <UniqueIdentifier>{4421b703-853a-41d7-b3ea-9a0e81566014}</UniqueIdentifier>
     </Filter>
+    <Filter Include="95. KeyManager">
+      <UniqueIdentifier>{10388a78-3c3a-4a53-a8b0-7e6979a91d34}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -101,9 +104,12 @@
     </ClInclude>
     <ClInclude Include="CScene.h">
       <Filter>헤더 파일</Filter>
-	</ClInclude>
+    </ClInclude>
     <ClInclude Include="CBullet.h">
       <Filter>01. Object\02.Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="CKeyManager.h">
+      <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -145,9 +151,12 @@
     </ClCompile>
     <ClCompile Include="CScene.cpp">
       <Filter>소스 파일</Filter>
-	</ClCompile>
+    </ClCompile>
     <ClCompile Include="CBullet.cpp">
       <Filter>01. Object\02.Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="CKeyManager.cpp">
+      <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

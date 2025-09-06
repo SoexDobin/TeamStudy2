@@ -9,6 +9,7 @@ extern		HWND		g_hWnd;
 #define		WINCY				600
 #define		OBJ_DESTROY			1
 #define		OBJ_NOEVENT			0
+#define		VK_MAX				0xFF
 
 // enum 
 enum OBJECT
