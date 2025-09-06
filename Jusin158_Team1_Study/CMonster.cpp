@@ -16,7 +16,7 @@ void CMonster::Initialize()
 
 int CMonster::Update()
 {
-	return 0;
+	return OBJ_NOEVENT;
 }
 
 void CMonster::LateUpdate()

@@ -43,6 +43,9 @@
     <Filter Include="97. CollisionManager">
       <UniqueIdentifier>{2e878ed4-17dd-4e6d-b560-ff2e6237acaa}</UniqueIdentifier>
     </Filter>
+    <Filter Include="01. Object\02.Bullet">
+      <UniqueIdentifier>{4421b703-853a-41d7-b3ea-9a0e81566014}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -93,6 +96,9 @@
     <ClInclude Include="CCollisionManager.h">
       <Filter>97. CollisionManager</Filter>
     </ClInclude>
+    <ClInclude Include="CBullet.h">
+      <Filter>01. Object\02.Bullet</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Jusin158_Team1_Study.cpp">
@@ -130,6 +136,9 @@
     </ClCompile>
     <ClCompile Include="CCollisionManager.cpp">
       <Filter>97. CollisionManager</Filter>
+    </ClCompile>
+    <ClCompile Include="CBullet.cpp">
+      <Filter>01. Object\02.Bullet</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

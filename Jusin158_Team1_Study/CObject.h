@@ -20,6 +20,7 @@ public:
 	void	SetSpeed(const float& _fSpeed)		{ m_fSpeed = _fSpeed; }
 	void	SetCollision(const bool& _bCol)		{ m_bCollision = _bCol; }
 	void	SetDestroy()						{ m_bDestroy = true; }
+	void	SetBullet(list<CObject*>* pBullet)	{ m_pBullet = pBullet; }
 
 public:
 	virtual void		Initialize()						PURE;
@@ -37,6 +38,8 @@ protected:
 	Vector2			m_vPivot;
 	Vector2			m_vSize;
 	Vector2			m_vDir;
+
+	list<CObject*>* m_pBullet;
 
 	float			m_fSpeed;
 	bool			m_bDestroy;
