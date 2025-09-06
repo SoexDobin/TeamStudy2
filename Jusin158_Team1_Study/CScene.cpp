@@ -15,6 +15,8 @@ void CScene::Initialize()
 
 int CScene::Update()
 {
+
+
 	return 0;
 }
 

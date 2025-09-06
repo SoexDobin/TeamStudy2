@@ -78,9 +78,22 @@ enum LINESTATE {
 };
 
 enum SCENENUMBER {
-	SCENE1 = 1,
-	SCENE2,
-	SCENE3,
-	SCENE4,
+	SCENE01 = 1,
+	SCENE02,
+	SCENE03,
+	SCENE04,
 	SCENE_END
+};
+
+struct DeleteObj
+{
+	template<typename T>
+	void	operator()(T& p)
+	{
+		if (p)
+		{
+			delete p;
+			p = nullptr;
+		}
+	}
 };

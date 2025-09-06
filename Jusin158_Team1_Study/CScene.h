@@ -1,6 +1,6 @@
 #pragma once
 #include "CObject.h"
-
+#include "CObjectManager.h"
 class CScene
 {
 public:
