@@ -18,7 +18,6 @@ public:
 	void		Release();
 private:
 	HDC				m_hDC;
-	list<CObject*>	m_ObjectList[OBJ_END];
 
 	// Dubble buffering
 	RECT	    m_tRect = {};

@@ -9,6 +9,7 @@ extern		HWND		g_hWnd;
 #define		WINCY				600
 #define		OBJ_DESTROY			1
 #define		OBJ_NOEVENT			0
+#define		VK_MAX				0xFF
 
 // enum 
 enum OBJECT
@@ -82,4 +83,17 @@ enum SCENENUMBER {
 	SCENE03,
 	SCENE04,
 	SCENE_END
+};
+
+struct DeleteObj
+{
+	template<typename T>
+	void	operator()(T& p)
+	{
+		if (p)
+		{
+			delete p;
+			p = nullptr;
+		}
+	}
 };
