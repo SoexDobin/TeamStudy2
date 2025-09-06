@@ -56,7 +56,7 @@ void CCollisionManager::CTCCollision(list<CObject*> _Src1, list<CObject*> _Src2)
 			{
 				Src1->SetCollision(false);
 				Src2->SetCollision(false);
-			}
+			}//!!!!
 		}
 }
 
