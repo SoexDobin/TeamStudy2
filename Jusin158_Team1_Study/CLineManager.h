@@ -34,4 +34,7 @@ public:
 			m_pInstance = nullptr;
 		}
 	}
+
+	bool Collision_Bottom_Line(float _fUnderX, float _fUnderY, float* _pY, float fPlayerSize);
+	bool Collision_Top_Line(float _fUpX, float _fUpY, float fPlayerSize);
 };

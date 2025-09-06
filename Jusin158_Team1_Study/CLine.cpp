@@ -16,5 +16,6 @@ CLine::~CLine()
 
 void CLine::Render(HDC hDC)
 {
-
+	MoveToEx(hDC, (int)m_tLine.tLPoint.fX, (int)m_tLine.tLPoint.fY, nullptr);
+	LineTo(hDC, (int)m_tLine.tRPoint.fX, (int)m_tLine.tRPoint.fY);
 }
