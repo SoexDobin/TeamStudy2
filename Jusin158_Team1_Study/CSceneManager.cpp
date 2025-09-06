@@ -2,7 +2,7 @@
 #include "CSceneManager.h"
 #include "CObjectManager.h"
 
-CSceneManager::CSceneManager() : m_pScene(nullptr)
+CSceneManager::CSceneManager() : m_pScene(nullptr),m_iSceneNumber(SCENE_END)
 {
 }
 CSceneManager::~CSceneManager()

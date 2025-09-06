@@ -30,3 +30,7 @@ void CMonster::Render(HDC _hDC)
 void CMonster::Release()
 {
 }
+
+void CMonster::OnCollision(CObject* _pColObj)
+{
+}
