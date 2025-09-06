@@ -2,6 +2,9 @@
 #include "CSceneManager.h"
 #include "CObjectManager.h"
 
+
+CSceneManager* CSceneManager::m_pInstance = nullptr;
+
 CSceneManager::CSceneManager() : m_pScene(nullptr),m_iSceneNumber(SCENE_END)
 {
 }
@@ -11,10 +14,10 @@ CSceneManager::~CSceneManager()
 }
 void CSceneManager::Initialize()
 {
-	if (m_pPlayer == nullptr)
-	{
-		m_pPlayer = AbstractFactory<CPlayer>::Create();
-	}
+	//if (m_pPlayer == nullptr)
+	//{
+	//	m_pPlayer = AbstractFactory<CPlayer>::Create();
+	//}
 }
 void CSceneManager::Update()
 {

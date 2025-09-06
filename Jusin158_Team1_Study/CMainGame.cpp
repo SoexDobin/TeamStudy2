@@ -25,6 +25,7 @@ void CMainGame::Initialize()
 		HBITMAP prev = (HBITMAP)::SelectObject(m_hDCBack, m_bmpBack);
 		DeleteObject(prev);
 	}
+
 	CObjectManager::GetInstance()->AddObject(PLAYER, AbstractFactory<CPlayer>::Create());
 
 }
@@ -78,4 +79,6 @@ void CMainGame::Render()
 void CMainGame::Release()
 {
 	CObjectManager::GetInstance()->Release();
+	CObjectManager::DestroyInstance();
+	CSceneManager::DestroyInstance();
 }
