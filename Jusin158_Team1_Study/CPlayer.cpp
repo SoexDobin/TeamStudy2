@@ -22,6 +22,9 @@ void CPlayer::Initialize()
 
 int CPlayer::Update()
 {
+	if (m_bDestroy)
+		return OBJ_DESTROY;
+
 	__super::UpdateRect();
 
 	return OBJ_NOEVENT;
