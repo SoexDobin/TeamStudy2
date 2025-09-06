@@ -101,7 +101,7 @@ bool CLineManager::Collision_Bottom_Line(float _fUnderX, float _fUnderY, float* 
 	float fSecondY = pLine->GetLineInfo().tRPoint.fY;
 
 	float fDistance = ((fSecondY - fFirstY) / (fSecondX - fFirstX) * _fUnderX +
-		(-1 * (_fUnderY - fPlayerSize)) + fFirstY +
+		(-1 * (_fUnderY)) + fFirstY +
 		(-1 * ((fSecondY - fFirstY) / (fSecondX - fFirstX)) * fFirstX)) /
 		sqrtf(((fSecondY - fFirstY) / (fSecondX - fFirstX)) * ((fSecondY - fFirstY) / (fSecondX - fFirstX)) + 1);
 

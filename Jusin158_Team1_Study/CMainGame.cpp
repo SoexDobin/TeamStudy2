@@ -37,13 +37,14 @@ void CMainGame::Initialize()
 void CMainGame::Update()
 {
 	CObjectManager::GetInstance()->Update();
+	CLineManager::GetInstance()->Update();
 	
 }
 
 void CMainGame::LateUpdate()
 {
 	CObjectManager::GetInstance()->LateUpdate();
-
+	CLineManager::GetInstance()->Late_Update();
 }
 
 void CMainGame::Render()
