@@ -32,6 +32,23 @@ void CMainGame::Initialize()
 void CMainGame::Update()
 {
 	CObjectManager::GetInstance()->Update();
+	bool bIsDestroy(false);
+	for (int i = 0; i < OBJ_END; ++i)
+	{
+		for (auto iter = m_ObjectList[i].begin(); iter != m_ObjectList[i].end();)
+		{
+			bIsDestroy = (*iter)->Update();
+
+			if (bIsDestroy)
+			{
+				SafeDelete<CObject*>((*iter));
+				iter = m_ObjectList[i].erase(iter);
+			}
+			else
+				++iter;
+		}
+	}
+
 }
 
 void CMainGame::LateUpdate()
@@ -55,6 +72,7 @@ void CMainGame::Render()
 	// 백버퍼 시점 dc를 따로 복사해서 사용해야 함
 	
 	// 여기서 충돌검사를 실행
+
 }
 
 void CMainGame::Release()

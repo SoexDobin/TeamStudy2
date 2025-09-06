@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "CPlayer.h"
+#include "CBullet.h"
 
 CPlayer::CPlayer()
 {

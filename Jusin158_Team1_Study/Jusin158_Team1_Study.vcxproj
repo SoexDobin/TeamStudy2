@@ -132,6 +132,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="CAbstractFactory.h" />
+    <ClInclude Include="CBullet.h" />
     <ClInclude Include="CCollisionManager.h" />
     <ClInclude Include="CLine.h" />
     <ClInclude Include="CLineManager.h" />
@@ -151,6 +152,7 @@
     <ClInclude Include="Vector2.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CBullet.cpp" />
     <ClCompile Include="CCollisionManager.cpp" />
     <ClCompile Include="CLine.cpp" />
     <ClCompile Include="CLineManager.cpp" />
