@@ -47,6 +47,6 @@ void CMonster::Release()
 {
 }
 
-void CMonster::OnCollision(CObject* _pColObj)
+void CMonster::OnCollision(CObject* _pColObj, Vector2 _vColSize)
 {
 }

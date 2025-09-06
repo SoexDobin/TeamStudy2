@@ -46,7 +46,7 @@ void CPlayer::Release()
 {
 }
 
-void CPlayer::OnCollision(CObject* _pColObj)
+void CPlayer::OnCollision(CObject* _pColObj, Vector2 _vColSize)
 {
 }
 
