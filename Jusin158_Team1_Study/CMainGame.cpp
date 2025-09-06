@@ -2,6 +2,9 @@
 #include "CMainGame.h"
 #include "CObject.h"
 #include "CSceneManager.h"
+#include "CObjectManager.h"
+#include "CAbstractFactory.h"
+#include "CPlayer.h"
 
 CMainGame::CMainGame() : m_hDC(nullptr)
 {
@@ -22,11 +25,13 @@ void CMainGame::Initialize()
 		HBITMAP prev = (HBITMAP)::SelectObject(m_hDCBack, m_bmpBack);
 		DeleteObject(prev);
 	}
+	CObjectManager::GetInstance()->AddObject(PLAYER, AbstractFactory<CPlayer>::Create());
 
 }
 
 void CMainGame::Update()
 {
+	CObjectManager::GetInstance()->Update();
 	bool bIsDestroy(false);
 	for (int i = 0; i < OBJ_END; ++i)
 	{
@@ -48,9 +53,7 @@ void CMainGame::Update()
 
 void CMainGame::LateUpdate()
 {
-	for (auto& list : m_ObjectList)
-		for (auto& obj : list)	
-			obj->LateUpdate();
+	CObjectManager::GetInstance()->LateUpdate();
 }
 
 
@@ -63,10 +66,8 @@ void CMainGame::Render()
 		PatBlt(m_hDCBack, 0, 0, m_tRect.right, m_tRect.bottom, WHITENESS);
 	}
 
-	for (auto& list : m_ObjectList)
-		for (auto& obj : list)
-			obj->Render(m_hDC);
 
+	CObjectManager::GetInstance()->Render(m_hDC);
 	// dc 사용 시 m_hDCBack 멤버 변수 사용할 것
 	// 백버퍼 시점 dc를 따로 복사해서 사용해야 함
 	
@@ -76,13 +77,5 @@ void CMainGame::Render()
 
 void CMainGame::Release()
 {
-	for (int i = 0; i < OBJ_END; ++i)
-		for_each(m_ObjectList[i].begin(), m_ObjectList[i].end()
-			, [](CObject* _p) -> void {
-				if (_p)
-				{
-					delete _p;
-					_p = nullptr;
-				}
-			});
+	CObjectManager::GetInstance()->Release();
 }
