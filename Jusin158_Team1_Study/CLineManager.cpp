@@ -9,7 +9,7 @@ CLineManager::CLineManager()
 }
 CLineManager::~CLineManager()
 {
-
+	Release();
 }
 
 void CLineManager::Initialize()
@@ -54,17 +54,11 @@ void CLineManager::Render(HDC hDC)
 }
 void CLineManager::Release()
 {
-	for_each(vecLine.begin(), vecLine.end(), [](CLine* _line) {
-		if (_line != nullptr)
-		{
-			delete _line;
-			_line = nullptr;
-		}
-		});
+	for_each(vecLine.begin(), vecLine.end(), DeleteObj());
 	vecLine.clear();
 }
 
-bool CLineManager::Collision_Bottom_Line(float _fUnderX, float _fUnderY, float* _pY, float fPlayerSize)
+bool CLineManager::Collision_Bottom_Line(float _fX, float _fY, float* _pY, float fPlayerSize)
 {
 	if (vecLine.empty())
 	{
@@ -75,13 +69,15 @@ bool CLineManager::Collision_Bottom_Line(float _fUnderX, float _fUnderY, float* 
 
 	for (int i = 0; i < vecLine.size(); ++i)
 	{
-		if (_fUnderX > vecLine[i]->GetLineInfo().tLPoint.fX &&
-			_fUnderX < vecLine[i]->GetLineInfo().tRPoint.fX)
+		if ((_fX > vecLine[i]->GetLineInfo().tLPoint.fX &&
+			_fX < vecLine[i]->GetLineInfo().tRPoint.fX) ||
+			(_fX < vecLine[i]->GetLineInfo().tLPoint.fX &&
+				_fX > vecLine[i]->GetLineInfo().tRPoint.fX))
 		{
-			if ((_fUnderY > vecLine[i]->GetLineInfo().tLPoint.fY &&
-				_fUnderY < vecLine[i]->GetLineInfo().tRPoint.fY) ||
-				(_fUnderY < vecLine[i]->GetLineInfo().tLPoint.fY &&
-					_fUnderY > vecLine[i]->GetLineInfo().tRPoint.fY))
+			if ((_fY > vecLine[i]->GetLineInfo().tLPoint.fY &&
+				_fY < vecLine[i]->GetLineInfo().tRPoint.fY) ||
+				(_fY < vecLine[i]->GetLineInfo().tLPoint.fY &&
+					_fY > vecLine[i]->GetLineInfo().tRPoint.fY))
 			{
 				pLine = vecLine[i];
 				break;
@@ -100,20 +96,20 @@ bool CLineManager::Collision_Bottom_Line(float _fUnderX, float _fUnderY, float* 
 	float fSecondX = pLine->GetLineInfo().tRPoint.fX;
 	float fSecondY = pLine->GetLineInfo().tRPoint.fY;
 
-	float fDistance = ((fSecondY - fFirstY) / (fSecondX - fFirstX) * _fUnderX +
-		(-1 * (_fUnderY)) + fFirstY +
+	float fDistance = fabsf(((fSecondY - fFirstY) / (fSecondX - fFirstX) * _fX +
+		(-1 * (_fY)) + fFirstY +
 		(-1 * ((fSecondY - fFirstY) / (fSecondX - fFirstX)) * fFirstX)) /
-		sqrtf(((fSecondY - fFirstY) / (fSecondX - fFirstX)) * ((fSecondY - fFirstY) / (fSecondX - fFirstX)) + 1);
+		sqrtf(((fSecondY - fFirstY) / (fSecondX - fFirstX)) * ((fSecondY - fFirstY) / (fSecondX - fFirstX)) + 1));
 
-	if (fPlayerSize < fDistance)
+	if (fPlayerSize > fDistance)
 	{
-		*_pY = ((fSecondY - fFirstY) / (fSecondX - fFirstX)) * (_fUnderX - fFirstX) + fFirstY;
+		*_pY = ((fSecondY - fFirstY) / (fSecondX - fFirstX)) * (_fX - fFirstX) + fFirstY;
 		return true;
 	}
 	return false;
 }
 
-bool CLineManager::Collision_Top_Line(float _fUpX, float _fUpY, float fPlayerSize)
+bool CLineManager::Collision_Top_Line(float _fX, float _fY, float fPlayerSize)
 {
 	if (vecLine.empty())
 	{
@@ -124,13 +120,13 @@ bool CLineManager::Collision_Top_Line(float _fUpX, float _fUpY, float fPlayerSiz
 
 	for (int i = 0; i < vecLine.size(); ++i)
 	{
-		if (_fUpX > vecLine[i]->GetLineInfo().tLPoint.fX &&
-			_fUpX < vecLine[i]->GetLineInfo().tRPoint.fX)
+		if (_fX > vecLine[i]->GetLineInfo().tLPoint.fX &&
+			_fX < vecLine[i]->GetLineInfo().tRPoint.fX)
 		{
-			if ((_fUpY > vecLine[i]->GetLineInfo().tLPoint.fY &&
-				_fUpY < vecLine[i]->GetLineInfo().tRPoint.fY) ||
-				(_fUpY < vecLine[i]->GetLineInfo().tLPoint.fY &&
-					_fUpY > vecLine[i]->GetLineInfo().tRPoint.fY))
+			if ((_fY > vecLine[i]->GetLineInfo().tLPoint.fY &&
+				_fY < vecLine[i]->GetLineInfo().tRPoint.fY) ||
+				(_fY < vecLine[i]->GetLineInfo().tLPoint.fY &&
+					_fY > vecLine[i]->GetLineInfo().tRPoint.fY))
 			{
 				pLine = vecLine[i];
 				break;
@@ -149,10 +145,10 @@ bool CLineManager::Collision_Top_Line(float _fUpX, float _fUpY, float fPlayerSiz
 	float fSecondX = pLine->GetLineInfo().tRPoint.fX;
 	float fSecondY = pLine->GetLineInfo().tRPoint.fY;
 
-	float fdistance = ((fSecondY - fFirstY) / (fSecondX - fFirstX) * _fUpX +
-		(-1 * (_fUpY + fPlayerSize)) + fFirstY +
+	float fdistance = fabsf(((fSecondY - fFirstY) / (fSecondX - fFirstX) * _fX +
+		(-1 * (_fY)) + fFirstY +
 		(-1 * ((fSecondY - fFirstY) / (fSecondX - fFirstX)) * fFirstX)) /
-		sqrtf(((fSecondY - fFirstY) / (fSecondX - fFirstX)) * ((fSecondY - fFirstY) / (fSecondX - fFirstX)) + 1);
+		sqrtf(((fSecondY - fFirstY) / (fSecondX - fFirstX)) * ((fSecondY - fFirstY) / (fSecondX - fFirstX)) + 1));
 
 	if (fPlayerSize < fdistance)
 	{

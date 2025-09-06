@@ -83,3 +83,16 @@ enum SCENENUMBER {
 	SCENE4,
 	SCENE_END
 };
+
+struct DeleteObj
+{
+	template<typename T>
+	void	operator()(T& p)
+	{
+		if (p)
+		{
+			delete p;
+			p = nullptr;
+		}
+	}
+};
