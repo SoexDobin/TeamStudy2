@@ -1,12 +1,14 @@
 ﻿#include "pch.h"
+// 
 #include "CMainGame.h"
 #include "CObject.h"
-#include "CSceneManager.h"
-#include "CObjectManager.h"
-#include "CAbstractFactory.h"
 #include "CPlayer.h"
 #include "CMonster.h"
+
 #include "CLineManager.h"
+#include "CAbstractFactory.h"
+#include "CSceneManager.h"
+#include "CObjectManager.h"
 
 CMainGame::CMainGame() : m_hDC(nullptr)
 {
@@ -37,13 +39,14 @@ void CMainGame::Initialize()
 void CMainGame::Update()
 {
 	CObjectManager::GetInstance()->Update();
+	CLineManager::GetInstance()->Update();
 	
 }
 
 void CMainGame::LateUpdate()
 {
 	CObjectManager::GetInstance()->LateUpdate();
-
+	CLineManager::GetInstance()->Late_Update();
 }
 
 void CMainGame::Render()
@@ -59,8 +62,6 @@ void CMainGame::Render()
 	// dc 사용 시 m_hDCBack 멤버 변수 사용할 것
 	// 백버퍼 시점 dc를 따로 복사해서 사용해야 함
 	
-	// 여기서 충돌검사를 실행
-
 }
 
 void CMainGame::Release()
