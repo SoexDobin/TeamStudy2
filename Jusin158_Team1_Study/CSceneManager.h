@@ -1,9 +1,14 @@
 #pragma once
+#include "CScene.h"
+#include "CPlayer.h"
+#include "CAbstractFactory.h"
 class CSceneManager
 {
 
 public:
 	CSceneManager();
+	CSceneManager(const CSceneManager& rhs) = delete;
+	CSceneManager& operator=(CSceneManager& rManager) = delete;
 	~CSceneManager();
 
 public:
@@ -28,6 +33,7 @@ public:
 	}
 
 
+
 public:
 	void Initialize();
 	void Update();
@@ -37,6 +43,8 @@ public:
 
 private:
 	static CSceneManager* m_pInstance;
-
+	CScene* m_pScene;
+	CObject* m_pPlayer;
+	int m_iSceneNumber;
 };
 

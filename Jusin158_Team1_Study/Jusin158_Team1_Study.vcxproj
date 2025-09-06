@@ -131,6 +131,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CAbstractFactory.h" />
+    <ClInclude Include="CBullet.h" />
     <ClInclude Include="CCollisionManager.h" />
     <ClInclude Include="CLine.h" />
     <ClInclude Include="CLineManager.h" />
@@ -138,6 +140,7 @@
     <ClInclude Include="CMonster.h" />
     <ClInclude Include="CObject.h" />
     <ClInclude Include="CObjectManager.h" />
+    <ClInclude Include="CScene.h" />
     <ClInclude Include="CSceneManager.h" />
     <ClInclude Include="CPlayer.h" />
     <ClInclude Include="Define.h" />
@@ -149,6 +152,7 @@
     <ClInclude Include="Vector2.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CBullet.cpp" />
     <ClCompile Include="CCollisionManager.cpp" />
     <ClCompile Include="CLine.cpp" />
     <ClCompile Include="CLineManager.cpp" />
@@ -156,6 +160,7 @@
     <ClCompile Include="CMonster.cpp" />
     <ClCompile Include="CObject.cpp" />
     <ClCompile Include="CObjectManager.cpp" />
+    <ClCompile Include="CScene.cpp" />
     <ClCompile Include="CSceneManager.cpp" />
     <ClCompile Include="CPlayer.cpp" />
     <ClCompile Include="Jusin158_Team1_Study.cpp" />
