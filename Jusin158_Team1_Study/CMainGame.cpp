@@ -1,6 +1,7 @@
 ﻿#include "pch.h"
 #include "CMainGame.h"
 #include "CObject.h"
+#include "CSceneManager.h"
 
 CMainGame::CMainGame() : m_hDC(nullptr)
 {
@@ -51,6 +52,8 @@ void CMainGame::LateUpdate()
 		for (auto& obj : list)	
 			obj->LateUpdate();
 }
+
+
 
 void CMainGame::Render()
 {

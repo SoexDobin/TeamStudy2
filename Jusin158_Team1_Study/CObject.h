@@ -8,15 +8,17 @@ public:
 	virtual ~CObject();
 public:
 	const RECT&			GetRect()		{ return m_tRect; }
-	const Vector2&		GetPivot()		{ return m_vPivot; }
-	const Vector2&		GetSize()		{ return m_vSize; }
-	const Vector2&		GetDir()		{ return m_vDir; }
+	Vector2				GetPivot()		{ return m_vPivot; }
+	Vector2				GetSize()		{ return m_vSize; }
+	Vector2				GetDir()		{ return m_vDir; }
 	const float&		GetSpeed()		{ return m_fSpeed; }
+	bool				GetCollision()  { return m_bCollision; }
 	
 	void	SetPivot(const Vector2& _vPivot)	{ m_vPivot = _vPivot; }
 	void	SetSize(const Vector2& _vSize)		{ m_vSize = _vSize; }
 	void	SetDir(const Vector2& _vDir)		{ m_vDir = _vDir; }
 	void	SetSpeed(const float& _fSpeed)		{ m_fSpeed = _fSpeed; }
+	void	SetCollision(const bool& _bCol)		{ m_bCollision = _bCol; }
 	void	SetDestroy()						{ m_bDestroy = true; }
 
 public:
@@ -38,6 +40,8 @@ protected:
 
 	float			m_fSpeed;
 	bool			m_bDestroy;
+
+private:
 	bool			m_bCollision;
 };
 
