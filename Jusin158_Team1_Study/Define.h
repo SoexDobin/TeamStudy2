@@ -9,6 +9,7 @@ extern		HWND		g_hWnd;
 #define		WINCY				600
 #define		OBJ_DESTROY			1
 #define		OBJ_NOEVENT			0
+#define		VK_MAX				0xFF
 
 // enum 
 enum OBJECT
@@ -16,7 +17,7 @@ enum OBJECT
 	PLAYER,
 	MONSTER,
 	BULLET,
-	LINE,
+	//LINE,
 
 	OBJ_END
 };
@@ -40,3 +41,59 @@ static void SafeDelete(T& _p)
 		_p = nullptr;
 	}
 }
+
+typedef struct tagLinePoint {
+	float fX, fY;
+
+	tagLinePoint()
+	{
+		ZeroMemory(this, sizeof(tagLinePoint));
+	}
+	tagLinePoint(float _fX, float _fY) : fX(_fX), fY(_fY)
+	{
+
+	}
+}LINEPOINT;
+
+typedef struct tagLine 
+{
+	LINEPOINT tLPoint;
+	LINEPOINT tRPoint;
+
+	tagLine()
+	{
+		ZeroMemory(this, sizeof(tagLine));
+	}
+
+	tagLine(LINEPOINT _tLPoint, LINEPOINT _tRPoint) : tLPoint(_tLPoint), tRPoint(_tRPoint)
+	{
+
+	}
+}LINE;
+
+enum LINESTATE {
+	LEFT,
+	RIGHT,
+	LINECHECK
+};
+
+enum SCENENUMBER {
+	SCENE01 = 1,
+	SCENE02,
+	SCENE03,
+	SCENE04,
+	SCENE_END
+};
+
+struct DeleteObj
+{
+	template<typename T>
+	void	operator()(T& p)
+	{
+		if (p)
+		{
+			delete p;
+			p = nullptr;
+		}
+	}
+};

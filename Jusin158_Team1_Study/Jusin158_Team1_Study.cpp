@@ -115,10 +115,11 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
     {
         return FALSE;
     }
-
+    g_hWnd = hWnd;
     ShowWindow(hWnd, nCmdShow);
     UpdateWindow(hWnd);
 
+    g_hWnd = hWnd;
     return TRUE;
 }
 
@@ -142,6 +143,14 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
         }
     }
     break;
+    case WM_KEYDOWN:
+        switch (wParam)
+        {
+        case VK_ESCAPE:
+            DestroyWindow(hWnd);
+            break;
+        }
+        break;
     case WM_DESTROY:
         PostQuitMessage(0);
         break;

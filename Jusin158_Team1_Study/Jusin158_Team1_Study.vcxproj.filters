@@ -22,24 +22,39 @@
     <Filter Include="소스 파일\Vector2">
       <UniqueIdentifier>{2e1e52b4-d9f1-4d34-a786-746fe6ca7786}</UniqueIdentifier>
     </Filter>
+    <Filter Include="99. SceneManager">
+      <UniqueIdentifier>{90573290-bf15-4e8a-9da2-c95161defe0e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="98. ObjectManager">
+      <UniqueIdentifier>{06901751-2d7a-4cdc-b909-d5a516ae386f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Object\00.Player">
+      <UniqueIdentifier>{289dd3d7-a13d-4463-9f17-e6ef56671bb5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Object\01.Monster">
+      <UniqueIdentifier>{e8eba61d-b5bc-469d-a536-49d342c32f51}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="96.LineManager">
+      <UniqueIdentifier>{b482df0a-e5a7-4b64-9a44-df2268e21ab5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="96.LineManager\Line">
+      <UniqueIdentifier>{25826ffb-4fdd-4b3f-aa83-ff9fca182dd2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="97. CollisionManager">
+      <UniqueIdentifier>{2e878ed4-17dd-4e6d-b560-ff2e6237acaa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Object\02.Bullet">
+      <UniqueIdentifier>{4421b703-853a-41d7-b3ea-9a0e81566014}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene">
+      <UniqueIdentifier>{71ac03e4-6ca4-46bb-b5b4-a04328f682fe}</UniqueIdentifier>
+	</Filter>
+    <Filter Include="95. KeyManager">
+      <UniqueIdentifier>{10388a78-3c3a-4a53-a8b0-7e6979a91d34}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="targetver.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Resource.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Jusin158_Team1_Study.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="pch.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Define.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="CMainGame.h">
@@ -50,6 +65,67 @@
     </ClInclude>
     <ClInclude Include="Vector2.h">
       <Filter>소스 파일\Vector2</Filter>
+    </ClInclude>
+    <ClInclude Include="CSceneManager.h">
+      <Filter>99. SceneManager</Filter>
+    </ClInclude>
+    <ClInclude Include="CObjectManager.h">
+      <Filter>98. ObjectManager</Filter>
+    </ClInclude>
+    <ClInclude Include="CLineManager.h">
+      <Filter>96.LineManager</Filter>
+    </ClInclude>
+    <ClInclude Include="CLine.h">
+      <Filter>96.LineManager\Line</Filter>
+    </ClInclude>
+    <ClInclude Include="CMonster.h">
+      <Filter>01. Object\01.Monster</Filter>
+    </ClInclude>
+    <ClInclude Include="CPlayer.h">
+      <Filter>01. Object\00.Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Define.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Jusin158_Team1_Study.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CCollisionManager.h">
+      <Filter>97. CollisionManager</Filter>
+    </ClInclude>
+    <ClInclude Include="CAbstractFactory.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CBullet.h">
+      <Filter>01. Object\02.Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="CScene04.h">
+      <Filter>03. Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="CScene01.h">
+      <Filter>03. Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="CScene02.h">
+      <Filter>03. Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="CScene03.h">
+      <Filter>03. Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="CScene.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+
+    <ClInclude Include="CKeyManager.h">
+      <Filter>95. KeyManager</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -67,6 +143,48 @@
     </ClCompile>
     <ClCompile Include="Vector2.cpp">
       <Filter>소스 파일\Vector2</Filter>
+    </ClCompile>
+    <ClCompile Include="CSceneManager.cpp">
+      <Filter>99. SceneManager</Filter>
+    </ClCompile>
+    <ClCompile Include="CObjectManager.cpp">
+      <Filter>98. ObjectManager</Filter>
+    </ClCompile>
+    <ClCompile Include="CLine.cpp">
+      <Filter>96.LineManager\Line</Filter>
+    </ClCompile>
+    <ClCompile Include="CMonster.cpp">
+      <Filter>01. Object\01.Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="CPlayer.cpp">
+      <Filter>01. Object\00.Player</Filter>
+    </ClCompile>
+    <ClCompile Include="CCollisionManager.cpp">
+      <Filter>97. CollisionManager</Filter>
+    </ClCompile>
+    <ClCompile Include="CBullet.cpp">
+      <Filter>01. Object\02.Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="CScene01.cpp">
+      <Filter>03. Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="CScene03.cpp">
+      <Filter>03. Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="CScene02.cpp">
+      <Filter>03. Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="CScene04.cpp">
+      <Filter>03. Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="CScene.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CLineManager.cpp">
+      <Filter>96.LineManager\Line</Filter>
+    </ClCompile>
+    <ClCompile Include="CKeyManager.cpp">
+      <Filter>95. KeyManager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
