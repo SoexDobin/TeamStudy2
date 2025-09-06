@@ -109,7 +109,7 @@
       <Filter>01. Object\02.Bullet</Filter>
     </ClInclude>
     <ClInclude Include="CKeyManager.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>95. KeyManager</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -134,9 +134,6 @@
     <ClCompile Include="CObjectManager.cpp">
       <Filter>98. ObjectManager</Filter>
     </ClCompile>
-    <ClCompile Include="CLineManager.cpp">
-      <Filter>96.LineManager</Filter>
-    </ClCompile>
     <ClCompile Include="CLine.cpp">
       <Filter>96.LineManager\Line</Filter>
     </ClCompile>
@@ -155,8 +152,11 @@
     <ClCompile Include="CBullet.cpp">
       <Filter>01. Object\02.Bullet</Filter>
     </ClCompile>
+    <ClCompile Include="CLineManager.cpp">
+      <Filter>96.LineManager\Line</Filter>
+    </ClCompile>
     <ClCompile Include="CKeyManager.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>95. KeyManager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

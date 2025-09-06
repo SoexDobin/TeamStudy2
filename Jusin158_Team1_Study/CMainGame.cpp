@@ -9,6 +9,7 @@
 #include "CAbstractFactory.h"
 #include "CSceneManager.h"
 #include "CObjectManager.h"
+#include "CKeyManager.h"
 
 CMainGame::CMainGame() : m_hDC(nullptr)
 {
@@ -47,6 +48,7 @@ void CMainGame::LateUpdate()
 {
 	CObjectManager::GetInstance()->LateUpdate();
 	CLineManager::GetInstance()->Late_Update();
+	CKeyManager::Get_Instance()->KeyUpdate();
 }
 
 void CMainGame::Render()

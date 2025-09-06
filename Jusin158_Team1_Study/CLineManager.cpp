@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "CLineManager.h"
+#include "CKeyManager.h"
 
 CLineManager* CLineManager::m_pInstance = nullptr;
 
@@ -22,7 +23,7 @@ int	CLineManager::Update()
 	GetCursorPos(&pt);
 	ScreenToClient(g_hWnd, &pt);
 
-	if (GetAsyncKeyState(VK_LBUTTON))
+	if (CKeyManager::Get_Instance()->KeyDown(VK_LBUTTON))
 	{
 		if (!m_tLinePoint[LEFT].fX && !m_tLinePoint[LEFT].fY)
 		{
