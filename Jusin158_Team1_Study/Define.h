@@ -16,7 +16,7 @@ enum OBJECT
 	PLAYER,
 	MONSTER,
 	BULLET,
-	LINE,
+	//LINE,
 
 	OBJ_END
 };
