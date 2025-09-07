@@ -58,6 +58,12 @@
     <Filter Include="01. Object\03.Mouse">
       <UniqueIdentifier>{15ccb0a2-82de-4d08-93fe-79bcd6e33f22}</UniqueIdentifier>
     </Filter>
+    <Filter Include="01. Object\01.Monster\03. ThirdSceneBoss">
+      <UniqueIdentifier>{3f46987f-8e83-4da6-aafc-fdc5b64eebed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Object\02.Bullet\00. CurveBullet">
+      <UniqueIdentifier>{066ce8c9-1002-45c5-abd1-489494987300}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -138,6 +144,9 @@
     <ClInclude Include="CMouse.h">
       <Filter>01. Object\03.Mouse</Filter>
     </ClInclude>
+    <ClInclude Include="CThirdBoss.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Jusin158_Team1_Study.cpp">
@@ -202,6 +211,9 @@
     </ClCompile>
     <ClCompile Include="CMouse.cpp">
       <Filter>01. Object\03.Mouse</Filter>
+    </ClCompile>
+    <ClCompile Include="CThirdBoss.cpp">
+      <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

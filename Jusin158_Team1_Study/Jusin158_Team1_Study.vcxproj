@@ -150,6 +150,7 @@
     <ClInclude Include="CSceneManager.h" />
     <ClInclude Include="CPlayer.h" />
     <ClInclude Include="CScrollManager.h" />
+    <ClInclude Include="CThirdBoss.h" />
     <ClInclude Include="Define.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="Jusin158_Team1_Study.h" />
@@ -177,6 +178,7 @@
     <ClCompile Include="CSceneManager.cpp" />
     <ClCompile Include="CPlayer.cpp" />
     <ClCompile Include="CScrollManager.cpp" />
+    <ClCompile Include="CThirdBoss.cpp" />
     <ClCompile Include="Jusin158_Team1_Study.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
