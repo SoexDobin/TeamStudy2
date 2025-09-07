@@ -4,6 +4,7 @@
 #include "CObject.h"
 #include "CPlayer.h"
 #include "CMonster.h"
+#include "CMouse.h"
 
 #include "CLineManager.h"
 #include "CAbstractFactory.h"
@@ -37,15 +38,15 @@ void CMainGame::Initialize()
 	CObjectManager::GetInstance()->AddObject(MONSTER, AbstractFactory<CMonster>::Create());
 	CSceneManager::GetInstance()->ChangeScene(SCENE02);
 	
-
+	CObjectManager::GetInstance()->AddObject(MOUSE, AbstractFactory<CMouse>::Create());
 }
 
 void CMainGame::Update()
 {
-
 	CObjectManager::GetInstance()->Update();
 	CSceneManager::GetInstance()->Update();
 	CLineManager::GetInstance()->Update();
+
 }
 
 void CMainGame::LateUpdate()

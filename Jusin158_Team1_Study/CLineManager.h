@@ -12,6 +12,10 @@ private:
 	CLineManager operator=(CLineManager& _rMgr) = delete;
 	~CLineManager();
 public:
+	int GetCurLeftX() { return (int)m_tLinePoint[LEFT].fX; }
+	int GetCurLeftY() { return (int)m_tLinePoint[LEFT].fY; }
+
+public:
 	void		Initialize();
 	int			Update();
 	void		Late_Update();
