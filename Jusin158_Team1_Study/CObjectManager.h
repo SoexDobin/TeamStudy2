@@ -11,13 +11,17 @@ private:
 	~CObjectManager();
 
 public:
-	void AddObject(OBJECT _eID, CObject* _pObject);
+	CObject* AddObject(OBJECT _eID, CObject* _pObject);
 	void Initialize();
 	int Update();
 	void LateUpdate();
 	void Render(HDC hdc);
 	void Release();
-
+public:
+	list<CObject*>* GetMonsterList() { return  &m_ObjectList[MONSTER]; }
+	list<CObject*>* GetPlayer() {return &m_ObjectList[PLAYER];}
+	
+	//플레이어, 불릿 추가
 public:
 	static CObjectManager* GetInstance()
 	{

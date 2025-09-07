@@ -20,11 +20,39 @@ void CSceneManager::Initialize()
 }
 void CSceneManager::Update()
 {
+	CObjectManager::GetInstance()->Update();
 	if (m_pScene)
 	{
-		m_pScene->Update();
+		m_bDead= m_pScene->Update();
+
+
+		if (m_bDead)
+		{
+			switch (m_SceneNumber)
+			{
+			case SCENE01:
+				CSceneManager::GetInstance()->ChangeScene(SCENE02);
+				break;
+			case SCENE02:
+				CSceneManager::GetInstance()->ChangeScene(SCENE03);
+				break;
+			case SCENE03:
+				CSceneManager::GetInstance()->ChangeScene(SCENE04);
+				break;
+			}
+		}
+
+		else
+		{
+			return;
+		}
+
 	}
-	
+
+
+
+
+
 }
 void CSceneManager::LateUpdate()
 {
@@ -35,6 +63,10 @@ void CSceneManager::LateUpdate()
 }
 void CSceneManager::Render(HDC hdc)
 {
+	TCHAR szBuff[32] = L"";
+	swprintf_s(szBuff, L" 스테이지 : %d", CSceneManager::GetInstance()->GetSceneNumber());
+	TextOut(hdc, 50, 200, szBuff, lstrlen(szBuff));
+	CObjectManager::GetInstance()->Render(hdc);
 	if (m_pScene)
 	{
 		m_pScene->Render(hdc);
@@ -71,9 +103,12 @@ int CSceneManager::ChangeScene(SCENENUMBER _eSceneNumber)
 		m_SceneNumber = SCENE04;
 			break;
 	}
-
+	//기본 할당된 Scene 해제
 	SafeDelete(m_pScene);
-
+	//새로운 Scene 할당
 	m_pScene = newScene;	
+	//새로운 Scene 정보 불러오기
+	m_pScene->Initialize();
+	return 0;
 }
 

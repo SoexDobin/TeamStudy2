@@ -7,9 +7,9 @@ public:
 	CScene02();
 	virtual ~CScene02();
 public:
-	void		Initialize();
-	int			Update();
-	void		LateUpdate();
-	void		Render(HDC _hDC);
-	void		Release();
+	void		Initialize()		override;
+	int			Update()			override;
+	void		LateUpdate()		override;
+	void		Render(HDC _hDC)	override;
+	void		Release()			override;
 };
