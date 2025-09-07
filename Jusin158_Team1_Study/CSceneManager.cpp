@@ -1,4 +1,4 @@
-#include "pch.h"
+﻿#include "pch.h"
 #include "CSceneManager.h"
 #include "CScene01.h"
 #include "CScene02.h"
@@ -64,7 +64,7 @@ void CSceneManager::LateUpdate()
 void CSceneManager::Render(HDC hdc)
 {
 	TCHAR szBuff[32] = L"";
-	swprintf_s(szBuff, L" �������� : %d", CSceneManager::GetInstance()->GetSceneNumber());
+	swprintf_s(szBuff, L"스테이지 : %d", CSceneManager::GetInstance()->GetSceneNumber());
 	TextOut(hdc, 50, 200, szBuff, lstrlen(szBuff));
 	CObjectManager::GetInstance()->Render(hdc);
 	if (m_pScene)
