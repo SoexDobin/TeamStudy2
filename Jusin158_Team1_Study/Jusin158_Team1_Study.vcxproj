@@ -134,6 +134,7 @@
     <ClInclude Include="CAbstractFactory.h" />
     <ClInclude Include="CBullet.h" />
     <ClInclude Include="CCollisionManager.h" />
+    <ClInclude Include="CFirstBoss.h" />
     <ClInclude Include="CKeyManager.h" />
     <ClInclude Include="CLine.h" />
     <ClInclude Include="CLineManager.h" />
@@ -161,6 +162,7 @@
   <ItemGroup>
     <ClCompile Include="CBullet.cpp" />
     <ClCompile Include="CCollisionManager.cpp" />
+    <ClCompile Include="CFirstBoss.cpp" />
     <ClCompile Include="CKeyManager.cpp" />
     <ClCompile Include="CLine.cpp" />
     <ClCompile Include="CLineManager.cpp" />
