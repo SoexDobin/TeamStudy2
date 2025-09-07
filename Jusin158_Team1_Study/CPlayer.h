@@ -22,6 +22,7 @@ private:
 
 private:
 	bool m_bFaceRight;
+	float m_fBulletDir;
 	bool m_bJump;
 	float m_fJumpSpeed;
 	float m_fJumpTime;

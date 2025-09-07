@@ -5,7 +5,7 @@
 #include "CAbstractFactory.h"
 #include "CObjectManager.h"
 
-CPlayer::CPlayer() : m_bFaceRight(true), m_bJump(false), m_fJumpSpeed(0.f), m_fJumpTime(0.f)
+CPlayer::CPlayer() : m_bFaceRight(true), m_bJump(false), m_fJumpSpeed(0.f), m_fJumpTime(0.f), m_fBulletDir(1.f)
 {
 }
 
@@ -21,8 +21,6 @@ void CPlayer::Initialize()
 
 	m_fSpeed = 8.f;
 	m_fJumpSpeed = 15.f;
-
-	m_bFaceRight = true;
 
 }
 
@@ -61,9 +59,10 @@ void CPlayer::KeyInput()
 	float fY = 0.f;
 	if (GetAsyncKeyState(VK_RIGHT))
 	{
-		if (m_bFaceRight != true)
+		if (m_bFaceRight == false)
 		{
 			m_bFaceRight = true;
+			m_fBulletDir = 1.f;
 
 		}
 
@@ -92,9 +91,11 @@ void CPlayer::KeyInput()
 		if (m_bFaceRight == true)
 		{
 			m_bFaceRight = false; 
-
+			m_fBulletDir = -1.f;
 			
 		}
+
+
 
 		if (GetAsyncKeyState(VK_UP))
 		{
@@ -142,6 +143,8 @@ void CPlayer::KeyInput()
 	if (GetAsyncKeyState('A'))
 	{
 		CObjectManager::GetInstance()->GetBulletList()->push_back(AbstractFactory<CBullet>::Create(m_vPivot.x, m_vPivot.y));
+		CObject* pLastBullet = CObjectManager::GetInstance()->GetBulletList()->back();
+		pLastBullet->SetSpeed(pLastBullet->GetSpeed() * m_fBulletDir);
 	}
 }
 

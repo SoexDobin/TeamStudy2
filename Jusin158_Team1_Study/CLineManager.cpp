@@ -26,6 +26,7 @@ int	CLineManager::Update()
 
 	if (CKeyManager::Get_Instance()->KeyDown(VK_LBUTTON))
 	{
+		int a = 0;
 		// if you have no left instance
 		if (!m_tLinePoint[LEFT].fX && !m_tLinePoint[LEFT].fY)
 		{
