@@ -75,5 +75,6 @@ int CSceneManager::ChangeScene(SCENENUMBER _eSceneNumber)
 	SafeDelete(m_pScene);
 
 	m_pScene = newScene;	
+	m_pScene->Initialize();
 }
 

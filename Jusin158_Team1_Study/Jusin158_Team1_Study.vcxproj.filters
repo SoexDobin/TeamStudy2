@@ -52,6 +52,9 @@
     <Filter Include="95. KeyManager">
       <UniqueIdentifier>{10388a78-3c3a-4a53-a8b0-7e6979a91d34}</UniqueIdentifier>
     </Filter>
+    <Filter Include="94. ScrollManager">
+      <UniqueIdentifier>{9c98fee8-59ca-443f-b156-30092bc8513a}</UniqueIdentifier>
+    </Filter>
     <Filter Include="01. Object\03.Mouse">
       <UniqueIdentifier>{15ccb0a2-82de-4d08-93fe-79bcd6e33f22}</UniqueIdentifier>
     </Filter>
@@ -129,6 +132,9 @@
     <ClInclude Include="CKeyManager.h">
       <Filter>95. KeyManager</Filter>
     </ClInclude>
+    <ClInclude Include="CScrollManager.h">
+      <Filter>94. ScrollManager</Filter>
+    </ClInclude>
     <ClInclude Include="CMouse.h">
       <Filter>01. Object\03.Mouse</Filter>
     </ClInclude>
@@ -190,6 +196,9 @@
     </ClCompile>
     <ClCompile Include="CKeyManager.cpp">
       <Filter>95. KeyManager</Filter>
+    </ClCompile>
+    <ClCompile Include="CScrollManager.cpp">
+      <Filter>94. ScrollManager</Filter>
     </ClCompile>
     <ClCompile Include="CMouse.cpp">
       <Filter>01. Object\03.Mouse</Filter>
