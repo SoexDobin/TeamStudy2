@@ -19,12 +19,14 @@ void CLineManager::Initialize()
 }
 int	CLineManager::Update()
 {
+	// get mouse x,y
 	POINT pt{};
 	GetCursorPos(&pt);
 	ScreenToClient(g_hWnd, &pt);
 
 	if (CKeyManager::Get_Instance()->KeyDown(VK_LBUTTON))
 	{
+		// if you have no left instance
 		if (!m_tLinePoint[LEFT].fX && !m_tLinePoint[LEFT].fY)
 		{
 			m_tLinePoint[LEFT].fX = (float)pt.x;
@@ -38,6 +40,7 @@ int	CLineManager::Update()
 
 			vecLine.push_back(new CLine(m_tLinePoint[LEFT], m_tLinePoint[RIGHT]));
 
+			// right instance should have to be left instance
 			m_tLinePoint[LEFT].fX = m_tLinePoint[RIGHT].fX;
 			m_tLinePoint[LEFT].fY = m_tLinePoint[RIGHT].fY;
 		}
@@ -70,11 +73,13 @@ bool CLineManager::Collision_Bottom_Line(float _fX, float _fY, float* _pY, float
 
 	for (int i = 0; i < vecLine.size(); ++i)
 	{
+		// check left and right pointX
 		if ((_fX > vecLine[i]->GetLineInfo().tLPoint.fX &&
 			_fX < vecLine[i]->GetLineInfo().tRPoint.fX) ||
 			(_fX < vecLine[i]->GetLineInfo().tLPoint.fX &&
 				_fX > vecLine[i]->GetLineInfo().tRPoint.fX))
 		{
+			// check left and right pointY
 			if ((_fY > vecLine[i]->GetLineInfo().tLPoint.fY &&
 				_fY < vecLine[i]->GetLineInfo().tRPoint.fY) ||
 				(_fY < vecLine[i]->GetLineInfo().tLPoint.fY &&
@@ -91,17 +96,21 @@ bool CLineManager::Collision_Bottom_Line(float _fX, float _fY, float* _pY, float
 		return false;
 	}
 
+	// left point's X and Y
 	float fFirstX = pLine->GetLineInfo().tLPoint.fX;
 	float fFirstY = pLine->GetLineInfo().tLPoint.fY;
 
+	// right point's X and Y
 	float fSecondX = pLine->GetLineInfo().tRPoint.fX;
 	float fSecondY = pLine->GetLineInfo().tRPoint.fY;
 
+	// distance from circle's pivot to line 
 	float fDistance = fabsf(((fSecondY - fFirstY) / (fSecondX - fFirstX) * _fX +
 		(-1 * (_fY)) + fFirstY +
 		(-1 * ((fSecondY - fFirstY) / (fSecondX - fFirstX)) * fFirstX)) /
 		sqrtf(((fSecondY - fFirstY) / (fSecondX - fFirstX)) * ((fSecondY - fFirstY) / (fSecondX - fFirstX)) + 1));
 
+	// collision of circle and line
 	if (fPlayerSize > fDistance)
 	{
 		*_pY = ((fSecondY - fFirstY) / (fSecondX - fFirstX)) * (_fX - fFirstX) + fFirstY;
@@ -110,50 +119,51 @@ bool CLineManager::Collision_Bottom_Line(float _fX, float _fY, float* _pY, float
 	return false;
 }
 
-bool CLineManager::Collision_Top_Line(float _fX, float _fY, float fPlayerSize)
-{
-	if (vecLine.empty())
-	{
-		return false;
-	}
-
-	CLine* pLine = nullptr;
-
-	for (int i = 0; i < vecLine.size(); ++i)
-	{
-		if (_fX > vecLine[i]->GetLineInfo().tLPoint.fX &&
-			_fX < vecLine[i]->GetLineInfo().tRPoint.fX)
-		{
-			if ((_fY > vecLine[i]->GetLineInfo().tLPoint.fY &&
-				_fY < vecLine[i]->GetLineInfo().tRPoint.fY) ||
-				(_fY < vecLine[i]->GetLineInfo().tLPoint.fY &&
-					_fY > vecLine[i]->GetLineInfo().tRPoint.fY))
-			{
-				pLine = vecLine[i];
-				break;
-			}
-		}
-	}
-
-	if (!pLine)
-	{
-		return false;
-	}
-
-	float fFirstX = pLine->GetLineInfo().tLPoint.fX;
-	float fFirstY = pLine->GetLineInfo().tLPoint.fY;
-
-	float fSecondX = pLine->GetLineInfo().tRPoint.fX;
-	float fSecondY = pLine->GetLineInfo().tRPoint.fY;
-
-	float fdistance = fabsf(((fSecondY - fFirstY) / (fSecondX - fFirstX) * _fX +
-		(-1 * (_fY)) + fFirstY +
-		(-1 * ((fSecondY - fFirstY) / (fSecondX - fFirstX)) * fFirstX)) /
-		sqrtf(((fSecondY - fFirstY) / (fSecondX - fFirstX)) * ((fSecondY - fFirstY) / (fSecondX - fFirstX)) + 1));
-
-	if (fPlayerSize < fdistance)
-	{
-		return true;
-	}
-	return false;
-}
+// inactive
+//bool CLineManager::Collision_Top_Line(float _fX, float _fY, float fPlayerSize)
+//{
+//	if (vecLine.empty())
+//	{
+//		return false;
+//	}
+//
+//	CLine* pLine = nullptr;
+//
+//	for (int i = 0; i < vecLine.size(); ++i)
+//	{
+//		if (_fX > vecLine[i]->GetLineInfo().tLPoint.fX &&
+//			_fX < vecLine[i]->GetLineInfo().tRPoint.fX)
+//		{
+//			if ((_fY > vecLine[i]->GetLineInfo().tLPoint.fY &&
+//				_fY < vecLine[i]->GetLineInfo().tRPoint.fY) ||
+//				(_fY < vecLine[i]->GetLineInfo().tLPoint.fY &&
+//					_fY > vecLine[i]->GetLineInfo().tRPoint.fY))
+//			{
+//				pLine = vecLine[i];
+//				break;
+//			}
+//		}
+//	}
+//
+//	if (!pLine)
+//	{
+//		return false;
+//	}
+//
+//	float fFirstX = pLine->GetLineInfo().tLPoint.fX;
+//	float fFirstY = pLine->GetLineInfo().tLPoint.fY;
+//
+//	float fSecondX = pLine->GetLineInfo().tRPoint.fX;
+//	float fSecondY = pLine->GetLineInfo().tRPoint.fY;
+//
+//	float fdistance = fabsf(((fSecondY - fFirstY) / (fSecondX - fFirstX) * _fX +
+//		(-1 * (_fY)) + fFirstY +
+//		(-1 * ((fSecondY - fFirstY) / (fSecondX - fFirstX)) * fFirstX)) /
+//		sqrtf(((fSecondY - fFirstY) / (fSecondX - fFirstX)) * ((fSecondY - fFirstY) / (fSecondX - fFirstX)) + 1));
+//
+//	if (fPlayerSize < fdistance)
+//	{
+//		return true;
+//	}
+//	return false;
+//}

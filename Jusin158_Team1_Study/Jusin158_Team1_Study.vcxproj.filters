@@ -48,9 +48,12 @@
     </Filter>
     <Filter Include="03. Scene">
       <UniqueIdentifier>{71ac03e4-6ca4-46bb-b5b4-a04328f682fe}</UniqueIdentifier>
-	</Filter>
+    </Filter>
     <Filter Include="95. KeyManager">
       <UniqueIdentifier>{10388a78-3c3a-4a53-a8b0-7e6979a91d34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="94. ScrollManager">
+      <UniqueIdentifier>{9c98fee8-59ca-443f-b156-30092bc8513a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -123,9 +126,11 @@
     <ClInclude Include="CScene.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-
     <ClInclude Include="CKeyManager.h">
       <Filter>95. KeyManager</Filter>
+    </ClInclude>
+    <ClInclude Include="CScrollManager.h">
+      <Filter>94. ScrollManager</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -185,6 +190,9 @@
     </ClCompile>
     <ClCompile Include="CKeyManager.cpp">
       <Filter>95. KeyManager</Filter>
+    </ClCompile>
+    <ClCompile Include="CScrollManager.cpp">
+      <Filter>94. ScrollManager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
