@@ -55,6 +55,9 @@
     <Filter Include="94. ScrollManager">
       <UniqueIdentifier>{9c98fee8-59ca-443f-b156-30092bc8513a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="01. Object\03.Mouse">
+      <UniqueIdentifier>{15ccb0a2-82de-4d08-93fe-79bcd6e33f22}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -132,6 +135,9 @@
     <ClInclude Include="CScrollManager.h">
       <Filter>94. ScrollManager</Filter>
     </ClInclude>
+    <ClInclude Include="CMouse.h">
+      <Filter>01. Object\03.Mouse</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Jusin158_Team1_Study.cpp">
@@ -193,6 +199,9 @@
     </ClCompile>
     <ClCompile Include="CScrollManager.cpp">
       <Filter>94. ScrollManager</Filter>
+    </ClCompile>
+    <ClCompile Include="CMouse.cpp">
+      <Filter>01. Object\03.Mouse</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

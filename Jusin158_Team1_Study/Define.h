@@ -18,6 +18,7 @@ enum OBJECT
 	MONSTER,
 	BULLET,
 	//LINE,
+	MOUSE,
 
 	OBJ_END
 };
