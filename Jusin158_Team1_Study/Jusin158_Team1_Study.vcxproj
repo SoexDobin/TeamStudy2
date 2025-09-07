@@ -139,6 +139,7 @@
     <ClInclude Include="CLineManager.h" />
     <ClInclude Include="CMainGame.h" />
     <ClInclude Include="CMonster.h" />
+    <ClInclude Include="CMouse.h" />
     <ClInclude Include="CObject.h" />
     <ClInclude Include="CObjectManager.h" />
     <ClInclude Include="CScene.h" />
@@ -164,6 +165,7 @@
     <ClCompile Include="CLineManager.cpp" />
     <ClCompile Include="CMainGame.cpp" />
     <ClCompile Include="CMonster.cpp" />
+    <ClCompile Include="CMouse.cpp" />
     <ClCompile Include="CObject.cpp" />
     <ClCompile Include="CObjectManager.cpp" />
     <ClCompile Include="CScene.cpp" />
