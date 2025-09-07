@@ -11,7 +11,9 @@ CObject::CObject()
 }
 
 CObject::~CObject()
-{}
+{
+
+}
 
 void CObject::UpdateRect()
 {

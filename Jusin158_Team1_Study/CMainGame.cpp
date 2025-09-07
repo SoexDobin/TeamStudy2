@@ -44,7 +44,7 @@ void CMainGame::Update()
 {
 	CSceneManager::GetInstance()->Update();
 	CLineManager::GetInstance()->Update();
-
+	CKeyManager::Get_Instance()->KeyUpdate();
 }
 
 void CMainGame::LateUpdate()
@@ -53,7 +53,22 @@ void CMainGame::LateUpdate()
 }
 void CMainGame::Render()
 {
-	CSceneManager::GetInstance()->Render(m_hDC);
+	{
+		//Rectangle(m_hDC, 0, 0, WINCX, WINCY);
+		BitBlt(m_hDC, 0, 0, m_tRect.right, m_tRect.bottom, m_hDCBack, 0, 0, SRCCOPY);
+		PatBlt(m_hDCBack, 0, 0, m_tRect.right, m_tRect.bottom, WHITENESS);
+	}
+
+
+	CLineManager::GetInstance()->Render(m_hDCBack);
+	CObjectManager::GetInstance()->Render(m_hDCBack);
+	// dc 사용 시 m_hDCBack 멤버 변수 사용할 것
+	// 백버퍼 시점 dc를 따로 복사해서 사용해야 함
+
+	// 여기서 충돌검사를 실행
+	TCHAR szBuff[32] = L"";
+	swprintf_s(szBuff, L" 스테이지 : %d", CSceneManager::GetInstance()->GetSceneNumber());
+	TextOut(m_hDCBack, 50, 200, szBuff, lstrlen(szBuff));
 }
 
 void CMainGame::Release()
