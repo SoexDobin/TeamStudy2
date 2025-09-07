@@ -29,5 +29,14 @@ Vector2는 헝가리안으로 v      ```Vector2 m_vPosition``` <br>
 
 <br>
 
-ScrollManager, LineManager, Collision, KeyManager, File입출력, StageManager 
-, Monster, Bullet, Player(Jump, Shoot)
+# 09/07일자 회의
+    1. 김준   : ScrollManager, Line 유지보수(라인 데이터 로드 기능)
+    2. 이순재 : Player, Jump랑 Shooting 기능 추가
+    3. 최재욱 : 마우스 객체에 LeftPoint, RightPoint x, y 보스 몬스터 
+    4. 황유림 : Scene 코드 수정 및 보스 몬스터 제작
+    Scene 할당 1. 김준 2. 이순재 3. 최재욱 4. 황유림 
+
+ScrollManager, File입출력 
+Player 슈팅, 점프
+각각의 보스 몬스터와 스테이지
+
