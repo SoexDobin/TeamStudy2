@@ -16,13 +16,19 @@ public:
 	void		LateUpdate();
 	void		Render();
 	void		Release();
+
+public:
+	CObject* GetPlayer() { return m_pPlayer; }
+	void	SetPlayer(CObject* _pPlayer) { m_pPlayer = _pPlayer; }
+
 private:
 	HDC				m_hDC;
-	//list<CObject*>	m_ObjectList[OBJ_END];
 
 	// Dubble buffering
 	RECT	    m_tRect = {};
 	HDC			m_hDCBack = {};
 	HBITMAP		m_bmpBack = {};
+
+	CObject* m_pPlayer;
 };
 

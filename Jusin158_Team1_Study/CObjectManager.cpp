@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "CObjectManager.h"
 #include "CObject.h"
+#include "CCollisionManager.h"
 
 CObjectManager* CObjectManager::m_pInstance = nullptr;
 
@@ -9,13 +10,16 @@ CObjectManager::CObjectManager()
 }
 CObjectManager::~CObjectManager()
 {
+	Release();
 }
-void CObjectManager::AddObject(OBJECT _eID, CObject* _pObject)
+CObject* CObjectManager::AddObject(OBJECT _eID, CObject* _pObject)
 {
 	if (_eID >= OBJ_END || _pObject == nullptr)
-		return;
+		return 0;
 
 	m_ObjectList[_eID].push_back(_pObject);
+
+	return _pObject;
 }
 
 void CObjectManager::Initialize()
@@ -53,6 +57,8 @@ void CObjectManager::Render(HDC hdc)
 	for (auto& list : m_ObjectList)
 		for (auto& obj : list)
 			obj->Render(hdc);
+
+	CCollisionManager::Collision(m_ObjectList[PLAYER], m_ObjectList[MONSTER], CIRCLE_TO_RECT);
 }
 void CObjectManager::Release()
 {

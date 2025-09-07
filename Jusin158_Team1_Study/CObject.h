@@ -23,12 +23,12 @@ public:
 	//void	SetBullet(list<CObject*>* pBullet)	{ m_pBullet = pBullet; }
 
 public:
-	virtual void		Initialize()						PURE;
-	virtual int			Update()							PURE;
-	virtual void		LateUpdate()						PURE;
-	virtual void		Render(HDC _hDC)					PURE;
-	virtual void		OnCollision(CObject* _pColObj)		PURE;
-	virtual void		Release()							PURE;
+	virtual void		Initialize()										PURE;
+	virtual int			Update()											PURE;
+	virtual void		LateUpdate()										PURE;
+	virtual void		Render(HDC _hDC)									PURE;
+	virtual void		OnCollision(CObject* _pColObj, Vector2 _vColSize)	PURE;
+	virtual void		Release()											PURE;
 
 protected:
 	virtual void		UpdateRect();

@@ -46,6 +46,21 @@
     <Filter Include="01. Object\02.Bullet">
       <UniqueIdentifier>{4421b703-853a-41d7-b3ea-9a0e81566014}</UniqueIdentifier>
     </Filter>
+    <Filter Include="03. Scene">
+      <UniqueIdentifier>{71ac03e4-6ca4-46bb-b5b4-a04328f682fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="95. KeyManager">
+      <UniqueIdentifier>{10388a78-3c3a-4a53-a8b0-7e6979a91d34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Object\01.Monster\04.FourthBoss">
+      <UniqueIdentifier>{7967dc99-8fac-4f0c-9b25-d4f852b0f134}</UniqueIdentifier>
+        </Filter>
+    <Filter Include="94. ScrollManager">
+      <UniqueIdentifier>{9c98fee8-59ca-443f-b156-30092bc8513a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Object\03.Mouse">
+      <UniqueIdentifier>{15ccb0a2-82de-4d08-93fe-79bcd6e33f22}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -105,6 +120,34 @@
     <ClInclude Include="CBullet.h">
       <Filter>01. Object\02.Bullet</Filter>
     </ClInclude>
+    <ClInclude Include="CScene04.h">
+      <Filter>03. Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="CScene01.h">
+      <Filter>03. Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="CScene02.h">
+      <Filter>03. Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="CScene03.h">
+      <Filter>03. Scene</Filter>
+    </ClInclude>
+
+    <ClInclude Include="CKeyManager.h">
+      <Filter>95. KeyManager</Filter>
+    </ClInclude>
+    <ClInclude Include="CScene.h">
+      <Filter>03. Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="FourthBoss.h">
+      <Filter>01. Object\01.Monster\04.FourthBoss</Filter>
+    </ClInclude>
+    <ClInclude Include="CScrollManager.h">
+      <Filter>94. ScrollManager</Filter>
+    </ClInclude>
+    <ClInclude Include="CMouse.h">
+      <Filter>01. Object\03.Mouse</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Jusin158_Team1_Study.cpp">
@@ -128,9 +171,6 @@
     <ClCompile Include="CObjectManager.cpp">
       <Filter>98. ObjectManager</Filter>
     </ClCompile>
-    <ClCompile Include="CLineManager.cpp">
-      <Filter>96.LineManager</Filter>
-    </ClCompile>
     <ClCompile Include="CLine.cpp">
       <Filter>96.LineManager\Line</Filter>
     </ClCompile>
@@ -148,6 +188,36 @@
     </ClCompile>
     <ClCompile Include="CBullet.cpp">
       <Filter>01. Object\02.Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="CScene01.cpp">
+      <Filter>03. Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="CScene03.cpp">
+      <Filter>03. Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="CScene02.cpp">
+      <Filter>03. Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="CScene04.cpp">
+      <Filter>03. Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="CLineManager.cpp">
+      <Filter>96.LineManager\Line</Filter>
+    </ClCompile>
+    <ClCompile Include="CKeyManager.cpp">
+      <Filter>95. KeyManager</Filter>
+    </ClCompile>
+    <ClCompile Include="CScene.cpp">
+      <Filter>03. Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="FourthBoss.cpp">
+      <Filter>01. Object\01.Monster\04.FourthBoss</Filter>
+      </ClCompile>
+    <ClCompile Include="CScrollManager.cpp">
+      <Filter>94. ScrollManager</Filter>
+    </ClCompile>
+    <ClCompile Include="CMouse.cpp">
+      <Filter>01. Object\03.Mouse</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

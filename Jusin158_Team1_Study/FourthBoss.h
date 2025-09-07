@@ -1,12 +1,11 @@
 #pragma once
-
 #include "CObject.h"
 
-class CMonster : public CObject
+class FourthBoss : public CObject 
 {
 public:
-	CMonster();
-	virtual ~CMonster();
+	FourthBoss();
+	virtual ~FourthBoss();
 
 public:
 	void	Initialize()						override;
@@ -15,5 +14,5 @@ public:
 	void	Render(HDC _hDC)					override;
 	void	Release()							override;
 	void	OnCollision(CObject* _pColObj, Vector2 _vColSize)		override;
-	
+
 };

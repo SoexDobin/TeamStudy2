@@ -45,7 +45,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     CMainGame GAME;
     GAME.Initialize();
 
-    while (1)
+     while (1)
     {
         if (PeekMessage(&msg, nullptr, 0, 0, PM_REMOVE))
         {
@@ -68,7 +68,6 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
                 ullTime = GetTickCount64();
             }
         }
-
     }
     GAME.Release();
     return (int)msg.wParam;
@@ -119,6 +118,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
     ShowWindow(hWnd, nCmdShow);
     UpdateWindow(hWnd);
 
+    g_hWnd = hWnd;
     return TRUE;
 }
 
@@ -142,6 +142,14 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
         }
     }
     break;
+    case WM_KEYDOWN:
+        switch (wParam)
+        {
+        case VK_ESCAPE:
+            DestroyWindow(hWnd);
+            break;
+        }
+        break;
     case WM_DESTROY:
         PostQuitMessage(0);
         break;
