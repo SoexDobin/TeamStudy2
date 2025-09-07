@@ -18,6 +18,8 @@ public:
 	void Render(HDC hdc);
 	void Release();
 
+	list<CObject*>* GetBulletList() { return &m_ObjectList[BULLET]; }
+
 public:
 	static CObjectManager* GetInstance()
 	{

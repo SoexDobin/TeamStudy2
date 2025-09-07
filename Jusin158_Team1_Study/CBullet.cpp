@@ -21,7 +21,7 @@ int CBullet::Update()
 {
 	if (m_bDestroy)
 		return OBJ_DESTROY;
-
+	
 	__super::UpdateRect();
 
 	m_vPivot.x += m_fSpeed;
