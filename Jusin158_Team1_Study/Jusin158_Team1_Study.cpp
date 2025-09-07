@@ -68,7 +68,6 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
                 ullTime = GetTickCount64();
             }
         }
-
     }
     GAME.Release();
     return (int)msg.wParam;

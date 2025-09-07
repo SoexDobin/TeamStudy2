@@ -54,6 +54,12 @@
     </Filter>
     <Filter Include="01. Object\01.Monster\04.FourthBoss">
       <UniqueIdentifier>{7967dc99-8fac-4f0c-9b25-d4f852b0f134}</UniqueIdentifier>
+        </Filter>
+    <Filter Include="94. ScrollManager">
+      <UniqueIdentifier>{9c98fee8-59ca-443f-b156-30092bc8513a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Object\03.Mouse">
+      <UniqueIdentifier>{15ccb0a2-82de-4d08-93fe-79bcd6e33f22}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -123,6 +129,7 @@
     <ClInclude Include="CScene03.h">
       <Filter>03. Scene</Filter>
     </ClInclude>
+
     <ClInclude Include="CKeyManager.h">
       <Filter>95. KeyManager</Filter>
     </ClInclude>
@@ -131,6 +138,12 @@
     </ClInclude>
     <ClInclude Include="FourthBoss.h">
       <Filter>01. Object\01.Monster\04.FourthBoss</Filter>
+    </ClInclude>
+    <ClInclude Include="CScrollManager.h">
+      <Filter>94. ScrollManager</Filter>
+    </ClInclude>
+    <ClInclude Include="CMouse.h">
+      <Filter>01. Object\03.Mouse</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -193,6 +206,12 @@
     </ClCompile>
     <ClCompile Include="FourthBoss.cpp">
       <Filter>01. Object\01.Monster\04.FourthBoss</Filter>
+      </ClCompile>
+    <ClCompile Include="CScrollManager.cpp">
+      <Filter>94. ScrollManager</Filter>
+    </ClCompile>
+    <ClCompile Include="CMouse.cpp">
+      <Filter>01. Object\03.Mouse</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

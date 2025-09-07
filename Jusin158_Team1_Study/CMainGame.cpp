@@ -4,6 +4,7 @@
 #include "CObject.h"
 #include "CPlayer.h"
 #include "CMonster.h"
+#include "CMouse.h"
 
 #include "CLineManager.h"
 #include "CAbstractFactory.h"
@@ -36,14 +37,15 @@ void CMainGame::Initialize()
 	SetPlayer(CObjectManager::GetInstance()->AddObject(PLAYER, AbstractFactory<CPlayer>::Create()));
 	CSceneManager::GetInstance()->ChangeScene(SCENE01);
 	
+	CObjectManager::GetInstance()->AddObject(MOUSE, AbstractFactory<CMouse>::Create());
 }
 
 void CMainGame::Update()
 {
-
-	// 백버퍼 시점 dc를 따로 복사해서 사용해야 함
 	CSceneManager::GetInstance()->Update();
-	// 여기서 충돌검사를 실행
+	CLineManager::GetInstance()->Update();
+
+}
 
 }
 void CMainGame::LateUpdate()

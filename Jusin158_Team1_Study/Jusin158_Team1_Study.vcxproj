@@ -139,6 +139,7 @@
     <ClInclude Include="CLineManager.h" />
     <ClInclude Include="CMainGame.h" />
     <ClInclude Include="CMonster.h" />
+    <ClInclude Include="CMouse.h" />
     <ClInclude Include="CObject.h" />
     <ClInclude Include="CObjectManager.h" />
     <ClInclude Include="CScene.h" />
@@ -148,6 +149,7 @@
     <ClInclude Include="CScene04.h" />
     <ClInclude Include="CSceneManager.h" />
     <ClInclude Include="CPlayer.h" />
+    <ClInclude Include="CScrollManager.h" />
     <ClInclude Include="Define.h" />
     <ClInclude Include="FourthBoss.h" />
     <ClInclude Include="framework.h" />
@@ -165,6 +167,7 @@
     <ClCompile Include="CLineManager.cpp" />
     <ClCompile Include="CMainGame.cpp" />
     <ClCompile Include="CMonster.cpp" />
+    <ClCompile Include="CMouse.cpp" />
     <ClCompile Include="CObject.cpp" />
     <ClCompile Include="CObjectManager.cpp" />
     <ClCompile Include="CScene.cpp" />
@@ -175,6 +178,7 @@
     <ClCompile Include="CSceneManager.cpp" />
     <ClCompile Include="CPlayer.cpp" />
     <ClCompile Include="FourthBoss.cpp" />
+    <ClCompile Include="CScrollManager.cpp" />
     <ClCompile Include="Jusin158_Team1_Study.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

@@ -64,7 +64,7 @@ void CSceneManager::LateUpdate()
 void CSceneManager::Render(HDC hdc)
 {
 	TCHAR szBuff[32] = L"";
-	swprintf_s(szBuff, L" ½ºÅ×ÀÌÁö : %d", CSceneManager::GetInstance()->GetSceneNumber());
+	swprintf_s(szBuff, L" ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ : %d", CSceneManager::GetInstance()->GetSceneNumber());
 	TextOut(hdc, 50, 200, szBuff, lstrlen(szBuff));
 	CObjectManager::GetInstance()->Render(hdc);
 	if (m_pScene)
@@ -103,11 +103,11 @@ int CSceneManager::ChangeScene(SCENENUMBER _eSceneNumber)
 		m_SceneNumber = SCENE04;
 			break;
 	}
-	//±âº» ÇÒ´çµÈ Scene ÇØÁ¦
+	//ï¿½âº» ï¿½Ò´ï¿½ï¿½ Scene ï¿½ï¿½ï¿½ï¿½
 	SafeDelete(m_pScene);
-	//»õ·Î¿î Scene ÇÒ´ç
+	//ï¿½ï¿½ï¿½Î¿ï¿½ Scene ï¿½Ò´ï¿½
 	m_pScene = newScene;	
-	//»õ·Î¿î Scene Á¤º¸ ºÒ·¯¿À±â
+
 	m_pScene->Initialize();
 	return 0;
 }
