@@ -17,6 +17,8 @@ void CMonster::Initialize()
 	m_vSize = { 100.f, 100.f };
 
 	m_fSpeed = 3.f;
+
+	m_iHp = 50;
 }
 
 int CMonster::Update()
@@ -33,6 +35,11 @@ int CMonster::Update()
 
 void CMonster::LateUpdate()
 {
+	if (m_iHp <= 0)
+	{
+		m_bDestroy = true;
+	}
+
 	if (0 >= m_tRect.top || WINCY <= m_tRect.bottom)
 	{
 		m_fSpeed *= -1.f;
@@ -50,5 +57,5 @@ void CMonster::Release()
 
 void CMonster::OnCollision(CObject* _pColObj, Vector2 _vColSize)
 {
-	SetDestroy();
+	m_iHp = m_iHp - 10;
 }

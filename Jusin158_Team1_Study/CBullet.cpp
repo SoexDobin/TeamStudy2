@@ -15,6 +15,8 @@ void CBullet::Initialize()
 	m_vSize = { 20.f, 20.f };
 
 	m_fSpeed = 7.f;
+
+	int iAttack = 10;
 }
 
 int CBullet::Update()
@@ -44,4 +46,5 @@ void CBullet::Release()
 
 void CBullet::OnCollision(CObject* _pColObj, Vector2 _vColSize)
 {
+	SetDestroy();
 }

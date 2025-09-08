@@ -24,6 +24,7 @@ void CPlayer::Initialize()
 	m_fSpeed = 8.f;
 	m_fJumpSpeed = 20.f;
 
+	m_iHp = 100;
 }
 
 int CPlayer::Update()
@@ -80,6 +81,10 @@ void CPlayer::KeyInput()
 			m_vPivot.x += m_fSpeed / sqrtf(2.f);
 			m_vPivot.y += m_fSpeed / sqrtf(2.f);
 		}
+		else if (GetAsyncKeyState(VK_SPACE))
+		{
+			m_bJump = true;
+		}
 		else
 		{
 			m_vPivot.x += m_fSpeed;
@@ -98,7 +103,7 @@ void CPlayer::KeyInput()
 			m_fBulletDir = -1.f;
 			
 		}
-
+		
 
 
 		if (GetAsyncKeyState(VK_UP))
@@ -110,6 +115,10 @@ void CPlayer::KeyInput()
 		{
 			m_vPivot.x -= m_fSpeed / sqrtf(2.f);
 			m_vPivot.y += m_fSpeed / sqrtf(2.f);
+		}
+		else if (GetAsyncKeyState(VK_SPACE))
+		{
+			m_bJump = true;
 		}
 		else
 		{
