@@ -61,6 +61,9 @@
     <Filter Include="01. Object\03.Mouse">
       <UniqueIdentifier>{15ccb0a2-82de-4d08-93fe-79bcd6e33f22}</UniqueIdentifier>
     </Filter>
+    <Filter Include="01. Object\01.Monster\01. FirstBoss">
+      <UniqueIdentifier>{dd002064-a879-4a1d-ba2c-459815063d3b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -148,6 +151,9 @@
     <ClInclude Include="CMouse.h">
       <Filter>01. Object\03.Mouse</Filter>
     </ClInclude>
+    <ClInclude Include="CFirstBoss.h">
+      <Filter>01. Object\01.Monster\01. FirstBoss</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Jusin158_Team1_Study.cpp">
@@ -201,6 +207,9 @@
     <ClCompile Include="CScene04.cpp">
       <Filter>03. Scene</Filter>
     </ClCompile>
+    <ClCompile Include="CScene.cpp">
+      <Filter>소스 파일</Filter>
+	</ClCompile>
     <ClCompile Include="CLineManager.cpp">
       <Filter>96.LineManager\Line</Filter>
     </ClCompile>
@@ -218,6 +227,12 @@
     </ClCompile>
     <ClCompile Include="CMouse.cpp">
       <Filter>01. Object\03.Mouse</Filter>
+    </ClCompile>
+    <ClCompile Include="CLineManager.cpp">
+      <Filter>96.LineManager</Filter>
+    </ClCompile>
+    <ClCompile Include="CFirstBoss.cpp">
+      <Filter>01. Object\01.Monster\01. FirstBoss</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
