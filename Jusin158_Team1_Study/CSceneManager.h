@@ -10,7 +10,7 @@ public:
 	CSceneManager(const CSceneManager& rhs) = delete;
 	CSceneManager& operator=(CSceneManager& rManager) = delete;
 	~CSceneManager();
-
+		
 public:
 	static CSceneManager* GetInstance()
 	{
