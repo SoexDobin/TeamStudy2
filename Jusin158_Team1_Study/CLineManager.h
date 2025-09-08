@@ -40,7 +40,13 @@ public:
 	}
 
 	bool Collision_Bottom_Line(float _fX, float _fY, float* _pY, float fPlayerSize);
-	void SaveData();
-	void LoadData();
+	void SaveDataOne();
+	void SaveDataTwo();
+	void SaveDataThree();
+	void SaveDataFour();
+	void LoadDataOne();
+	void LoadDataTwo();
+	void LoadDataThree();
+	void LoadDataFour();
 	/*bool Collision_Top_Line(float _fX, float _fY, float fPlayerSize);*/
 };
