@@ -7,10 +7,12 @@
 
 FourthBoss::FourthBoss()
 {
+
 }
 
 FourthBoss::~FourthBoss()
 {
+
 }
 
 void FourthBoss::Initialize()

@@ -1,27 +1,27 @@
 #include "pch.h"
-#include "CMonster.h"
+#include "CSecondBoss.h"
+#include "CBullet.h"
 #include "CScrollManager.h"
 
-CMonster::CMonster()
+CSecondBoss::CSecondBoss()
 {
 }
 
-CMonster::~CMonster()
+CSecondBoss::~CSecondBoss()
 {
 	Release();
 }
 
-void CMonster::Initialize()
+void CSecondBoss::Initialize()
 {
-	m_vPivot = { 700.f, 300.f };
-	m_vSize = { 100.f, 100.f };
+	m_vSize = { 100.f, 200.f };
 
 	m_fSpeed = 3.f;
 
-	m_iHp = 70;
+	m_iHp = 200;
 }
 
-int CMonster::Update()
+int CSecondBoss::Update()
 {
 	if (m_bDestroy)
 		return OBJ_DESTROY;
@@ -32,7 +32,7 @@ int CMonster::Update()
 	return OBJ_NOEVENT;
 }
 
-void CMonster::LateUpdate()
+void CSecondBoss::LateUpdate()
 {
 	if (m_iHp <= 0)
 	{
@@ -45,18 +45,17 @@ void CMonster::LateUpdate()
 	}
 }
 
-void CMonster::Render(HDC _hDC)
+void CSecondBoss::Render(HDC _hDC)
 {
 	int iScrollX = (int)CScrollManager::Get_Instance()->Get_ScrollX();
 	Rectangle(_hDC, m_tRect.left + iScrollX, m_tRect.top, m_tRect.right + iScrollX, m_tRect.bottom);
 }
 
-void CMonster::Release()
+void CSecondBoss::Release()
 {
-
 }
 
-void CMonster::OnCollision(CObject* _pColObj, Vector2 _vColSize)
+void CSecondBoss::OnCollision(CObject* _pColObj, Vector2 _vColSize)
 {
 	m_iHp = m_iHp - 10;
 }
