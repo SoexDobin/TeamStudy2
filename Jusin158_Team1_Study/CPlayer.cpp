@@ -20,7 +20,7 @@ void CPlayer::Initialize()
 	m_vPivot = { 500.f , 300.f };
 
 	m_fSpeed = 8.f;
-	m_fJumpSpeed = 15.f;
+	m_fJumpSpeed = 20.f;
 
 }
 
@@ -80,10 +80,10 @@ void CPlayer::KeyInput()
 		{
 			m_vPivot.x += m_fSpeed;
 		}
-		if (CLineManager::GetInstance()->Collision_Bottom_Line(m_vPivot.x, m_vPivot.y, &fY, m_vSize.x / 2.f))
-		{
-			m_vPivot.y = fY;
-		}
+		//if (CLineManager::GetInstance()->Collision_Bottom_Line(m_vPivot.x, m_vPivot.y, &fY, m_vSize.x / 2.f))
+		//{
+		//	m_vPivot.y = fY;
+		//}
 	}
 
 	else if (GetAsyncKeyState(VK_LEFT))
@@ -111,28 +111,28 @@ void CPlayer::KeyInput()
 		{
 			m_vPivot.x -= m_fSpeed;
 		}
-		if (CLineManager::GetInstance()->Collision_Bottom_Line(m_vPivot.x, m_vPivot.y, &fY, m_vSize.x / 2.f))
-		{
-			m_vPivot.y = fY;
-		}
+		//if (CLineManager::GetInstance()->Collision_Bottom_Line(m_vPivot.x, m_vPivot.y, &fY, m_vSize.x / 2.f))
+		//{
+		//	m_vPivot.y = fY;
+		//}
 	}
 
 	else if (GetAsyncKeyState(VK_UP))
 	{
 		m_vPivot.y -= m_fSpeed;
-		if (CLineManager::GetInstance()->Collision_Bottom_Line(m_vPivot.x, m_vPivot.y, &fY, m_vSize.x / 2.f))
-		{
-			m_vPivot.y = fY;
-		}
+		//if (CLineManager::GetInstance()->Collision_Bottom_Line(m_vPivot.x, m_vPivot.y, &fY, m_vSize.x / 2.f))
+		//{
+		//	m_vPivot.y = fY;
+		//}
 	}
 
 	else if (GetAsyncKeyState(VK_DOWN))
 	{
 		m_vPivot.y += m_fSpeed;
-		if (CLineManager::GetInstance()->Collision_Bottom_Line(m_vPivot.x, m_vPivot.y, &fY, m_vSize.x / 2.f))
-		{
-			m_vPivot.y = fY;
-		}
+		//if (CLineManager::GetInstance()->Collision_Bottom_Line(m_vPivot.x, m_vPivot.y, &fY, m_vSize.x / 2.f))
+		//{
+		//	m_vPivot.y = fY;
+		//}
 	}
 
 	else if (GetAsyncKeyState(VK_SPACE))
