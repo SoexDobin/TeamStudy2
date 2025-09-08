@@ -13,6 +13,7 @@
 #include "CScene04.h"`
 #include "CKeyManager.h"
 #include "CScrollManager.h"
+#include "CBmpManager.h"
 
 CMainGame::CMainGame() : m_hDC(nullptr), m_pPlayer(nullptr)
 {
@@ -39,6 +40,8 @@ void CMainGame::Initialize()
 	CSceneManager::GetInstance()->ChangeScene(SCENE01);
 	
 	CObjectManager::GetInstance()->AddObject(MOUSE, AbstractFactory<CMouse>::Create());
+
+	CBmpManager::GetInstance()->Insert_Bmp(L"../../Image/Back.bmp", L"Back");
 }
 
 void CMainGame::Update()
@@ -57,10 +60,11 @@ void CMainGame::Render()
 {
 	{
 		//Rectangle(m_hDC, 0, 0, WINCX, WINCY);
-		BitBlt(m_hDC, 0, 0, m_tRect.right, m_tRect.bottom, m_hDCBack, 0, 0, SRCCOPY);
+		BitBlt(m_hDC, 0, 0, m_tRect.right, m_tRect.bottom, m_hDCBack, 0, 0, SRCCOPY);		
 		PatBlt(m_hDCBack, 0, 0, m_tRect.right, m_tRect.bottom, WHITENESS);
 	}
 
+	
 	CLineManager::GetInstance()->Render(m_hDCBack);
 	CObjectManager::GetInstance()->Render(m_hDCBack);
 	// dc 사용 시 m_hDCBack 멤버 변수 사용할 것
@@ -70,13 +74,18 @@ void CMainGame::Render()
 	TCHAR szBuff[32] = L"";
 	swprintf_s(szBuff, L" 스테이지 : %d", CSceneManager::GetInstance()->GetSceneNumber());
 	TextOut(m_hDCBack, 50, 200, szBuff, lstrlen(szBuff));
+
+	HDC	hBackDC = CBmpManager::GetInstance()->Find_Img(L"Back");
+	BitBlt(m_hDC, 0, 0, WINCX, WINCY, hBackDC, 0, 0, SRCCOPY);
 }
 
 void CMainGame::Release()
 {
+	CBmpManager::DestroyInstance();
 	CKeyManager::Destroy_Instance();
 	CLineManager::DestroyInstance();
 	CObjectManager::DestroyInstance();
 	CSceneManager::DestroyInstance();
 	CScrollManager::Destroy_Instance();
+	ReleaseDC(g_hWnd, m_hDC);
 }

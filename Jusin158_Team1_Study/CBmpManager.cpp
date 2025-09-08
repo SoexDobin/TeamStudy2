@@ -15,10 +15,7 @@ CBmpManager::~CBmpManager()
 
 void CBmpManager::Insert_Bmp(const TCHAR* _pFilePath, const TCHAR* _pImgKey)
 {
-	auto		iter = find_if(m_mapBit.begin(), m_mapBit.end(), 
-		[_pImgKey](pair<const TCHAR*, CBmpObject*>& MyPair) -> bool {
-			return !lstrcmp(MyPair.first, _pImgKey);
-		});
+	auto		iter = find_if(m_mapBit.begin(), m_mapBit.end(), tagFinder(_pImgKey));
 
 	if (m_mapBit.end() == iter)
 	{
@@ -32,10 +29,7 @@ void CBmpManager::Insert_Bmp(const TCHAR* _pFilePath, const TCHAR* _pImgKey)
 
 HDC CBmpManager::Find_Img(const TCHAR* _pImgKey)
 {
-	auto		iter = find_if(m_mapBit.begin(), m_mapBit.end(), 
-		[=](pair<const TCHAR*, CBmpObject*>& MyPair) -> bool {
-			return !lstrcmp(MyPair.first , _pImgKey);
-		});
+	auto		iter = find_if(m_mapBit.begin(), m_mapBit.end(), tagFinder(_pImgKey));
 
 	if (iter == m_mapBit.end())
 		return nullptr;
@@ -59,7 +53,7 @@ CBmpManager* CBmpManager::GetInstance()
 	return m_pInstance;
 }
 
-void CBmpManager::DeleteInstance()
+void CBmpManager::DestroyInstance()
 {
 	if (m_pInstance)
 	{

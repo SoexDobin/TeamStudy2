@@ -6,6 +6,7 @@
 #include "CObjectManager.h"
 #include "CScrollManager.h"
 #include "CKeyManager.h"
+#include "CBmpManager.h"
 
 CPlayer::CPlayer() : m_bFaceRight(true), m_bJump(false), m_fJumpSpeed(0.f), m_fJumpTime(0.f), m_fBulletDir(1.f)
 {
@@ -24,6 +25,8 @@ void CPlayer::Initialize()
 	m_fSpeed = 8.f;
 	m_fJumpSpeed = 20.f;
 
+
+	CBmpManager::GetInstance()->Insert_Bmp(L"../../Image/Player.bmp", L"Player");
 }
 
 int CPlayer::Update()
@@ -48,7 +51,28 @@ void CPlayer::LateUpdate()
 void CPlayer::Render(HDC _hDC)
 {
 	int iScrollX = (int)CScrollManager::Get_Instance()->Get_ScrollX();
-	Ellipse(_hDC, m_tRect.left + iScrollX, m_tRect.top, m_tRect.right + iScrollX, m_tRect.bottom);
+	HDC	hMemDC = CBmpManager::GetInstance()->Find_Img(L"Player");
+	
+	//BitBlt(_hDC,						// 복사 받을 dc
+	//	m_tRect.left + iScrollX,	// 복사 받을 위치 left
+	//	m_tRect.top,				// 복사 받을 위치 top
+	//	(int)m_vSize.x,			// 복사 받을 가로 사이즈
+	//	(int)m_vSize.y,			// 복사 받을 세로 사이즈
+	//	hMemDC,						// 복사할 이미지 dc
+	//	0, 0,						// 복사할 이미지의 출력 시작(left, top)
+	//	SRCCOPY);					// 복사 방식
+
+	GdiTransparentBlt(_hDC,
+		m_tRect.left + iScrollX,
+		m_tRect.top,
+		(int)m_vSize.x,
+		(int)m_vSize.y,
+		hMemDC,
+		0,
+		0,
+		(int)m_vSize.x,
+		(int)m_vSize.y,
+		RGB(255, 255, 255));		// 제거할 픽셀의 색상
 }
 
 void CPlayer::Release()
@@ -99,8 +123,6 @@ void CPlayer::KeyInput()
 			m_fBulletDir = -1.f;
 			
 		}
-
-
 
 		if (GetAsyncKeyState(VK_UP))
 		{
@@ -185,7 +207,6 @@ void CPlayer::Offset()
 {
 	int iOffsetminX = WINCX - 900;
 	int iOffsetmaxX = WINCX - 100;
-
 
 	int iScrollX = (int)CScrollManager::Get_Instance()->Get_ScrollX();
 

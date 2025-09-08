@@ -17,7 +17,7 @@ public:
 
 public: 
 	static CBmpManager* GetInstance();
-	static void DeleteInstance();
+	static void DestroyInstance();
 
 private:
 	static CBmpManager* m_pInstance;

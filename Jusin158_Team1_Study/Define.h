@@ -43,6 +43,22 @@ static void SafeDelete(T& _p)
 	}
 }
 
+struct tagFinder
+{
+	tagFinder(const TCHAR* pTag) : m_pTag(pTag)
+	{
+	}
+
+	template<typename T>
+	bool operator()(T& MyPair)
+	{
+		return !lstrcmp(MyPair.first, m_pTag);
+	}
+
+
+	const TCHAR* m_pTag;
+};
+
 typedef struct tagLinePoint {
 	float fX, fY;
 
