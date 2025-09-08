@@ -80,7 +80,7 @@ void CThirdBoss::StandingJump()
 	m_vPivot.y -= m_fJumpSpeed * m_fJumpTime - (9.8f * m_fJumpTime * m_fJumpTime);
 	m_fJumpTime += 0.2f;
 
-	if (bCol)
+
 
 }
 

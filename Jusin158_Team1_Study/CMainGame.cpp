@@ -60,7 +60,6 @@ void CMainGame::Render()
 		PatBlt(m_hDCBack, 0, 0, m_tRect.right, m_tRect.bottom, WHITENESS);
 	}
 
-
 	CLineManager::GetInstance()->Render(m_hDCBack);
 	CObjectManager::GetInstance()->Render(m_hDCBack);
 	// dc 사용 시 m_hDCBack 멤버 변수 사용할 것
