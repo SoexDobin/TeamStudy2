@@ -40,5 +40,7 @@ public:
 	}
 
 	bool Collision_Bottom_Line(float _fX, float _fY, float* _pY, float fPlayerSize);
-	bool Collision_Top_Line(float _fX, float _fY, float fPlayerSize);
+	void SaveData();
+	void LoadData();
+	/*bool Collision_Top_Line(float _fX, float _fY, float fPlayerSize);*/
 };

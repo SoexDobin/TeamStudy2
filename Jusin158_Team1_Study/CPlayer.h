@@ -17,6 +17,14 @@ public:
 	void	OnCollision(CObject* _pColObj, Vector2 _vColSize)	override;
 
 private:
-	void	Key_Input();
+	void	KeyInput();
+	void	Jump();
+
+private:
+	bool m_bFaceRight;
+	float m_fBulletDir;
+	bool m_bJump;
+	float m_fJumpSpeed;
+	float m_fJumpTime;
 
 };

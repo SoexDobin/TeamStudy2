@@ -17,11 +17,12 @@ public:
 	void LateUpdate();
 	void Render(HDC hdc);
 	void Release();
+	list<CObject*>* GetBulletList() { return &m_ObjectList[BULLET]; }
+
 public:
 	list<CObject*>* GetMonsterList() { return  &m_ObjectList[MONSTER]; }
 	list<CObject*>* GetPlayer() {return &m_ObjectList[PLAYER];}
-	
-	//플레이어, 불릿 추가
+
 public:
 	static CObjectManager* GetInstance()
 	{

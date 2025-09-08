@@ -56,6 +56,7 @@ void CSceneManager::Update()
 }
 void CSceneManager::LateUpdate()
 {
+	CObjectManager::GetInstance()->LateUpdate();
 	if (m_pScene)
 	{
 		m_pScene->LateUpdate();
