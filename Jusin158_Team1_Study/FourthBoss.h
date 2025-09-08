@@ -1,7 +1,7 @@
 #pragma once
 #include "CObject.h"
 
-class FourthBoss : public CObject 
+class FourthBoss : public CObject
 {
 public:
 	FourthBoss();

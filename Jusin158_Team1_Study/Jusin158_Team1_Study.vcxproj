@@ -184,9 +184,9 @@
     <ClCompile Include="CSceneManager.cpp" />
     <ClCompile Include="CPlayer.cpp" />
     <ClCompile Include="CSecondBoss.cpp" />
-    <ClCompile Include="FourthBoss.cpp" />
     <ClCompile Include="CScrollManager.cpp" />
     <ClCompile Include="CThirdBoss.cpp" />
+    <ClCompile Include="FourthBoss.cpp" />
     <ClCompile Include="Jusin158_Team1_Study.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

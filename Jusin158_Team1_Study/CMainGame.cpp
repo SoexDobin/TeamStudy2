@@ -35,10 +35,10 @@ void CMainGame::Initialize()
 		DeleteObject(prev);
 	}
 	CLineManager::GetInstance()->Initialize();
-	SetPlayer(CObjectManager::GetInstance()->AddObject(PLAYER, AbstractFactory<CPlayer>::Create()));
-	CSceneManager::GetInstance()->ChangeScene(SCENE02);
+	SetPlayer(CObjectManager::GetInstance()->AddObject(PLAYER, CAbstractFactory<CPlayer>::Create()));
+	CSceneManager::GetInstance()->ChangeScene(SCENE04);
 	
-	CObjectManager::GetInstance()->AddObject(MOUSE, AbstractFactory<CMouse>::Create());
+	CObjectManager::GetInstance()->AddObject(MOUSE, CAbstractFactory<CMouse>::Create());
 }
 
 void CMainGame::Update()
