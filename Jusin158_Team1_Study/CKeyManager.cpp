@@ -20,7 +20,6 @@ bool CKeyManager::KeyPressing(int _iKey)
 
 	return false;
 }
-// 이전 누른 적이 없고 현재 눌렀을 경우
 bool CKeyManager::KeyUp(int _iKey)
 {
 	if ((m_bKeyState[_iKey]) && !(GetAsyncKeyState(_iKey) & 0x8000))
@@ -31,7 +30,6 @@ bool CKeyManager::KeyUp(int _iKey)
 
 	return false;
 }
-// 이전에 눌렀다가 지금 누르지 않은 상태
 bool CKeyManager::KeyDown(int _iKey)
 {
 	if ((!m_bKeyState[_iKey]) && GetAsyncKeyState(_iKey) & 0x8000)

@@ -4,6 +4,8 @@
 #include "CLineManager.h"
 #include "CAbstractFactory.h"
 #include "CObjectManager.h"
+#include "CScrollManager.h"
+#include "CKeyManager.h"
 
 CPlayer::CPlayer() : m_bFaceRight(true), m_bJump(false), m_fJumpSpeed(0.f), m_fJumpTime(0.f), m_fBulletDir(1.f)
 {
@@ -39,11 +41,13 @@ int CPlayer::Update()
 void CPlayer::LateUpdate()
 {
 	Jump();
+	Offset();
 }
 
 void CPlayer::Render(HDC _hDC)
 {
-	Ellipse(_hDC, m_tRect.left, m_tRect.top, m_tRect.right, m_tRect.bottom);
+	int iScrollX = (int)CScrollManager::Get_Instance()->Get_ScrollX();
+	Ellipse(_hDC, m_tRect.left + iScrollX, m_tRect.top, m_tRect.right + iScrollX, m_tRect.bottom);
 }
 
 void CPlayer::Release()
@@ -140,7 +144,7 @@ void CPlayer::KeyInput()
 		m_bJump = true;
 	}
 
-	if (GetAsyncKeyState('A'))
+	if (CKeyManager::Get_Instance()->KeyDown('A'))
 	{
 		CObjectManager::GetInstance()->GetBulletList()->push_back(AbstractFactory<CBullet>::Create(m_vPivot.x, m_vPivot.y));
 		CObject* pLastBullet = CObjectManager::GetInstance()->GetBulletList()->back();
@@ -170,4 +174,19 @@ void CPlayer::Jump()
 	{
 		m_vPivot.y = fY;
 	}
+}
+void CPlayer::Offset()
+{
+	int iOffsetminX = WINCX - 900;
+	int iOffsetmaxX = WINCX - 100;
+
+
+	int iScrollX = (int)CScrollManager::Get_Instance()->Get_ScrollX();
+
+	if (iOffsetminX > m_vPivot.x + iScrollX)
+		CScrollManager::Get_Instance()->Set_ScrollX(m_fSpeed);
+
+	if (iOffsetmaxX < m_vPivot.x + iScrollX)
+		CScrollManager::Get_Instance()->Set_ScrollX(-m_fSpeed);
+
 }

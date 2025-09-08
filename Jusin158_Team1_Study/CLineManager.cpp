@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "CLineManager.h"
 #include "CKeyManager.h"
+#include "CScrollManager.h"
 
 CLineManager* CLineManager::m_pInstance = nullptr;
 
@@ -24,6 +25,7 @@ int	CLineManager::Update()
 	GetCursorPos(&pt);
 	ScreenToClient(g_hWnd, &pt);
 
+	pt.x -= (int)CScrollManager::Get_Instance()->Get_ScrollX();
 	// starting point
 	if (CKeyManager::Get_Instance()->KeyDown(VK_LBUTTON))
 	{

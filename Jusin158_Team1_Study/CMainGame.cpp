@@ -14,7 +14,7 @@
 #include "CKeyManager.h"
 #include "CScrollManager.h"
 
-CMainGame::CMainGame() : m_hDC(nullptr)
+CMainGame::CMainGame() : m_hDC(nullptr), m_pPlayer(nullptr)
 {
 }
 
@@ -78,5 +78,5 @@ void CMainGame::Release()
 	CLineManager::DestroyInstance();
 	CObjectManager::DestroyInstance();
 	CSceneManager::DestroyInstance();
-	CScrollManager::DestroyInstance();
+	CScrollManager::Destroy_Instance();
 }
