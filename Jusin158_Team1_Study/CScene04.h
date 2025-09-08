@@ -17,7 +17,7 @@ public:
 	void		Release()			override;
 
 private:
-	vector<CLine*> m_vecLine;
+
 	list<CObject*> m_MonsterList;
 	CObject* m_pPlayer;
 	CObject* m_pBoss;

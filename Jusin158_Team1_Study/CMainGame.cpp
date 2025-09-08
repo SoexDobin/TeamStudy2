@@ -37,18 +37,16 @@ void CMainGame::Initialize()
 	}
 	CLineManager::GetInstance()->Initialize();
 	SetPlayer(CObjectManager::GetInstance()->AddObject(PLAYER, CAbstractFactory<CPlayer>::Create()));
-	CSceneManager::GetInstance()->ChangeScene(SCENE04);
+	CSceneManager::GetInstance()->ChangeScene(SCENE01);
 	
 	CObjectManager::GetInstance()->AddObject(MOUSE, CAbstractFactory<CMouse>::Create());
-
-	CBmpManager::GetInstance()->Insert_Bmp(L"../../Image/Back.bmp", L"Back");
 }
 
 void CMainGame::Update()
 {
 	CSceneManager::GetInstance()->Update();
 	CLineManager::GetInstance()->Update();
-	CKeyManager::Get_Instance()->KeyUpdate();
+	CKeyManager::GetInstance()->KeyUpdate();
 }
 
 void CMainGame::LateUpdate()
@@ -73,9 +71,6 @@ void CMainGame::Render()
 	TCHAR szBuff[32] = L"";
 	swprintf_s(szBuff, L" 스테이지 : %d", CSceneManager::GetInstance()->GetSceneNumber());
 	TextOut(m_hDCBack, 50, 200, szBuff, lstrlen(szBuff));
-
-	HDC	hBackDC = CBmpManager::GetInstance()->Find_Img(L"Back");
-	BitBlt(m_hDC, 0, 0, WINCX, WINCY, hBackDC, 0, 0, SRCCOPY);
 }
 
 void CMainGame::Release()

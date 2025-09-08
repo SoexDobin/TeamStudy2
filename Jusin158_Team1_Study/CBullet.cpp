@@ -2,11 +2,11 @@
 #include "CBullet.h"
 #include "CScrollManager.h"
 
-CBullet::CBullet()
+CBullet::CBullet() : m_ullTime(0)
 {
 }
 
-CBullet::~CBullet()
+CBullet::~CBullet() 
 {
 	Release();
 }
@@ -18,6 +18,8 @@ void CBullet::Initialize()
 	m_fSpeed = 7.f;
 
 	int iAttack = 10;
+
+	m_ullTime = GetTickCount64();
 }
 
 int CBullet::Update()
@@ -34,6 +36,8 @@ int CBullet::Update()
 
 void CBullet::LateUpdate()
 {
+	if (m_ullTime + 3000 < GetTickCount64())
+		SetDestroy();
 }
 
 void CBullet::Render(HDC _hDC)
