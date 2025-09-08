@@ -2,7 +2,7 @@
 #include "CObject.h"
 #include "CCollisionManager.h"
 
-void CCollisionManager::Collision(list<CObject*> _Src1, list<CObject*> _Src2, COLLISION_FLAG _eFlag)
+void CCollisionManager::Collision(list<CObject*>* _Src1, list<CObject*>* _Src2, COLLISION_FLAG _eFlag)
 {
 	switch (_eFlag)
 	{
@@ -14,12 +14,12 @@ void CCollisionManager::Collision(list<CObject*> _Src1, list<CObject*> _Src2, CO
 	}
 }
 
-void CCollisionManager::RTRCollision(list<CObject*> _Src1, list<CObject*> _Src2)
+void CCollisionManager::RTRCollision(list<CObject*>* _Src1, list<CObject*>* _Src2)
 {
 	RECT tColBox{ 0,0,0,0 };
 
-	for (auto& Src1 : _Src1)
-		for (auto& Src2 : _Src2)
+	for (auto& Src1 : *_Src1)
+		for (auto& Src2 : *_Src2)
 		{
 			Vector2 vFrom(Src1->GetPivot()), vTo(Src2->GetPivot());
 			Vector2 vDst = vFrom - vTo;
@@ -39,6 +39,7 @@ void CCollisionManager::RTRCollision(list<CObject*> _Src1, list<CObject*> _Src2)
 				vDifference = Vector2(fabsf(vDifference.x), fabsf(vDifference.y));
 				if (vDifference.x > vDifference.y) // To(Src)기준 상하 충돌
 				{
+					vDifference.x = 0.f;
 					if (vFrom.y < vTo.y) // 상 충돌
 					{
 						Src1->OnCollision(Src2, vDifference);
@@ -52,6 +53,7 @@ void CCollisionManager::RTRCollision(list<CObject*> _Src1, list<CObject*> _Src2)
 				}
 				else if (vDifference.x <= vDifference.y) // To(Src)의 좌우 충돌
 				{
+					vDifference.y = 0.f;
 					if (vFrom.x < vTo.x) // 우 충돌
 					{
 						Src1->OnCollision(Src2, vDifference);
@@ -72,10 +74,10 @@ void CCollisionManager::RTRCollision(list<CObject*> _Src1, list<CObject*> _Src2)
 		}
 }
 
-void CCollisionManager::CTCCollision(list<CObject*> _Src1, list<CObject*> _Src2)
+void CCollisionManager::CTCCollision(list<CObject*>* _Src1, list<CObject*>* _Src2)
 {
-	for (auto& Src1 : _Src1)
-		for (auto& Src2 : _Src2)
+	for (auto& Src1 : *_Src1)
+		for (auto& Src2 : *_Src2)
 		{
 			Vector2 vDst = Src1->GetPivot() - Src2->GetPivot();
 			float fHypot = sqrtf(vDst.GetSquared());
@@ -96,12 +98,12 @@ void CCollisionManager::CTCCollision(list<CObject*> _Src1, list<CObject*> _Src2)
 		}
 }
 
-void CCollisionManager::RTCCollision(list<CObject*> _Src1, list<CObject*> _Src2)
+void CCollisionManager::RTCCollision(list<CObject*>* _Src1, list<CObject*>* _Src2)
 {
 
 }
 
-void CCollisionManager::CTRCollision(list<CObject*> _Src1, list<CObject*> _Src2)
+void CCollisionManager::CTRCollision(list<CObject*>* _Src1, list<CObject*>* _Src2)
 {
 
 }

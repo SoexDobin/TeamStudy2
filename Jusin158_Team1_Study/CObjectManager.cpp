@@ -58,7 +58,8 @@ void CObjectManager::Render(HDC hdc)
 		for (auto& obj : list)
 			obj->Render(hdc);
 
-	CCollisionManager::Collision(m_ObjectList[PLAYER], m_ObjectList[MONSTER], CIRCLE_TO_RECT);
+	CCollisionManager::Collision(&m_ObjectList[PLAYER], &m_ObjectList[MONSTER], CIRCLE_TO_RECT);
+	CCollisionManager::Collision(&m_ObjectList[MONSTER], &m_ObjectList[BULLET], CIRCLE_TO_RECT);
 }
 void CObjectManager::Release()
 {
