@@ -12,6 +12,7 @@
 #include "CObjectManager.h"
 #include "CScene04.h"
 #include "CKeyManager.h"
+#include "CScrollManager.h"
 
 CMainGame::CMainGame() : m_hDC(nullptr)
 {
@@ -82,4 +83,5 @@ void CMainGame::Release()
 	CLineManager::DestroyInstance();
 	CObjectManager::DestroyInstance();
 	CSceneManager::DestroyInstance();
+	CScrollManager::DestroyInstance();
 }

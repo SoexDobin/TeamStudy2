@@ -67,6 +67,66 @@ void CLineManager::Release()
 	vecLine.clear();
 }
 
+//bool CLineManager::Collision_Bottom_Line(float _fX, float _fY, float* _pY, float fPlayerSize)
+//{
+//	if (vecLine.empty())
+//	{
+//		return false;
+//	}
+//
+//	CLine* pLine = nullptr;
+//
+//	for (int i = 0; i < vecLine.size(); ++i)
+//	{
+//		// check left and right pointX
+//		if ((_fX >= vecLine[i]->GetLineInfo().tLPoint.fX &&
+//			_fX <= vecLine[i]->GetLineInfo().tRPoint.fX) ||
+//			(_fX <= vecLine[i]->GetLineInfo().tLPoint.fX &&
+//				_fX >= vecLine[i]->GetLineInfo().tRPoint.fX))
+//		{
+//			// check left and right pointY
+//			if ((_fY >= vecLine[i]->GetLineInfo().tLPoint.fY &&
+//				_fY <= vecLine[i]->GetLineInfo().tRPoint.fY) ||
+//				(_fY <= vecLine[i]->GetLineInfo().tLPoint.fY &&
+//					_fY >= vecLine[i]->GetLineInfo().tRPoint.fY))
+//			{
+//				pLine = vecLine[i];
+//				break;
+//			}
+//		}
+//	}
+//
+//	if (!pLine)
+//	{
+//		return false;
+//	}
+//
+//	// left point's X and Y
+//	float fFirstX = pLine->GetLineInfo().tLPoint.fX;
+//	float fFirstY = pLine->GetLineInfo().tLPoint.fY;
+//
+//	// right point's X and Y
+//	float fSecondX = pLine->GetLineInfo().tRPoint.fX;
+//	float fSecondY = pLine->GetLineInfo().tRPoint.fY;
+//
+//	// distance from circle's pivot to line 
+//	float fDistance = fabsf(((fSecondY - fFirstY) / (fSecondX - fFirstX) * _fX +
+//		(-1 * (_fY)) + fFirstY +
+//		(-1 * ((fSecondY - fFirstY) / (fSecondX - fFirstX)) * fFirstX)) /
+//		sqrtf(((fSecondY - fFirstY) / (fSecondX - fFirstX)) * ((fSecondY - fFirstY) / (fSecondX - fFirstX)) + 1));
+//
+//	// collision of circle and line
+//	if (fPlayerSize >= fDistance)
+//	{
+//		*_pY = ((fSecondY - fFirstY) / (fSecondX - fFirstX)) * (_fX - fFirstX) + fFirstY;
+//		float fRadian = 3.14f * 0.5f -
+//			acosf((_fX - fFirstX) / sqrtf((_fX - fFirstX) * (_fX - fFirstX) + (*_pY - fFirstY) * (*_pY - fFirstY)));
+//		*_pY -= fPlayerSize * sinf(fRadian);
+//		return true;
+//	}
+//	return false;
+//}
+
 bool CLineManager::Collision_Bottom_Line(float _fX, float _fY, float* _pY, float fPlayerSize)
 {
 	if (vecLine.empty())
@@ -75,6 +135,7 @@ bool CLineManager::Collision_Bottom_Line(float _fX, float _fY, float* _pY, float
 	}
 
 	CLine* pLine = nullptr;
+	vector<CLine*> vecCheckX;
 
 	for (int i = 0; i < vecLine.size(); ++i)
 	{
@@ -84,22 +145,41 @@ bool CLineManager::Collision_Bottom_Line(float _fX, float _fY, float* _pY, float
 			(_fX <= vecLine[i]->GetLineInfo().tLPoint.fX &&
 				_fX >= vecLine[i]->GetLineInfo().tRPoint.fX))
 		{
-			// check left and right pointY
-			if ((_fY >= vecLine[i]->GetLineInfo().tLPoint.fY &&
-				_fY <= vecLine[i]->GetLineInfo().tRPoint.fY) ||
-				(_fY <= vecLine[i]->GetLineInfo().tLPoint.fY &&
-					_fY >= vecLine[i]->GetLineInfo().tRPoint.fY))
-			{
-				pLine = vecLine[i];
-				break;
-			}
+			//pLine = vecLine[i];
+			vecCheckX.push_back(vecLine[i]);
 		}
 	}
 
-	if (!pLine)
+	if (vecCheckX.empty())
 	{
 		return false;
 	}
+
+	if(vecCheckX.size() > 1)
+	{
+		// left point 기준 내림차순 정렬
+		sort(vecCheckX.begin(), vecCheckX.end(),
+			[](CLine* a, CLine* b) {
+				return a->GetLineInfo().tLPoint.fY < b->GetLineInfo().tLPoint.fY;
+			});
+		for (int i = 0; i < vecCheckX.size(); ++i)
+		{
+			if (_fY <= vecCheckX[i]->GetLineInfo().tLPoint.fY)
+			{
+				pLine = vecCheckX[i];
+				break;
+			}
+		}
+		if (pLine == nullptr)
+			pLine = vecCheckX.back();
+	}
+
+	else
+	{
+		pLine = vecCheckX[0];
+	}
+
+	vecCheckX.clear();
 
 	// left point's X and Y
 	float fFirstX = pLine->GetLineInfo().tLPoint.fX;
@@ -109,22 +189,11 @@ bool CLineManager::Collision_Bottom_Line(float _fX, float _fY, float* _pY, float
 	float fSecondX = pLine->GetLineInfo().tRPoint.fX;
 	float fSecondY = pLine->GetLineInfo().tRPoint.fY;
 
-	// distance from circle's pivot to line 
-	float fDistance = fabsf(((fSecondY - fFirstY) / (fSecondX - fFirstX) * _fX +
-		(-1 * (_fY)) + fFirstY +
-		(-1 * ((fSecondY - fFirstY) / (fSecondX - fFirstX)) * fFirstX)) /
-		sqrtf(((fSecondY - fFirstY) / (fSecondX - fFirstX)) * ((fSecondY - fFirstY) / (fSecondX - fFirstX)) + 1));
-
-	// collision of circle and line
-	if (fPlayerSize >= fDistance)
-	{
-		*_pY = ((fSecondY - fFirstY) / (fSecondX - fFirstX)) * (_fX - fFirstX) + fFirstY;
-		float fRadian = 3.14f * 0.5f -
-			acosf((_fX - fFirstX) / sqrtf((_fX - fFirstX) * (_fX - fFirstX) + (*_pY - fFirstY) * (*_pY - fFirstY)));
-		*_pY -= fPlayerSize * sinf(fRadian);
-		return true;
-	}
-	return false;
+	*_pY = ((fSecondY - fFirstY) / (fSecondX - fFirstX)) * (_fX - fFirstX) + fFirstY;
+	float fRadian = 3.14f * 0.5f -
+		acosf((_fX - fFirstX) / sqrtf((_fX - fFirstX) * (_fX - fFirstX) + (*_pY - fFirstY) * (*_pY - fFirstY)));
+	*_pY -= fPlayerSize * sinf(fRadian);
+	return true;
 }
 
 void CLineManager::SaveData()
