@@ -6,6 +6,8 @@
 #include "CObjectManager.h"
 #include "CScrollManager.h"
 #include "CKeyManager.h"
+#include "CLine.h"
+
 
 CPlayer::CPlayer() : m_bFaceRight(true), m_bJump(false), m_fJumpSpeed(0.f), m_fJumpTime(0.f), m_fBulletDir(1.f)
 {
@@ -146,7 +148,7 @@ void CPlayer::KeyInput()
 
 	if (CKeyManager::Get_Instance()->KeyDown('A'))
 	{
-		CObjectManager::GetInstance()->GetBulletList()->push_back(AbstractFactory<CBullet>::Create(m_vPivot.x, m_vPivot.y));
+		CObjectManager::GetInstance()->GetBulletList()->push_back(CAbstractFactory<CBullet>::Create(m_vPivot.x, m_vPivot.y));
 		CObject* pLastBullet = CObjectManager::GetInstance()->GetBulletList()->back();
 		pLastBullet->SetSpeed(pLastBullet->GetSpeed() * m_fBulletDir);
 	}
