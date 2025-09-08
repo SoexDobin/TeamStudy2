@@ -135,6 +135,7 @@
     <ClInclude Include="CBullet.h" />
     <ClInclude Include="CCollisionManager.h" />
     <ClInclude Include="CFirstBoss.h" />
+    <ClInclude Include="CFourthBoss.h" />
     <ClInclude Include="CKeyManager.h" />
     <ClInclude Include="CLine.h" />
     <ClInclude Include="CLineManager.h" />
@@ -163,6 +164,7 @@
     <ClCompile Include="CBullet.cpp" />
     <ClCompile Include="CCollisionManager.cpp" />
     <ClCompile Include="CFirstBoss.cpp" />
+    <ClCompile Include="CFourthBoss.cpp" />
     <ClCompile Include="CKeyManager.cpp" />
     <ClCompile Include="CLine.cpp" />
     <ClCompile Include="CLineManager.cpp" />

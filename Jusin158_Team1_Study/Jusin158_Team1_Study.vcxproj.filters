@@ -61,6 +61,9 @@
     <Filter Include="01. Object\01.Monster\01. FirstBoss">
       <UniqueIdentifier>{dd002064-a879-4a1d-ba2c-459815063d3b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="01. Object\01.Monster\04. FourthBoss">
+      <UniqueIdentifier>{8054db14-90ad-4c13-a2bb-5c6de1d3f27a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -144,6 +147,9 @@
     <ClInclude Include="CFirstBoss.h">
       <Filter>01. Object\01.Monster\01. FirstBoss</Filter>
     </ClInclude>
+    <ClInclude Include="CFourthBoss.h">
+      <Filter>01. Object\01.Monster\04. FourthBoss</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Jusin158_Team1_Study.cpp">
@@ -211,6 +217,9 @@
     </ClCompile>
     <ClCompile Include="CFirstBoss.cpp">
       <Filter>01. Object\01.Monster\01. FirstBoss</Filter>
+    </ClCompile>
+    <ClCompile Include="CFourthBoss.cpp">
+      <Filter>01. Object\01.Monster\04. FourthBoss</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
