@@ -98,3 +98,16 @@ struct DeleteObj
 		}
 	}
 };
+
+struct DeleteMap
+{
+	template<typename T>
+	void	operator()(T& MyPair)
+	{
+		if (MyPair.second)
+		{
+			delete MyPair.second;
+			MyPair.second = nullptr;
+		}
+	}
+};

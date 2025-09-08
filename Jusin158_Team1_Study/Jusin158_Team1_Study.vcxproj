@@ -132,6 +132,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="CAbstractFactory.h" />
+    <ClInclude Include="CBmpManager.h" />
+    <ClInclude Include="CBmpObject.h" />
     <ClInclude Include="CBullet.h" />
     <ClInclude Include="CCollisionManager.h" />
     <ClInclude Include="CFirstBoss.h" />
@@ -162,6 +164,8 @@
     <ClInclude Include="Vector2.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CBmpManager.cpp" />
+    <ClCompile Include="CBmpObject.cpp" />
     <ClCompile Include="CBullet.cpp" />
     <ClCompile Include="CCollisionManager.cpp" />
     <ClCompile Include="CFirstBoss.cpp" />
