@@ -15,6 +15,7 @@ public:
 	bool				GetCollision()  { return m_bCollision; }
 	int					GetHp()		{ return m_iHp; }
 	int					GetAttack()	{ return m_iAttack; }
+	bool				GetDestroy() { return m_bDestroy; }
 	
 	void	SetPivot(const Vector2& _vPivot)	{ m_vPivot = _vPivot; }
 	void	SetSize(const Vector2& _vSize)		{ m_vSize = _vSize; }
@@ -25,6 +26,8 @@ public:
 	void	SetHp(int _iHp)					{ m_iHp = _iHp; }
 	void	SetAttack(int _iAttack)			{ m_iAttack = _iAttack; }
 	//void	SetBullet(list<CObject*>* pBullet)	{ m_pBullet = pBullet; }
+	void	Set_Target(CObject* pTarget) { m_pTarget = pTarget; }
+
 
 public:
 	virtual void		Initialize()										PURE;
@@ -49,6 +52,9 @@ protected:
 	bool			m_bDestroy;
 	int				m_iHp;
 	int				m_iAttack;
+	float			m_fAngle;
+
+	CObject*		m_pTarget;
 
 private:
 	bool			m_bCollision;
