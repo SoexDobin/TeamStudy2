@@ -1,6 +1,7 @@
 #pragma once
 
 #include "CScene.h"
+
 class CLine;
 
 class CScene04 : public CScene
@@ -21,7 +22,8 @@ private:
 	CObject* m_pPlayer;
 	CObject* m_pBoss;
 	BOOL	m_bDead;
-	DWORD	m_dTime;
+	ULONGLONG	m_dTime;
+	int	m_MonsterIDX;
 };
 
 
