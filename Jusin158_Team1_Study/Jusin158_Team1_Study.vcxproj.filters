@@ -54,7 +54,7 @@
     </Filter>
     <Filter Include="01. Object\01.Monster\04.FourthBoss">
       <UniqueIdentifier>{7967dc99-8fac-4f0c-9b25-d4f852b0f134}</UniqueIdentifier>
-        </Filter>
+    </Filter>
     <Filter Include="94. ScrollManager">
       <UniqueIdentifier>{9c98fee8-59ca-443f-b156-30092bc8513a}</UniqueIdentifier>
     </Filter>
@@ -117,9 +117,6 @@
     <ClInclude Include="CAbstractFactory.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="CScene.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="CBullet.h">
       <Filter>01. Object\02.Bullet</Filter>
     </ClInclude>
@@ -135,7 +132,6 @@
     <ClInclude Include="CScene03.h">
       <Filter>03. Scene</Filter>
     </ClInclude>
-
     <ClInclude Include="CKeyManager.h">
       <Filter>95. KeyManager</Filter>
     </ClInclude>
@@ -153,6 +149,9 @@
     </ClInclude>
     <ClInclude Include="CFirstBoss.h">
       <Filter>01. Object\01.Monster\01. FirstBoss</Filter>
+    </ClInclude>
+    <ClInclude Include="CScene.h">
+      <Filter>03. Scene</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -189,9 +188,6 @@
     <ClCompile Include="CCollisionManager.cpp">
       <Filter>97. CollisionManager</Filter>
     </ClCompile>
-    <ClCompile Include="CScene.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="CBullet.cpp">
       <Filter>01. Object\02.Bullet</Filter>
     </ClCompile>
@@ -209,7 +205,7 @@
     </ClCompile>
     <ClCompile Include="CScene.cpp">
       <Filter>소스 파일</Filter>
-	</ClCompile>
+    </ClCompile>
     <ClCompile Include="CLineManager.cpp">
       <Filter>96.LineManager\Line</Filter>
     </ClCompile>
@@ -221,7 +217,7 @@
     </ClCompile>
     <ClCompile Include="FourthBoss.cpp">
       <Filter>01. Object\01.Monster\04.FourthBoss</Filter>
-      </ClCompile>
+    </ClCompile>
     <ClCompile Include="CScrollManager.cpp">
       <Filter>94. ScrollManager</Filter>
     </ClCompile>
@@ -233,6 +229,9 @@
     </ClCompile>
     <ClCompile Include="CFirstBoss.cpp">
       <Filter>01. Object\01.Monster\01. FirstBoss</Filter>
+    </ClCompile>
+    <ClCompile Include="CScene.cpp">
+      <Filter>03. Scene</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
