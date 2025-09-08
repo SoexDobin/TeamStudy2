@@ -12,12 +12,14 @@ CObjectManager::~CObjectManager()
 {
 	Release();
 }
-void CObjectManager::AddObject(OBJECT _eID, CObject* _pObject)
+CObject* CObjectManager::AddObject(OBJECT _eID, CObject* _pObject)
 {
 	if (_eID >= OBJ_END || _pObject == nullptr)
-		return;
+		return 0;
 
 	m_ObjectList[_eID].push_back(_pObject);
+
+	return _pObject;
 }
 
 void CObjectManager::Initialize()

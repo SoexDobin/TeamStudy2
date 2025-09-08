@@ -1,20 +1,33 @@
 #include "pch.h"
+#include "CAbstractFactory.h"
 #include "CScene01.h"
-CScene01::CScene01()
-{
+#include "CMonster.h"
 
+CScene01::CScene01() :m_bDead(false)
+{
 }
 CScene01::~CScene01()
 {
 
 }
+
 void CScene01::Initialize()
 {
 	
+CObjectManager::GetInstance()->AddObject(MONSTER, AbstractFactory<CMonster>::Create());
+m_MonsterList.push_back(CObjectManager::GetInstance()->GetMonsterList()->back());
+
 
 }
+
 int CScene01::Update()
 {
+	if (m_bDead == true)
+		return OBJ_DESTROY;
+	if (GetAsyncKeyState(VK_SPACE))
+	{
+		m_bDead = true;
+	}
 	
 	return OBJ_NOEVENT;
 }
