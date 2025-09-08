@@ -42,6 +42,7 @@ void CPlayer::LateUpdate()
 {
 	Jump();
 	Offset();
+	CheckOutOfBound();
 }
 
 void CPlayer::Render(HDC _hDC)
@@ -174,6 +175,11 @@ void CPlayer::Jump()
 	{
 		m_vPivot.y = fY;
 	}
+}
+void CPlayer::CheckOutOfBound()
+{
+	if (m_tRect.top > WINCY || m_tRect.bottom < 0)
+		m_vPivot = Vector2(WINCX / 2, WINCY / 2);
 }
 void CPlayer::Offset()
 {
