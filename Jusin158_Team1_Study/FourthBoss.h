@@ -1,7 +1,7 @@
 #pragma once
 #include "CObject.h"
 
-class FourthBoss : public CObject 
+class FourthBoss : public CObject
 {
 public:
 	FourthBoss();
@@ -15,6 +15,7 @@ public:
 	void	Release()							override;
 	void	OnCollision(CObject* _pColObj, Vector2 _vColSize)		override;
 
-public:
+private:
 
+	ULONGLONG m_uTime;
 };

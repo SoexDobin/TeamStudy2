@@ -36,10 +36,10 @@ void CMainGame::Initialize()
 		DeleteObject(prev);
 	}
 	CLineManager::GetInstance()->Initialize();
-	SetPlayer(CObjectManager::GetInstance()->AddObject(PLAYER, AbstractFactory<CPlayer>::Create()));
-	CSceneManager::GetInstance()->ChangeScene(SCENE01);
+	SetPlayer(CObjectManager::GetInstance()->AddObject(PLAYER, CAbstractFactory<CPlayer>::Create()));
+	CSceneManager::GetInstance()->ChangeScene(SCENE04);
 	
-	CObjectManager::GetInstance()->AddObject(MOUSE, AbstractFactory<CMouse>::Create());
+	CObjectManager::GetInstance()->AddObject(MOUSE, CAbstractFactory<CMouse>::Create());
 
 	CBmpManager::GetInstance()->Insert_Bmp(L"../../Image/Back.bmp", L"Back");
 }
@@ -64,7 +64,6 @@ void CMainGame::Render()
 		PatBlt(m_hDCBack, 0, 0, m_tRect.right, m_tRect.bottom, WHITENESS);
 	}
 
-	
 	CLineManager::GetInstance()->Render(m_hDCBack);
 	CObjectManager::GetInstance()->Render(m_hDCBack);
 	// dc 사용 시 m_hDCBack 멤버 변수 사용할 것

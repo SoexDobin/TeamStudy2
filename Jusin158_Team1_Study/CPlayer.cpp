@@ -6,6 +6,7 @@
 #include "CObjectManager.h"
 #include "CScrollManager.h"
 #include "CKeyManager.h"
+#include "CLine.h"
 #include "CBmpManager.h"
 
 CPlayer::CPlayer() : m_bFaceRight(true), m_bJump(false), m_fJumpSpeed(0.f), m_fJumpTime(0.f), m_fBulletDir(1.f)
@@ -24,7 +25,7 @@ void CPlayer::Initialize()
 
 	m_fSpeed = 8.f;
 	m_fJumpSpeed = 20.f;
-
+	m_iHp = 100;
 
 	CBmpManager::GetInstance()->Insert_Bmp(L"../../Image/Player.bmp", L"Player");
 }
@@ -43,6 +44,11 @@ int CPlayer::Update()
 
 void CPlayer::LateUpdate()
 {
+	if (m_iHp <= 0)
+	{
+		m_bDestroy = true;
+	}
+
 	Jump();
 	Offset();
 	CheckOutOfBound();
@@ -53,14 +59,14 @@ void CPlayer::Render(HDC _hDC)
 	int iScrollX = (int)CScrollManager::Get_Instance()->Get_ScrollX();
 	HDC	hMemDC = CBmpManager::GetInstance()->Find_Img(L"Player");
 	
-	//BitBlt(_hDC,						// º¹»ç ¹ÞÀ» dc
-	//	m_tRect.left + iScrollX,	// º¹»ç ¹ÞÀ» À§Ä¡ left
-	//	m_tRect.top,				// º¹»ç ¹ÞÀ» À§Ä¡ top
-	//	(int)m_vSize.x,			// º¹»ç ¹ÞÀ» °¡·Î »çÀÌÁî
-	//	(int)m_vSize.y,			// º¹»ç ¹ÞÀ» ¼¼·Î »çÀÌÁî
-	//	hMemDC,						// º¹»çÇÒ ÀÌ¹ÌÁö dc
-	//	0, 0,						// º¹»çÇÒ ÀÌ¹ÌÁöÀÇ Ãâ·Â ½ÃÀÛ(left, top)
-	//	SRCCOPY);					// º¹»ç ¹æ½Ä
+	//BitBlt(_hDC,						// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ dc
+	//	m_tRect.left + iScrollX,	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ left
+	//	m_tRect.top,				// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ top
+	//	(int)m_vSize.x,			// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	//	(int)m_vSize.y,			// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	//	hMemDC,						// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½ dc
+	//	0, 0,						// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½(left, top)
+	//	SRCCOPY);					// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 
 	GdiTransparentBlt(_hDC,
 		m_tRect.left + iScrollX,
@@ -72,7 +78,7 @@ void CPlayer::Render(HDC _hDC)
 		0,
 		(int)m_vSize.x,
 		(int)m_vSize.y,
-		RGB(255, 255, 255));		// Á¦°ÅÇÒ ÇÈ¼¿ÀÇ »ö»ó
+		RGB(255, 255, 255));		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½È¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 }
 
 void CPlayer::Release()
@@ -81,6 +87,7 @@ void CPlayer::Release()
 
 void CPlayer::OnCollision(CObject* _pColObj, Vector2 _vColSize)
 {
+	//m_iHp = m_iHp - 20;
 }
 
 void CPlayer::KeyInput()
@@ -104,6 +111,10 @@ void CPlayer::KeyInput()
 		{
 			m_vPivot.x += m_fSpeed / sqrtf(2.f);
 			m_vPivot.y += m_fSpeed / sqrtf(2.f);
+		}
+		else if (CKeyManager::Get_Instance()->KeyDown(VK_SPACE))
+		{
+			m_bJump = true;
 		}
 		else
 		{
@@ -134,6 +145,10 @@ void CPlayer::KeyInput()
 			m_vPivot.x -= m_fSpeed / sqrtf(2.f);
 			m_vPivot.y += m_fSpeed / sqrtf(2.f);
 		}
+		else if (CKeyManager::Get_Instance()->KeyDown(VK_SPACE))
+		{
+			m_bJump = true;
+		}
 		else
 		{
 			m_vPivot.x -= m_fSpeed;
@@ -162,14 +177,14 @@ void CPlayer::KeyInput()
 		//}
 	}
 
-	else if (GetAsyncKeyState(VK_SPACE))
+	else if (CKeyManager::Get_Instance()->KeyDown(VK_SPACE))
 	{
 		m_bJump = true;
 	}
 
 	if (CKeyManager::Get_Instance()->KeyDown('A'))
 	{
-		CObjectManager::GetInstance()->GetBulletList()->push_back(AbstractFactory<CBullet>::Create(m_vPivot.x, m_vPivot.y));
+		CObjectManager::GetInstance()->GetBulletList()->push_back(CAbstractFactory<CBullet>::Create(m_vPivot.x, m_vPivot.y));
 		CObject* pLastBullet = CObjectManager::GetInstance()->GetBulletList()->back();
 		pLastBullet->SetSpeed(pLastBullet->GetSpeed() * m_fBulletDir);
 	}
@@ -200,13 +215,14 @@ void CPlayer::Jump()
 }
 void CPlayer::CheckOutOfBound()
 {
-	if (m_tRect.top > WINCY || m_tRect.bottom < 0)
+	if (m_tRect.top > WINCY)
 		m_vPivot = Vector2(WINCX / 2, WINCY / 2);
 }
 void CPlayer::Offset()
 {
-	int iOffsetminX = WINCX - 900;
-	int iOffsetmaxX = WINCX - 100;
+	int iOffsetminX = WINCX - 700;
+	int iOffsetmaxX = WINCX - 300;
+
 
 	int iScrollX = (int)CScrollManager::Get_Instance()->Get_ScrollX();
 
