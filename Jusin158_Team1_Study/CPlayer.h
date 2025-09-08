@@ -15,8 +15,18 @@ public:
 	void	Render(HDC _hDC)				override;
 	void	Release()						override;
 	void	OnCollision(CObject* _pColObj, Vector2 _vColSize)	override;
+	void	Offset();
 
 private:
-	void	Key_Input();
+	void	KeyInput();
+	void	Jump();
+	void	CheckOutOfBound();
+
+private:
+	bool	m_bFaceRight;
+	float	m_fBulletDir;
+	bool	m_bJump;
+	float	m_fJumpSpeed;
+	float	m_fJumpTime;
 
 };

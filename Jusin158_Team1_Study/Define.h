@@ -10,6 +10,7 @@ extern		HWND		g_hWnd;
 #define		OBJ_DESTROY			1
 #define		OBJ_NOEVENT			0
 #define		VK_MAX				0xFF
+#define		PI					3.14f
 
 // enum 
 enum OBJECT
@@ -18,7 +19,9 @@ enum OBJECT
 	MONSTER,
 	BULLET,
 	//LINE,
-
+	FOURTHBOSS,
+	MOUSE,
+	
 	OBJ_END
 };
 
@@ -41,6 +44,22 @@ static void SafeDelete(T& _p)
 		_p = nullptr;
 	}
 }
+
+struct tagFinder
+{
+	tagFinder(const TCHAR* pTag) : m_pTag(pTag)
+	{
+	}
+
+	template<typename T>
+	bool operator()(T& MyPair)
+	{
+		return !lstrcmp(MyPair.first, m_pTag);
+	}
+
+
+	const TCHAR* m_pTag;
+};
 
 typedef struct tagLinePoint {
 	float fX, fY;
@@ -94,6 +113,19 @@ struct DeleteObj
 		{
 			delete p;
 			p = nullptr;
+		}
+	}
+};
+
+struct DeleteMap
+{
+	template<typename T>
+	void	operator()(T& MyPair)
+	{
+		if (MyPair.second)
+		{
+			delete MyPair.second;
+			MyPair.second = nullptr;
 		}
 	}
 };

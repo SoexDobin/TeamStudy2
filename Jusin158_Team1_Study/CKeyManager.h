@@ -16,7 +16,7 @@ public:
 	void		KeyUpdate();
 
 public:
-	static CKeyManager* Get_Instance()
+	static CKeyManager* GetInstance()
 	{
 		if (nullptr == m_pInstance)
 			m_pInstance = new CKeyManager;

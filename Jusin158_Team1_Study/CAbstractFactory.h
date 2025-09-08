@@ -3,7 +3,7 @@
 #include "CObject.h"
 
 template<typename T>
-class AbstractFactory
+class CAbstractFactory
 {
 	public:
 		static CObject* Create()
@@ -14,4 +14,12 @@ class AbstractFactory
 			return pObject;
 		}
 
+		static CObject* Create(float fX, float fY)
+		{
+			CObject* pObject = new T;
+			pObject->Initialize();
+			pObject->SetPivot(Vector2(fX, fY));
+
+			return pObject;
+		}
 };

@@ -11,12 +11,17 @@ private:
 	~CObjectManager();
 
 public:
-	void AddObject(OBJECT _eID, CObject* _pObject);
+	CObject* AddObject(OBJECT _eID, CObject* _pObject);
 	void Initialize();
 	int Update();
 	void LateUpdate();
 	void Render(HDC hdc);
 	void Release();
+	list<CObject*>* GetBulletList() { return &m_ObjectList[BULLET]; }
+
+public:
+	list<CObject*>* GetMonsterList() { return  &m_ObjectList[MONSTER]; }
+	list<CObject*>* GetPlayer() {return &m_ObjectList[PLAYER];}
 
 public:
 	static CObjectManager* GetInstance()
@@ -39,6 +44,7 @@ public:
 
 	}
 
+	CObject* GetTarget(OBJECT _eID, CObject* pObj);
 
 private:
 	list<CObject*> m_ObjectList[OBJ_END];

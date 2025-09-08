@@ -12,6 +12,10 @@ private:
 	CLineManager operator=(CLineManager& _rMgr) = delete;
 	~CLineManager();
 public:
+	int GetCurLeftX() { return (int)m_tLinePoint[LEFT].fX; }
+	int GetCurLeftY() { return (int)m_tLinePoint[LEFT].fY; }
+
+public:
 	void		Initialize();
 	int			Update();
 	void		Late_Update();
@@ -36,5 +40,14 @@ public:
 	}
 
 	bool Collision_Bottom_Line(float _fX, float _fY, float* _pY, float fPlayerSize);
-	bool Collision_Top_Line(float _fX, float _fY, float fPlayerSize);
+	void SaveDataOne();
+	void SaveDataTwo();
+	void SaveDataThree();
+	void SaveDataFour();
+	void LoadDataOne();
+	void LoadDataTwo();
+	void LoadDataThree();
+	void LoadDataFour();
+	void EaseLastLine();
+	/*bool Collision_Top_Line(float _fX, float _fY, float fPlayerSize);*/
 };
