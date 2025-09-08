@@ -6,6 +6,8 @@
 #include "CObjectManager.h"
 #include "CScrollManager.h"
 #include "CKeyManager.h"
+#include "CLine.h"
+
 
 CPlayer::CPlayer() : m_bFaceRight(true), m_bJump(false), m_fJumpSpeed(0.f), m_fJumpTime(0.f), m_fBulletDir(1.f)
 {
@@ -63,7 +65,7 @@ void CPlayer::Release()
 
 void CPlayer::OnCollision(CObject* _pColObj, Vector2 _vColSize)
 {
-	m_iHp = m_iHp - 20;
+	//m_iHp = m_iHp - 20;
 }
 
 void CPlayer::KeyInput()
@@ -162,7 +164,7 @@ void CPlayer::KeyInput()
 
 	if (CKeyManager::Get_Instance()->KeyDown('A'))
 	{
-		CObjectManager::GetInstance()->GetBulletList()->push_back(AbstractFactory<CBullet>::Create(m_vPivot.x, m_vPivot.y));
+		CObjectManager::GetInstance()->GetBulletList()->push_back(CAbstractFactory<CBullet>::Create(m_vPivot.x, m_vPivot.y));
 		CObject* pLastBullet = CObjectManager::GetInstance()->GetBulletList()->back();
 		pLastBullet->SetSpeed(pLastBullet->GetSpeed() * m_fBulletDir);
 	}
@@ -193,7 +195,7 @@ void CPlayer::Jump()
 }
 void CPlayer::CheckOutOfBound()
 {
-	if (m_tRect.top > WINCY || m_tRect.bottom < 0)
+	if (m_tRect.top > WINCY)
 		m_vPivot = Vector2(WINCX / 2, WINCY / 2);
 }
 void CPlayer::Offset()

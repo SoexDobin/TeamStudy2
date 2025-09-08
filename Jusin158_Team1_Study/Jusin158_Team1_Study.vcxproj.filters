@@ -150,9 +150,6 @@
     <ClInclude Include="CScene.h">
       <Filter>03. Scene</Filter>
     </ClInclude>
-    <ClInclude Include="FourthBoss.h">
-      <Filter>01. Object\01.Monster\04.FourthBoss</Filter>
-    </ClInclude>
     <ClInclude Include="CScrollManager.h">
       <Filter>94. ScrollManager</Filter>
     </ClInclude>
@@ -168,6 +165,9 @@
     <ClInclude Include="CScene.h">
       <Filter>03. Scene</Filter>
     </ClInclude>
+    <ClInclude Include="FourthBoss.h">
+      <Filter>01. Object\01.Monster\04.FourthBoss</Filter>
+       </ClInclude>
     <ClInclude Include="CSecondBoss.h">
       <Filter>01. Object\01.Monster\02. SecondBoss</Filter>
     </ClInclude>
@@ -236,9 +236,6 @@
     <ClCompile Include="CScene.cpp">
       <Filter>03. Scene</Filter>
     </ClCompile>
-    <ClCompile Include="FourthBoss.cpp">
-      <Filter>01. Object\01.Monster\04.FourthBoss</Filter>
-    </ClCompile>
     <ClCompile Include="CScrollManager.cpp">
       <Filter>94. ScrollManager</Filter>
     </ClCompile>
@@ -257,6 +254,9 @@
     <ClCompile Include="CScene.cpp">
       <Filter>03. Scene</Filter>
     </ClCompile>
+    <ClCompile Include="FourthBoss.cpp">
+      <Filter>01. Object\01.Monster\04.FourthBoss</Filter>
+      </ClCompile>
     <ClCompile Include="CSecondBoss.cpp">
       <Filter>01. Object\01.Monster\02. SecondBoss</Filter>
     </ClCompile>

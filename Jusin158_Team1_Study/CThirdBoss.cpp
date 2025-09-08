@@ -66,7 +66,7 @@ void CThirdBoss::OnCollision(CObject* _pColObj, Vector2 _vColSize)
 
 void CThirdBoss::ShotBullet()
 {
-	CObjectManager::GetInstance()->AddObject(BULLET, AbstractFactory<CBullet>::Create());
+	CObjectManager::GetInstance()->AddObject(BULLET, CAbstractFactory<CBullet>::Create());
 }
 
 void CThirdBoss::StandingJump()
