@@ -16,7 +16,9 @@ void CSecondBoss::Initialize()
 {
 	m_vSize = { 100.f, 200.f };
 
-	m_fSpeed = 7.f;
+	m_fSpeed = 3.f;
+
+	m_iHp = 200;
 }
 
 int CSecondBoss::Update()
@@ -24,13 +26,23 @@ int CSecondBoss::Update()
 	if (m_bDestroy)
 		return OBJ_DESTROY;
 
-
+	m_vPivot.y -= m_fSpeed;
+	__super::UpdateRect();
 
 	return OBJ_NOEVENT;
 }
 
 void CSecondBoss::LateUpdate()
 {
+	if (m_iHp <= 0)
+	{
+		m_bDestroy = true;
+	}
+
+	if (0 >= m_tRect.top || WINCY <= m_tRect.bottom)
+	{
+		m_fSpeed *= -1.f;
+	}
 }
 
 void CSecondBoss::Render(HDC _hDC)
@@ -45,4 +57,5 @@ void CSecondBoss::Release()
 
 void CSecondBoss::OnCollision(CObject* _pColObj, Vector2 _vColSize)
 {
+	m_iHp = m_iHp - 10;
 }

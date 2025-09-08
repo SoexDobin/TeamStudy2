@@ -18,7 +18,7 @@ void CMonster::Initialize()
 
 	m_fSpeed = 3.f;
 
-	m_iHp = 50;
+	m_iHp = 70;
 }
 
 int CMonster::Update()

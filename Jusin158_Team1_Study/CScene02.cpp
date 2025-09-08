@@ -20,7 +20,7 @@ void CScene02::Initialize()
 	CLineManager::GetInstance()->LoadDataTwo();
 
 	CObjectManager::GetInstance()->AddObject(MONSTER, AbstractFactory<CMonster>::Create(3300.f, 100.f));
-	CObjectManager::GetInstance()->AddObject(MONSTER, AbstractFactory<CSecondBoss>::Create(5300.f, 100.f));
+	CObjectManager::GetInstance()->AddObject(MONSTER, AbstractFactory<CSecondBoss>::Create(5300.f, 300.f));
 
 }
 int CScene02::Update()

@@ -73,6 +73,9 @@
     <Filter Include="01. Object\01.Monster\04.FourthBoss">
       <UniqueIdentifier>{7967dc99-8fac-4f0c-9b25-d4f852b0f134}</UniqueIdentifier>
     </Filter>
+    <Filter Include="01. Object\01.Monster\02. SecondBoss\SecondBossAttackPattern">
+      <UniqueIdentifier>{749113be-c765-404e-8308-1f275d521f3f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -168,6 +171,9 @@
     <ClInclude Include="CSecondBoss.h">
       <Filter>01. Object\01.Monster\02. SecondBoss</Filter>
     </ClInclude>
+    <ClInclude Include="CGuideMonster.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Jusin158_Team1_Study.cpp">
@@ -253,6 +259,9 @@
     </ClCompile>
     <ClCompile Include="CSecondBoss.cpp">
       <Filter>01. Object\01.Monster\02. SecondBoss</Filter>
+    </ClCompile>
+    <ClCompile Include="CGuideMonster.cpp">
+      <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

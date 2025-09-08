@@ -19,7 +19,7 @@ CPlayer::~CPlayer()
 void CPlayer::Initialize()
 {
 	m_vSize = { 50.f, 50.f };
-	m_vPivot = { 500.f , 300.f };
+	m_vPivot = { 150.f , 300.f };
 
 	m_fSpeed = 8.f;
 	m_fJumpSpeed = 20.f;
@@ -41,6 +41,11 @@ int CPlayer::Update()
 
 void CPlayer::LateUpdate()
 {
+	if (m_iHp <= 0)
+	{
+		m_bDestroy = true;
+	}
+
 	Jump();
 	Offset();
 	CheckOutOfBound();
@@ -58,6 +63,7 @@ void CPlayer::Release()
 
 void CPlayer::OnCollision(CObject* _pColObj, Vector2 _vColSize)
 {
+	m_iHp = m_iHp - 20;
 }
 
 void CPlayer::KeyInput()
