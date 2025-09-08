@@ -145,7 +145,7 @@
       <Filter>01. Object\03.Mouse</Filter>
     </ClInclude>
     <ClInclude Include="CThirdBoss.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>01. Object\01.Monster\03. ThirdSceneBoss</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -213,7 +213,7 @@
       <Filter>01. Object\03.Mouse</Filter>
     </ClCompile>
     <ClCompile Include="CThirdBoss.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>01. Object\01.Monster\03. ThirdSceneBoss</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
