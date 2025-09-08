@@ -25,6 +25,7 @@ private:
 	ULONGLONG	m_dTime;
 	int	m_MonsterIDX;
 
+
 };
 
 

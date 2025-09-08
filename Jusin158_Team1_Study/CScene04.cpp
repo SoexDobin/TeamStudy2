@@ -48,7 +48,7 @@ int CScene04::Update()
 	{
 		CObjectManager::GetInstance()->AddObject(FOURTHBOSS, CAbstractFactory<FourthBoss>::Create());
 	}
-
+	//이거 한 번만 생성되게 수정해야 함!
 	return OBJ_NOEVENT;
 }
 void CScene04::LateUpdate()
