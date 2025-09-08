@@ -17,7 +17,7 @@ FourthBoss::~FourthBoss()
 
 void FourthBoss::Initialize()
 {
-	m_vPivot={1000.f, 150.f};
+	m_vPivot={2300.f, 150.f};
 	m_vSize = {300.f, 300.f};
 
 	m_fSpeed = 5.f;

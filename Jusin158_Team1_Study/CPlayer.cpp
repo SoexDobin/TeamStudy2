@@ -65,7 +65,7 @@ void CPlayer::Release()
 
 void CPlayer::OnCollision(CObject* _pColObj, Vector2 _vColSize)
 {
-	m_iHp = m_iHp - 20;
+	//m_iHp = m_iHp - 20;
 }
 
 void CPlayer::KeyInput()
@@ -195,7 +195,7 @@ void CPlayer::Jump()
 }
 void CPlayer::CheckOutOfBound()
 {
-	if (m_tRect.top > WINCY || m_tRect.bottom < 0)
+	if (m_tRect.top > WINCY)
 		m_vPivot = Vector2(WINCX / 2, WINCY / 2);
 }
 void CPlayer::Offset()
