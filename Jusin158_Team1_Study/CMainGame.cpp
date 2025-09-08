@@ -36,7 +36,7 @@ void CMainGame::Initialize()
 	}
 	CLineManager::GetInstance()->Initialize();
 	SetPlayer(CObjectManager::GetInstance()->AddObject(PLAYER, AbstractFactory<CPlayer>::Create()));
-	CSceneManager::GetInstance()->ChangeScene(SCENE01);
+	CSceneManager::GetInstance()->ChangeScene(SCENE02);
 	
 	CObjectManager::GetInstance()->AddObject(MOUSE, AbstractFactory<CMouse>::Create());
 }
