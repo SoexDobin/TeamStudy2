@@ -44,6 +44,7 @@ public:
 
 	}
 
+	CObject* GetTarget(OBJECT _eID, CObject* pObj);
 
 private:
 	list<CObject*> m_ObjectList[OBJ_END];

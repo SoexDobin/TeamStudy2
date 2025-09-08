@@ -74,3 +74,33 @@ void CObjectManager::Release()
 			});
 
 }
+
+CObject* CObjectManager::GetTarget(OBJECT _eID, CObject* pObj)
+{
+	if (m_ObjectList[_eID].empty())
+		return nullptr;
+
+	CObject* pTarget = nullptr;
+	float fDistance = 0.f;
+
+	for (auto& Src : m_ObjectList[_eID])
+	{
+		if (Src->GetDestroy())
+			continue;
+
+		float	fWidth(0.f), fHeight(0.f), fDiagonal(0.f);
+
+		fWidth = Src->GetPivot().x - pObj->GetPivot().x;
+		fHeight = Src->GetPivot().y - pObj->GetPivot().y;
+
+		fDiagonal = sqrtf(fWidth * fWidth + fHeight * fHeight);
+
+		if (!pTarget || fDistance > fDiagonal)
+		{
+			pTarget = Src;
+			fDistance = fDiagonal;
+		}
+
+	}
+	return pTarget;
+}
