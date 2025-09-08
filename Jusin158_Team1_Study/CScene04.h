@@ -13,6 +13,13 @@ public:
 	void		LateUpdate()		override;
 	void		Render(HDC _hDC)	override;
 	void		Release()			override;
+
+private:
+	vector<CLine*> m_vecLine;
+	list<CObject*> m_MonsterList;
+	CObject* m_pPlayer;
+	CObject* m_pBoss;
+	BOOL	m_bDead;
 };
 
 

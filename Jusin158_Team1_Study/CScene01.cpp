@@ -16,9 +16,8 @@ CScene01::~CScene01()
 void CScene01::Initialize()
 {
 	CLineManager::GetInstance()->LoadData();
-	CObjectManager::GetInstance()->AddObject(MONSTER, AbstractFactory<CMonster>::Create());
+	CObjectManager::GetInstance()->AddObject(MONSTER, CAbstractFactory<CMonster>::Create());
 	m_MonsterList.push_back(CObjectManager::GetInstance()->GetMonsterList()->back());
-
 	m_pPlayer = CObjectManager::GetInstance()->GetPlayer()->back();
 }
 
@@ -49,7 +48,7 @@ void CScene01::Render(HDC _hDC)
 }
 void CScene01::Release()
 {
-
+	m_pPlayer->SetDestroy();
 
 	for (auto& monster : m_MonsterList)
 	{
