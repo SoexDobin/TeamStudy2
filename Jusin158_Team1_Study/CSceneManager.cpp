@@ -1,4 +1,4 @@
-#include "pch.h"
+﻿#include "pch.h"
 #include "CSceneManager.h"
 #include "CScene01.h"
 #include "CScene02.h"
@@ -20,14 +20,43 @@ void CSceneManager::Initialize()
 }
 void CSceneManager::Update()
 {
+	CObjectManager::GetInstance()->Update();
 	if (m_pScene)
 	{
-		m_pScene->Update();
+		m_bDead= m_pScene->Update();
+
+
+		if (m_bDead)
+		{
+			switch (m_SceneNumber)
+			{
+			case SCENE01:
+				CSceneManager::GetInstance()->ChangeScene(SCENE02);
+				break;
+			case SCENE02:
+				CSceneManager::GetInstance()->ChangeScene(SCENE03);
+				break;
+			case SCENE03:
+				CSceneManager::GetInstance()->ChangeScene(SCENE04);
+				break;
+			}
+		}
+
+		else
+		{
+			return;
+		}
+
 	}
-	
+
+
+
+
+
 }
 void CSceneManager::LateUpdate()
 {
+	CObjectManager::GetInstance()->LateUpdate();
 	if (m_pScene)
 	{
 		m_pScene->LateUpdate();
@@ -35,6 +64,10 @@ void CSceneManager::LateUpdate()
 }
 void CSceneManager::Render(HDC hdc)
 {
+	TCHAR szBuff[32] = L"";
+	swprintf_s(szBuff, L"스테이지 : %d", CSceneManager::GetInstance()->GetSceneNumber());
+	TextOut(hdc, 50, 200, szBuff, lstrlen(szBuff));
+	CObjectManager::GetInstance()->Render(hdc);
 	if (m_pScene)
 	{
 		m_pScene->Render(hdc);
@@ -71,10 +104,12 @@ int CSceneManager::ChangeScene(SCENENUMBER _eSceneNumber)
 		m_SceneNumber = SCENE04;
 			break;
 	}
-
+	//�⺻ �Ҵ�� Scene ����
 	SafeDelete(m_pScene);
-
+	//���ο� Scene �Ҵ�
 	m_pScene = newScene;	
+
 	m_pScene->Initialize();
+	return 0;
 }
 

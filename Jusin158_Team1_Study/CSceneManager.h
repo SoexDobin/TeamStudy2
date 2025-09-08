@@ -10,7 +10,7 @@ public:
 	CSceneManager(const CSceneManager& rhs) = delete;
 	CSceneManager& operator=(CSceneManager& rManager) = delete;
 	~CSceneManager();
-
+		
 public:
 	static CSceneManager* GetInstance()
 	{
@@ -44,12 +44,12 @@ public:
 
 public:
 	int ChangeScene(SCENENUMBER _eSceneNumber);
-	SCENENUMBER GetNumber() { return m_SceneNumber; }
-
+	SCENENUMBER GetSceneNumber() { return m_SceneNumber; }
 private:
 	static CSceneManager* m_pInstance;
 
 	CScene* m_pScene;
 	SCENENUMBER m_SceneNumber;
+	BOOL	m_bDead;
 };
 

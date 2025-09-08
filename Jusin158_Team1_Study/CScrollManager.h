@@ -1,29 +1,30 @@
 #pragma once
+
 #include "Define.h"
-class CScrollManager {
+
+class CScrollManager
+{
 private:
 	CScrollManager();
 	~CScrollManager();
-	CScrollManager(const CScrollManager& rhs) = delete;
-	CScrollManager& operator=(CScrollManager& rMgr) = delete;
 
-	static CScrollManager* m_pInstance;
-	float m_fScrollScenefX;
-	float m_fScrollScenefY;
-	float m_fScrollPlayerfX;
-	float m_fScrollPlayerfY;
-	float m_fScrollSpeed;
 public:
-	static CScrollManager* GetInstance()
+	void		Set_ScrollX(float _X) { m_fScrollX += _X; }
+	void		Set_ScrollY(float _Y) { m_fScrollY += _Y; }
+
+	float		Get_ScrollX() { return m_fScrollX; }
+	float		Get_ScrollY() { return m_fScrollY; }
+
+public:
+	static CScrollManager* Get_Instance()
 	{
-		if (m_pInstance == nullptr)
-		{
+		if (nullptr == m_pInstance)
 			m_pInstance = new CScrollManager;
-		}
+
 		return m_pInstance;
 	}
 
-	static void DestroyInstance()
+	static void		Destroy_Instance()
 	{
 		if (m_pInstance)
 		{
@@ -32,15 +33,10 @@ public:
 		}
 	}
 
-	void SetScrollSceneX() { m_fScrollScenefX += WINCX; }
-	void SetScrollSceneY() { m_fScrollScenefY += WINCY; }
-	float GetScrollSceneX() { return m_fScrollScenefX; }
-	float GetScrollSceneY() { return m_fScrollScenefY; }
-	
-	void SetScrollPlayerX() { m_fScrollPlayerfX += WINCX - m_fScrollPlayerfX; }
-	void SetScrollPlayerY() { m_fScrollPlayerfY += WINCY - m_fScrollPlayerfY; }
-	float GetScrollPlayerX() { return m_fScrollPlayerfX; }
-	float GetScrollPlayerY() { return m_fScrollPlayerfY; }
+private:
+	static CScrollManager* m_pInstance;
 
-	float GetScrollSpeed() { return m_fScrollSpeed; }
+	float			m_fScrollX;
+	float			m_fScrollY;
 };
+
