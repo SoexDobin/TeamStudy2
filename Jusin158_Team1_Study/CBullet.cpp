@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "CBullet.h"
+#include "CScrollManager.h"
 
 CBullet::CBullet()
 {
@@ -35,7 +36,8 @@ void CBullet::LateUpdate()
 
 void CBullet::Render(HDC _hDC)
 {
-	Ellipse(_hDC, m_tRect.left, m_tRect.top, m_tRect.right, m_tRect.bottom);
+	int iScrollX = (int)CScrollManager::Get_Instance()->Get_ScrollX();
+	Ellipse(_hDC, m_tRect.left + iScrollX, m_tRect.top, m_tRect.right + iScrollX, m_tRect.bottom);
 }
 
 void CBullet::Release()
