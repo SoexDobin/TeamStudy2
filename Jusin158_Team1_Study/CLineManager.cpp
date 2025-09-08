@@ -29,13 +29,13 @@ int	CLineManager::Update()
 
 	pt.x -= (int)CScrollManager::Get_Instance()->Get_ScrollX();
 	// starting point
-	if (CKeyManager::Get_Instance()->KeyDown(VK_LBUTTON))
+	if (CKeyManager::GetInstance()->KeyDown(VK_LBUTTON))
 	{
 		m_tLinePoint[LEFT].fX = (float)pt.x;
 		m_tLinePoint[LEFT].fY = (float)pt.y;
 	}
 	// ending point
-	else if (CKeyManager::Get_Instance()->KeyDown(VK_RBUTTON) && (m_tLinePoint[LEFT].fX != 0.f || m_tLinePoint[LEFT].fY != 0.f))
+	else if (CKeyManager::GetInstance()->KeyDown(VK_RBUTTON) && (m_tLinePoint[LEFT].fX != 0.f || m_tLinePoint[LEFT].fY != 0.f))
 	{
 		m_tLinePoint[RIGHT].fX = (float)pt.x;
 		m_tLinePoint[RIGHT].fY = (float)pt.y;
@@ -54,7 +54,7 @@ int	CLineManager::Update()
 }
 void CLineManager::Late_Update()
 {
-	if (CKeyManager::Get_Instance()->KeyDown('S'))
+	if (CKeyManager::GetInstance()->KeyDown('S'))
 	{
 		SaveDataOne();
 		return;
@@ -377,8 +377,8 @@ void CLineManager::EaseLastLine()
 {
 	if (vecLine.empty()) return;
 
-	if (CKeyManager::Get_Instance()->KeyPressing(0xA2)
-		&& CKeyManager::Get_Instance()->KeyDown('Z'))
+	if (CKeyManager::GetInstance()->KeyPressing(0xA2)
+		&& CKeyManager::GetInstance()->KeyDown('Z'))
 	{
 		delete vecLine.back();
 		vecLine.back() = nullptr;

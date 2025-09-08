@@ -4,7 +4,7 @@ class CSecondBoss : public CMonster
 {
 public:
 	CSecondBoss();
-	~CSecondBoss();
+	virtual ~CSecondBoss() override;
 
 public:
 	void	Initialize()										override;
