@@ -20,6 +20,7 @@ public:
 private:
 	void	KeyInput();
 	void	Jump();
+	void	CheckOutOfBound();
 
 private:
 	bool	m_bFaceRight;
