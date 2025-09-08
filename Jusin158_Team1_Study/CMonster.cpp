@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "CMonster.h"
-
+#include "CScrollManager.h"
 
 CMonster::CMonster()
 {
@@ -25,7 +25,6 @@ int CMonster::Update()
 		return OBJ_DESTROY;
 
 	m_vPivot.y -= m_fSpeed;
-
 	__super::UpdateRect();
 
 	return OBJ_NOEVENT;
@@ -41,11 +40,13 @@ void CMonster::LateUpdate()
 
 void CMonster::Render(HDC _hDC)
 {
-	Rectangle(_hDC, m_tRect.left, m_tRect.top, m_tRect.right, m_tRect.bottom);
+	int iScrollX = (int)CScrollManager::Get_Instance()->Get_ScrollX();
+	Rectangle(_hDC, m_tRect.left + iScrollX, m_tRect.top, m_tRect.right + iScrollX, m_tRect.bottom);
 }
 
 void CMonster::Release()
 {
+
 }
 
 void CMonster::OnCollision(CObject* _pColObj, Vector2 _vColSize)
