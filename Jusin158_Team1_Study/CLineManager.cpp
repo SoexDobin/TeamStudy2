@@ -2,6 +2,7 @@
 #include "CLineManager.h"
 #include "CKeyManager.h"
 #include "CScrollManager.h"
+#include <iterator> 
 
 CLineManager* CLineManager::m_pInstance = nullptr;
 
@@ -379,6 +380,8 @@ void CLineManager::EaseLastLine()
 	if (CKeyManager::Get_Instance()->KeyPressing(0xA2)
 		&& CKeyManager::Get_Instance()->KeyDown('Z'))
 	{
+		delete vecLine.back();
+		vecLine.back() = nullptr;
 		vecLine.erase(--vecLine.end());
 	}
 }
