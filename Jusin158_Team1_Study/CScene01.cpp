@@ -14,7 +14,7 @@ CScene01::~CScene01()
 
 void CScene01::Initialize()
 {
-	CLineManager::GetInstance()->LoadData();
+	CLineManager::GetInstance()->LoadDataOne();
 	CObjectManager::GetInstance()->AddObject(MONSTER, AbstractFactory<CMonster>::Create());
 	m_MonsterList.push_back(CObjectManager::GetInstance()->GetMonsterList()->back());
 
@@ -35,6 +35,10 @@ int CScene01::Update()
 }
 void CScene01::LateUpdate()
 {
+	if (GetAsyncKeyState('S'))
+	{
+		CLineManager::GetInstance()->SaveDataOne();
+	}
 }
 void CScene01::Render(HDC _hDC)
 {
