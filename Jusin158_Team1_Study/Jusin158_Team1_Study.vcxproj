@@ -135,6 +135,7 @@
     <ClInclude Include="CBullet.h" />
     <ClInclude Include="CCollisionManager.h" />
     <ClInclude Include="CFirstBoss.h" />
+    <ClInclude Include="CGuideMonster.h" />
     <ClInclude Include="CKeyManager.h" />
     <ClInclude Include="CLine.h" />
     <ClInclude Include="CLineManager.h" />
@@ -151,6 +152,7 @@
     <ClInclude Include="CSceneManager.h" />
     <ClInclude Include="CPlayer.h" />
     <ClInclude Include="CScrollManager.h" />
+    <ClInclude Include="CSecondBoss.h" />
     <ClInclude Include="CThirdBoss.h" />
     <ClInclude Include="Define.h" />
     <ClInclude Include="FourthBoss.h" />
@@ -165,6 +167,7 @@
     <ClCompile Include="CBullet.cpp" />
     <ClCompile Include="CCollisionManager.cpp" />
     <ClCompile Include="CFirstBoss.cpp" />
+    <ClCompile Include="CGuideMonster.cpp" />
     <ClCompile Include="CKeyManager.cpp" />
     <ClCompile Include="CLine.cpp" />
     <ClCompile Include="CLineManager.cpp" />
@@ -180,6 +183,7 @@
     <ClCompile Include="CScene04.cpp" />
     <ClCompile Include="CSceneManager.cpp" />
     <ClCompile Include="CPlayer.cpp" />
+    <ClCompile Include="CSecondBoss.cpp" />
     <ClCompile Include="FourthBoss.cpp" />
     <ClCompile Include="CScrollManager.cpp" />
     <ClCompile Include="CThirdBoss.cpp" />

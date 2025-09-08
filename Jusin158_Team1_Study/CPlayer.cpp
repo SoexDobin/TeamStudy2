@@ -19,11 +19,12 @@ CPlayer::~CPlayer()
 void CPlayer::Initialize()
 {
 	m_vSize = { 50.f, 50.f };
-	m_vPivot = { 500.f , 300.f };
+	m_vPivot = { 150.f , 300.f };
 
 	m_fSpeed = 8.f;
 	m_fJumpSpeed = 20.f;
 
+	m_iHp = 100;
 }
 
 int CPlayer::Update()
@@ -40,6 +41,11 @@ int CPlayer::Update()
 
 void CPlayer::LateUpdate()
 {
+	if (m_iHp <= 0)
+	{
+		m_bDestroy = true;
+	}
+
 	Jump();
 	Offset();
 	CheckOutOfBound();
@@ -57,6 +63,7 @@ void CPlayer::Release()
 
 void CPlayer::OnCollision(CObject* _pColObj, Vector2 _vColSize)
 {
+	m_iHp = m_iHp - 20;
 }
 
 void CPlayer::KeyInput()
@@ -81,6 +88,10 @@ void CPlayer::KeyInput()
 			m_vPivot.x += m_fSpeed / sqrtf(2.f);
 			m_vPivot.y += m_fSpeed / sqrtf(2.f);
 		}
+		else if (CKeyManager::Get_Instance()->KeyDown(VK_SPACE))
+		{
+			m_bJump = true;
+		}
 		else
 		{
 			m_vPivot.x += m_fSpeed;
@@ -99,7 +110,7 @@ void CPlayer::KeyInput()
 			m_fBulletDir = -1.f;
 			
 		}
-
+		
 
 
 		if (GetAsyncKeyState(VK_UP))
@@ -111,6 +122,10 @@ void CPlayer::KeyInput()
 		{
 			m_vPivot.x -= m_fSpeed / sqrtf(2.f);
 			m_vPivot.y += m_fSpeed / sqrtf(2.f);
+		}
+		else if (CKeyManager::Get_Instance()->KeyDown(VK_SPACE))
+		{
+			m_bJump = true;
 		}
 		else
 		{
@@ -140,7 +155,7 @@ void CPlayer::KeyInput()
 		//}
 	}
 
-	else if (GetAsyncKeyState(VK_SPACE))
+	else if (CKeyManager::Get_Instance()->KeyDown(VK_SPACE))
 	{
 		m_bJump = true;
 	}
@@ -183,8 +198,8 @@ void CPlayer::CheckOutOfBound()
 }
 void CPlayer::Offset()
 {
-	int iOffsetminX = WINCX - 900;
-	int iOffsetmaxX = WINCX - 100;
+	int iOffsetminX = WINCX - 700;
+	int iOffsetmaxX = WINCX - 300;
 
 
 	int iScrollX = (int)CScrollManager::Get_Instance()->Get_ScrollX();

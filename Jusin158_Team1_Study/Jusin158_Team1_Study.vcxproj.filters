@@ -52,9 +52,6 @@
     <Filter Include="95. KeyManager">
       <UniqueIdentifier>{10388a78-3c3a-4a53-a8b0-7e6979a91d34}</UniqueIdentifier>
     </Filter>
-    <Filter Include="01. Object\01.Monster\04.FourthBoss">
-      <UniqueIdentifier>{7967dc99-8fac-4f0c-9b25-d4f852b0f134}</UniqueIdentifier>
-    </Filter>
     <Filter Include="94. ScrollManager">
       <UniqueIdentifier>{9c98fee8-59ca-443f-b156-30092bc8513a}</UniqueIdentifier>
     </Filter>
@@ -69,6 +66,15 @@
     </Filter>
     <Filter Include="01. Object\01.Monster\01. FirstBoss">
       <UniqueIdentifier>{dd002064-a879-4a1d-ba2c-459815063d3b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Object\01.Monster\02. SecondBoss">
+      <UniqueIdentifier>{289ee354-77ac-4ae0-9c45-da9bd6561b01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Object\01.Monster\04.FourthBoss">
+      <UniqueIdentifier>{7967dc99-8fac-4f0c-9b25-d4f852b0f134}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Object\01.Monster\02. SecondBoss\SecondBossAttackPattern">
+      <UniqueIdentifier>{749113be-c765-404e-8308-1f275d521f3f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -162,6 +168,12 @@
     <ClInclude Include="CScene.h">
       <Filter>03. Scene</Filter>
     </ClInclude>
+    <ClInclude Include="CSecondBoss.h">
+      <Filter>01. Object\01.Monster\02. SecondBoss</Filter>
+    </ClInclude>
+    <ClInclude Include="CGuideMonster.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Jusin158_Team1_Study.cpp">
@@ -244,6 +256,12 @@
     </ClCompile>
     <ClCompile Include="CScene.cpp">
       <Filter>03. Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="CSecondBoss.cpp">
+      <Filter>01. Object\01.Monster\02. SecondBoss</Filter>
+    </ClCompile>
+    <ClCompile Include="CGuideMonster.cpp">
+      <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
