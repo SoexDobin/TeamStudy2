@@ -51,6 +51,7 @@ void CMainGame::Update()
 void CMainGame::LateUpdate()
 {
 	CSceneManager::GetInstance()->LateUpdate();
+	CLineManager::GetInstance()->Late_Update();
 }
 void CMainGame::Render()
 {
