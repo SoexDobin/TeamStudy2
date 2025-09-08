@@ -1,8 +1,9 @@
-#include "pch.h"
+﻿#include "pch.h"
 #include "CAbstractFactory.h"
 #include "CScene01.h"
 #include "CMonster.h"
 #include "CLineManager.h"
+#include "CKeyManager.h"
 
 CScene01::CScene01() :m_bDead(false)
 {
@@ -30,11 +31,17 @@ int CScene01::Update()
 	{
 		m_bDead = true;
 	}
-
 	return OBJ_NOEVENT;
 }
 void CScene01::LateUpdate()
 {
+#pragma region 저장
+	if (GetAsyncKeyState('S'))
+	{
+		CLineManager::GetInstance()->SaveData();
+		return;
+	}
+#pragma endregion
 }
 void CScene01::Render(HDC _hDC)
 {
