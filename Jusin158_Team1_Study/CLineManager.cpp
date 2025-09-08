@@ -20,6 +20,7 @@ void CLineManager::Initialize()
 }
 int	CLineManager::Update()
 {
+	EaseLastLine();
 	// get mouse x,y
 	POINT pt{};
 	GetCursorPos(&pt);
@@ -54,7 +55,7 @@ void CLineManager::Late_Update()
 {
 	if (CKeyManager::Get_Instance()->KeyDown('S'))
 	{
-		SaveData();
+		SaveDataOne();
 		return;
 	}
 }
@@ -198,9 +199,9 @@ bool CLineManager::Collision_Bottom_Line(float _fX, float _fY, float* _pY, float
 	return true;
 }
 
-void CLineManager::SaveData()
+void CLineManager::SaveDataOne()
 {
-	HANDLE hFile = CreateFile(L"../Data/Line.dat",
+	HANDLE hFile = CreateFile(L"../Data/Line1.dat",
 		GENERIC_WRITE, NULL, NULL, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL);
 	if (hFile == INVALID_HANDLE_VALUE)
 	{
@@ -217,9 +218,138 @@ void CLineManager::SaveData()
 	CloseHandle(hFile);
 	MessageBox(g_hWnd, L"Success", _T("Save Success"), MB_OK);
 }
-void CLineManager::LoadData()
+void CLineManager::SaveDataTwo()
 {
-	HANDLE hFile = CreateFile(L"../Data/Line.dat",
+	HANDLE hFile = CreateFile(L"../Data/Line2.dat",
+		GENERIC_WRITE, NULL, NULL, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL);
+	if (hFile == INVALID_HANDLE_VALUE)
+	{
+		MessageBox(g_hWnd, L"Saved Fail", _T("Error"), MB_OK);
+		return;
+	}
+
+	DWORD dwByte = 0;
+
+	for (auto& pLine : vecLine)
+	{
+		WriteFile(hFile, &(pLine->GetLineInfo()), sizeof(LINE), &dwByte, nullptr);
+	}
+	CloseHandle(hFile);
+	MessageBox(g_hWnd, L"Success", _T("Save Success"), MB_OK);
+}
+void CLineManager::SaveDataThree()
+{
+	HANDLE hFile = CreateFile(L"../Data/Line3.dat",
+		GENERIC_WRITE, NULL, NULL, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL);
+	if (hFile == INVALID_HANDLE_VALUE)
+	{
+		MessageBox(g_hWnd, L"Saved Fail", _T("Error"), MB_OK);
+		return;
+	}
+
+	DWORD dwByte = 0;
+
+	for (auto& pLine : vecLine)
+	{
+		WriteFile(hFile, &(pLine->GetLineInfo()), sizeof(LINE), &dwByte, nullptr);
+	}
+	CloseHandle(hFile);
+	MessageBox(g_hWnd, L"Success", _T("Save Success"), MB_OK);
+}
+void CLineManager::SaveDataFour()
+{
+	HANDLE hFile = CreateFile(L"../Data/Line4.dat",
+		GENERIC_WRITE, NULL, NULL, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL);
+	if (hFile == INVALID_HANDLE_VALUE)
+	{
+		MessageBox(g_hWnd, L"Saved Fail", _T("Error"), MB_OK);
+		return;
+	}
+
+	DWORD dwByte = 0;
+
+	for (auto& pLine : vecLine)
+	{
+		WriteFile(hFile, &(pLine->GetLineInfo()), sizeof(LINE), &dwByte, nullptr);
+	}
+	CloseHandle(hFile);
+	MessageBox(g_hWnd, L"Success", _T("Save Success"), MB_OK);
+}
+void CLineManager::LoadDataOne()
+{
+	HANDLE hFile = CreateFile(L"../Data/Line1.dat",
+		GENERIC_READ, NULL, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
+	if (hFile == INVALID_HANDLE_VALUE)
+	{
+		MessageBox(g_hWnd, L"Saved Fail", _T("Error"), MB_OK);
+		return;
+	}
+
+	DWORD dwByte = 0;
+	LINE tLine{};
+
+	while (ReadFile(hFile, &tLine, sizeof(LINE), &dwByte, nullptr))
+	{
+		if (dwByte == 0)
+		{
+			break;
+		}
+		vecLine.push_back(new CLine(tLine.tLPoint, tLine.tRPoint));
+	}
+	CloseHandle(hFile);
+	MessageBox(g_hWnd, L"Success", _T("Load Success"), MB_OK);
+}
+void  CLineManager::LoadDataTwo()
+{
+	HANDLE hFile = CreateFile(L"../Data/Line2.dat",
+		GENERIC_READ, NULL, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
+	if (hFile == INVALID_HANDLE_VALUE)
+	{
+		MessageBox(g_hWnd, L"Saved Fail", _T("Error"), MB_OK);
+		return;
+	}
+
+	DWORD dwByte = 0;
+	LINE tLine{};
+
+	while (ReadFile(hFile, &tLine, sizeof(LINE), &dwByte, nullptr))
+	{
+		if (dwByte == 0)
+		{
+			break;
+		}
+		vecLine.push_back(new CLine(tLine.tLPoint, tLine.tRPoint));
+	}
+	CloseHandle(hFile);
+	MessageBox(g_hWnd, L"Success", _T("Load Success"), MB_OK);
+}
+void  CLineManager::LoadDataThree()
+{
+	HANDLE hFile = CreateFile(L"../Data/Line3.dat",
+		GENERIC_READ, NULL, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
+	if (hFile == INVALID_HANDLE_VALUE)
+	{
+		MessageBox(g_hWnd, L"Saved Fail", _T("Error"), MB_OK);
+		return;
+	}
+
+	DWORD dwByte = 0;
+	LINE tLine{};
+
+	while (ReadFile(hFile, &tLine, sizeof(LINE), &dwByte, nullptr))
+	{
+		if (dwByte == 0)
+		{
+			break;
+		}
+		vecLine.push_back(new CLine(tLine.tLPoint, tLine.tRPoint));
+	}
+	CloseHandle(hFile);
+	MessageBox(g_hWnd, L"Success", _T("Load Success"), MB_OK);
+}
+void  CLineManager::LoadDataFour()
+{
+	HANDLE hFile = CreateFile(L"../Data/Line4.dat",
 		GENERIC_READ, NULL, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
 	if (hFile == INVALID_HANDLE_VALUE)
 	{
@@ -242,51 +372,13 @@ void CLineManager::LoadData()
 	MessageBox(g_hWnd, L"Success", _T("Load Success"), MB_OK);
 }
 
-// inactive
-//bool CLineManager::Collision_Top_Line(float _fX, float _fY, float fPlayerSize)
-//{
-//	if (vecLine.empty())
-//	{
-//		return false;
-//	}
-//
-//	CLine* pLine = nullptr;
-//
-//	for (int i = 0; i < vecLine.size(); ++i)
-//	{
-//		if (_fX > vecLine[i]->GetLineInfo().tLPoint.fX &&
-//			_fX < vecLine[i]->GetLineInfo().tRPoint.fX)
-//		{
-//			if ((_fY > vecLine[i]->GetLineInfo().tLPoint.fY &&
-//				_fY < vecLine[i]->GetLineInfo().tRPoint.fY) ||
-//				(_fY < vecLine[i]->GetLineInfo().tLPoint.fY &&
-//					_fY > vecLine[i]->GetLineInfo().tRPoint.fY))
-//			{
-//				pLine = vecLine[i];
-//				break;
-//			}
-//		}
-//	}
-//
-//	if (!pLine)
-//	{
-//		return false;
-//	}
-//
-//	float fFirstX = pLine->GetLineInfo().tLPoint.fX;
-//	float fFirstY = pLine->GetLineInfo().tLPoint.fY;
-//
-//	float fSecondX = pLine->GetLineInfo().tRPoint.fX;
-//	float fSecondY = pLine->GetLineInfo().tRPoint.fY;
-//
-//	float fdistance = fabsf(((fSecondY - fFirstY) / (fSecondX - fFirstX) * _fX +
-//		(-1 * (_fY)) + fFirstY +
-//		(-1 * ((fSecondY - fFirstY) / (fSecondX - fFirstX)) * fFirstX)) /
-//		sqrtf(((fSecondY - fFirstY) / (fSecondX - fFirstX)) * ((fSecondY - fFirstY) / (fSecondX - fFirstX)) + 1));
-//
-//	if (fPlayerSize < fdistance)
-//	{
-//		return true;
-//	}
-//	return false;
-//}
+void CLineManager::EaseLastLine()
+{
+	if (vecLine.empty()) return;
+
+	if (CKeyManager::Get_Instance()->KeyPressing(0xA2)
+		&& CKeyManager::Get_Instance()->KeyDown('Z'))
+	{
+		vecLine.erase(--vecLine.end());
+	}
+}

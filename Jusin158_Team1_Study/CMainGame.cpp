@@ -51,6 +51,7 @@ void CMainGame::Update()
 void CMainGame::LateUpdate()
 {
 	CSceneManager::GetInstance()->LateUpdate();
+	CLineManager::GetInstance()->Late_Update();
 }
 void CMainGame::Render()
 {
@@ -59,7 +60,6 @@ void CMainGame::Render()
 		BitBlt(m_hDC, 0, 0, m_tRect.right, m_tRect.bottom, m_hDCBack, 0, 0, SRCCOPY);
 		PatBlt(m_hDCBack, 0, 0, m_tRect.right, m_tRect.bottom, WHITENESS);
 	}
-
 
 	CLineManager::GetInstance()->Render(m_hDCBack);
 	CObjectManager::GetInstance()->Render(m_hDCBack);
