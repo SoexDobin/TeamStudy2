@@ -20,6 +20,7 @@ void CLineManager::Initialize()
 }
 int	CLineManager::Update()
 {
+	EaseLastLine();
 	// get mouse x,y
 	POINT pt{};
 	GetCursorPos(&pt);
@@ -369,4 +370,15 @@ void  CLineManager::LoadDataFour()
 	}
 	CloseHandle(hFile);
 	MessageBox(g_hWnd, L"Success", _T("Load Success"), MB_OK);
+}
+
+void CLineManager::EaseLastLine()
+{
+	if (vecLine.empty()) return;
+
+	if (CKeyManager::Get_Instance()->KeyPressing(0xA2)
+		&& CKeyManager::Get_Instance()->KeyDown('Z'))
+	{
+		vecLine.erase(--vecLine.end());
+	}
 }

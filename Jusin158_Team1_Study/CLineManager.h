@@ -48,5 +48,6 @@ public:
 	void LoadDataTwo();
 	void LoadDataThree();
 	void LoadDataFour();
+	void EaseLastLine();
 	/*bool Collision_Top_Line(float _fX, float _fY, float fPlayerSize);*/
 };
