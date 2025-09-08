@@ -5,6 +5,7 @@
 #include "CMonster.h"
 #include "CLineManager.h"
 #include "CObjectManager.h"
+#include "FourthBoss.h"
 
 CScene04::CScene04() : m_MonsterIDX(1)
 {
@@ -42,7 +43,11 @@ int CScene04::Update()
 			m_dTime = GetTickCount64();
 
 		}
-	
+
+	if (m_MonsterList.empty()==true)
+	{
+		CObjectManager::GetInstance()->AddObject(FOURTHBOSS, CAbstractFactory<FourthBoss>::Create());
+	}
 
 	return OBJ_NOEVENT;
 }

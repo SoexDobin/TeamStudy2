@@ -159,8 +159,8 @@
     <ClInclude Include="CScene.h">
       <Filter>03. Scene</Filter>
     </ClInclude>
-    <ClInclude Include="CFourthBoss.h">
-      <Filter>헤더 파일</Filter>
+    <ClInclude Include="FourthBoss.h">
+      <Filter>01. Object\01.Monster\04.FourthBoss</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -241,6 +241,9 @@
     </ClCompile>
     <ClCompile Include="CScene.cpp">
       <Filter>03. Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="FourthBoss.cpp">
+      <Filter>01. Object\01.Monster\04.FourthBoss</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
