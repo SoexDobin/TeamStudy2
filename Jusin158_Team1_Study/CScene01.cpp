@@ -38,7 +38,7 @@ void CScene01::LateUpdate()
 #pragma region 저장
 	if (GetAsyncKeyState('S'))
 	{
-		CLineManager::GetInstance()->SaveData();
+		CLineManager::GetInstance()->SaveDataOne();
 		return;
 	}
 #pragma endregion
