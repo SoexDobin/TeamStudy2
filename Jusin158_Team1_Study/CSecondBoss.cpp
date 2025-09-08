@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "CSecondBoss.h"
 #include "CBullet.h"
+#include "CScrollManager.h"
 
 CSecondBoss::CSecondBoss()
 {
@@ -34,6 +35,8 @@ void CSecondBoss::LateUpdate()
 
 void CSecondBoss::Render(HDC _hDC)
 {
+	int iScrollX = (int)CScrollManager::Get_Instance()->Get_ScrollX();
+	Rectangle(_hDC, m_tRect.left + iScrollX, m_tRect.top, m_tRect.right + iScrollX, m_tRect.bottom);
 }
 
 void CSecondBoss::Release()

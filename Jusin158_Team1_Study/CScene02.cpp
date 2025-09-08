@@ -2,8 +2,10 @@
 #include "CAbstractFactory.h"
 #include "CScene02.h"
 #include "CMonster.h"
+#include "CSecondBoss.h"
 #include "CLineManager.h"
 #include "CKeyManager.h"
+#include "CSceneManager.h"
 
 CScene02::CScene02()
 {
@@ -17,7 +19,8 @@ void CScene02::Initialize()
 {
 	CLineManager::GetInstance()->LoadDataTwo();
 
-	CObjectManager::GetInstance()->AddObject(MONSTER, AbstractFactory<CMonster>::Create());
+	CObjectManager::GetInstance()->AddObject(MONSTER, AbstractFactory<CMonster>::Create(3300.f, 100.f));
+	CObjectManager::GetInstance()->AddObject(MONSTER, AbstractFactory<CSecondBoss>::Create(5300.f, 100.f));
 
 }
 int CScene02::Update()
@@ -36,7 +39,7 @@ void CScene02::LateUpdate()
 }
 void CScene02::Render(HDC _hDC)
 {
-	
+
 }
 void CScene02::Release()
 {

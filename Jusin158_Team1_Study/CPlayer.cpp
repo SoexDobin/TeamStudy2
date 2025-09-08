@@ -81,7 +81,7 @@ void CPlayer::KeyInput()
 			m_vPivot.x += m_fSpeed / sqrtf(2.f);
 			m_vPivot.y += m_fSpeed / sqrtf(2.f);
 		}
-		else if (GetAsyncKeyState(VK_SPACE))
+		else if (CKeyManager::Get_Instance()->KeyDown(VK_SPACE))
 		{
 			m_bJump = true;
 		}
@@ -116,7 +116,7 @@ void CPlayer::KeyInput()
 			m_vPivot.x -= m_fSpeed / sqrtf(2.f);
 			m_vPivot.y += m_fSpeed / sqrtf(2.f);
 		}
-		else if (GetAsyncKeyState(VK_SPACE))
+		else if (CKeyManager::Get_Instance()->KeyDown(VK_SPACE))
 		{
 			m_bJump = true;
 		}
@@ -148,7 +148,7 @@ void CPlayer::KeyInput()
 		//}
 	}
 
-	else if (GetAsyncKeyState(VK_SPACE))
+	else if (CKeyManager::Get_Instance()->KeyDown(VK_SPACE))
 	{
 		m_bJump = true;
 	}
@@ -186,8 +186,8 @@ void CPlayer::Jump()
 }
 void CPlayer::Offset()
 {
-	int iOffsetminX = WINCX - 900;
-	int iOffsetmaxX = WINCX - 100;
+	int iOffsetminX = WINCX - 700;
+	int iOffsetmaxX = WINCX - 300;
 
 
 	int iScrollX = (int)CScrollManager::Get_Instance()->Get_ScrollX();
