@@ -24,7 +24,7 @@ void CSecondBoss::Initialize()
 
 	m_fSpeed = 3.f;
 
-	m_iHp = 200;
+	m_iHp = 100;
 }
 
 int CSecondBoss::Update()

@@ -24,7 +24,7 @@ void FourthBoss::Initialize()
 
 	m_fSpeed = 100.f;
 
-	m_iHp = 150;
+	m_iHp = 100;
 
     //m_vPivot.y = CObjectManager::GetInstance()->GetPlayer()->back()->GetPivot().y ; //좌표 불러오기
 

@@ -18,7 +18,9 @@ CScene04::~CScene04()
 void CScene04::Initialize()
 {
 	CLineManager::GetInstance()->LoadDataFour();
+	CObjectManager::GetInstance()->GetPlayer()->back()->SetPivot({50.f, 500.f});
 	m_pPlayer = CObjectManager::GetInstance()->GetPlayer()->back();
+	
 	//for (int i = 1; i < m_MonsterIDX; i++)
 	//{
 	//	CObjectManager::GetInstance()->AddObject(MONSTER, CAbstractFactory<CMonster>::Create(300.f * i, 500.f));
