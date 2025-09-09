@@ -4,6 +4,7 @@
 #include "CScene02.h"
 #include "CScene03.h"
 #include "CScene04.h"
+#include "CLineManager.h"
 
 CSceneManager* CSceneManager::m_pInstance = nullptr;
 
@@ -39,6 +40,9 @@ void CSceneManager::Update()
 			case SCENE03:
 				CSceneManager::GetInstance()->ChangeScene(SCENE04);
 				break;
+
+			case SCENE04:
+				CSceneManager::GetInstance()->ChangeScene(SCENE_END);
 			}
 		}
 
@@ -102,14 +106,21 @@ int CSceneManager::ChangeScene(SCENENUMBER _eSceneNumber)
 	case SCENE04:
 		newScene = new CScene04;
 		m_SceneNumber = SCENE04;
-			break;
+		break;
+	case SCENE_END:
+		CObjectManager::GetInstance()->GetPlayer()->back()->SetPivot({ 3300,500 });
+		m_SceneNumber = SCENE_END;
 	}
-	//�⺻ �Ҵ�� Scene ����
-	SafeDelete(m_pScene);
-	//���ο� Scene �Ҵ�
-	m_pScene = newScene;	
 
-	m_pScene->Initialize();
+	if (m_SceneNumber != SCENE_END)
+		//�⺻ �Ҵ�� Scene ����
+	{
+		SafeDelete(m_pScene);
+		//���ο� Scene �Ҵ�
+		m_pScene = newScene;
+
+		m_pScene->Initialize();
+	}
 	return 0;
 }
 

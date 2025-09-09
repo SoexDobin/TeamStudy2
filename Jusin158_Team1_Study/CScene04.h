@@ -24,7 +24,8 @@ private:
 	BOOL	m_bDead;
 	ULONGLONG	m_dTime;
 	int	m_MonsterIDX;
-
+	BOOL m_bStart;
+	BOOL m_bKillCount;
 
 };
 

@@ -18,4 +18,5 @@ public:
 private:
 
 	ULONGLONG m_uTime;
+	int	m_iHp;
 };
