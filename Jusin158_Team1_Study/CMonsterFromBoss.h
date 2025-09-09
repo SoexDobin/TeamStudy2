@@ -1,15 +1,11 @@
-#pragma once
+#include "CMonster.h"
 
-#include "CObject.h"
-
-class CMonster : public CObject
+class CMonsterFromBoss : public CMonster
 {
-protected:
-	float fPlayerX;
-	float fPlayerY;
+private:
 public:
-	CMonster();
-	virtual ~CMonster();
+	CMonsterFromBoss();
+	virtual ~CMonsterFromBoss();
 
 public:
 	void	Initialize()						override;
@@ -18,10 +14,4 @@ public:
 	void	Render(HDC _hDC)					override;
 	void	Release()							override;
 	void	OnCollision(CObject* _pColObj, Vector2 _vColSize)		override;
-
-	void SetPlayerXY(float _fX, float _fY) 
-	{
-		fPlayerX = _fX;
-		fPlayerY = _fY;
-	}
 };

@@ -21,7 +21,7 @@ enum OBJECT
 	//LINE,
 	FOURTHBOSS,
 	MOUSE,
-	
+	BOSS,
 	OBJ_END
 };
 
