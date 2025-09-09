@@ -8,7 +8,7 @@
 
 CSceneManager* CSceneManager::m_pInstance = nullptr;
 
-CSceneManager::CSceneManager() : m_pScene(nullptr),m_SceneNumber(SCENE_END)
+CSceneManager::CSceneManager() : m_pScene(nullptr),m_SceneNumber(SCENE_END), m_bDead(false)
 {
 }
 CSceneManager::~CSceneManager()

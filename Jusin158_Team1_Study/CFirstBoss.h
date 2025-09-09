@@ -4,6 +4,8 @@
 class CFirstBoss : public CMonster 
 {
 private:
+	ULONGLONG timer;
+	int iHp;
 public:
 	CFirstBoss();
 	~CFirstBoss();
@@ -17,6 +19,5 @@ public:
 
 	void FirstPattern();
 	void SecondPattern();
-	void ThirdPattern();
-	/*void CheckDegree();*/
+	float CheckDegree();
 };

@@ -7,6 +7,8 @@
 #include "CScrollManager.h"
 #include "CKeyManager.h"
 #include "CLine.h"
+#include "CBmpManager.h"
+
 
 
 CPlayer::CPlayer() : m_bFaceRight(true), m_bJump(false), m_fJumpSpeed(0.f), m_fJumpTime(0.f), m_fBulletDir(1.f)
@@ -20,13 +22,14 @@ CPlayer::~CPlayer()
 
 void CPlayer::Initialize()
 {
-	m_vSize = { 50.f, 50.f };
-	m_vPivot = { 150.f , 300.f };
+	m_vSize = { 60.f, 60.f };
+	m_vPivot = { 500.f , 300.f };
 
 	m_fSpeed = 8.f;
 	m_fJumpSpeed = 20.f;
-
 	m_iHp = 100;
+
+	CBmpManager::GetInstance()->Insert_Bmp(L"../Image/maja2.bmp", L"Player");
 }
 
 int CPlayer::Update()
@@ -56,7 +59,19 @@ void CPlayer::LateUpdate()
 void CPlayer::Render(HDC _hDC)
 {
 	int iScrollX = (int)CScrollManager::Get_Instance()->Get_ScrollX();
-	Ellipse(_hDC, m_tRect.left + iScrollX, m_tRect.top, m_tRect.right + iScrollX, m_tRect.bottom);
+	HDC	hMemDC = CBmpManager::GetInstance()->Find_Img(L"Player");
+
+	GdiTransparentBlt(_hDC,
+		m_tRect.left + iScrollX,
+		m_tRect.top,
+		(int)m_vSize.x,
+		(int)m_vSize.y,
+		hMemDC,
+		0,
+		0,
+		(int)m_vSize.x,
+		(int)m_vSize.y,
+		RGB(255, 255, 255));
 }
 
 void CPlayer::Release()
@@ -90,7 +105,7 @@ void CPlayer::KeyInput()
 			m_vPivot.x += m_fSpeed / sqrtf(2.f);
 			m_vPivot.y += m_fSpeed / sqrtf(2.f);
 		}
-		else if (CKeyManager::Get_Instance()->KeyDown(VK_SPACE))
+		else if (CKeyManager::GetInstance()->KeyDown(VK_SPACE))
 		{
 			m_bJump = true;
 		}
@@ -112,8 +127,6 @@ void CPlayer::KeyInput()
 			m_fBulletDir = -1.f;
 			
 		}
-		
-
 
 		if (GetAsyncKeyState(VK_UP))
 		{
@@ -125,7 +138,7 @@ void CPlayer::KeyInput()
 			m_vPivot.x -= m_fSpeed / sqrtf(2.f);
 			m_vPivot.y += m_fSpeed / sqrtf(2.f);
 		}
-		else if (CKeyManager::Get_Instance()->KeyDown(VK_SPACE))
+		else if (CKeyManager::GetInstance()->KeyDown(VK_SPACE))
 		{
 			m_bJump = true;
 		}
@@ -157,12 +170,12 @@ void CPlayer::KeyInput()
 		//}
 	}
 
-	else if (CKeyManager::Get_Instance()->KeyDown(VK_SPACE))
+	else if (CKeyManager::GetInstance()->KeyDown(VK_SPACE))
 	{
 		m_bJump = true;
 	}
 
-	if (CKeyManager::Get_Instance()->KeyDown('A'))
+	if (CKeyManager::GetInstance()->KeyDown('A'))
 	{
 		CObjectManager::GetInstance()->GetBulletList()->push_back(CAbstractFactory<CBullet>::Create(m_vPivot.x, m_vPivot.y));
 		CObject* pLastBullet = CObjectManager::GetInstance()->GetBulletList()->back();

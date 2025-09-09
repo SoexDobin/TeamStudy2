@@ -13,6 +13,7 @@
 #include "CScene04.h"`
 #include "CKeyManager.h"
 #include "CScrollManager.h"
+#include "CBmpManager.h"
 
 CMainGame::CMainGame() : m_hDC(nullptr), m_pPlayer(nullptr)
 {
@@ -36,7 +37,7 @@ void CMainGame::Initialize()
 	}
 	CLineManager::GetInstance()->Initialize();
 	SetPlayer(CObjectManager::GetInstance()->AddObject(PLAYER, CAbstractFactory<CPlayer>::Create()));
-	CSceneManager::GetInstance()->ChangeScene(SCENE04);
+	CSceneManager::GetInstance()->ChangeScene(SCENE01);
 	
 	CObjectManager::GetInstance()->AddObject(MOUSE, CAbstractFactory<CMouse>::Create());
 }
@@ -45,7 +46,7 @@ void CMainGame::Update()
 {
 	CSceneManager::GetInstance()->Update();
 	CLineManager::GetInstance()->Update();
-	CKeyManager::Get_Instance()->KeyUpdate();
+	CKeyManager::GetInstance()->KeyUpdate();
 }
 
 void CMainGame::LateUpdate()
@@ -57,7 +58,7 @@ void CMainGame::Render()
 {
 	{
 		//Rectangle(m_hDC, 0, 0, WINCX, WINCY);
-		BitBlt(m_hDC, 0, 0, m_tRect.right, m_tRect.bottom, m_hDCBack, 0, 0, SRCCOPY);
+		BitBlt(m_hDC, 0, 0, m_tRect.right, m_tRect.bottom, m_hDCBack, 0, 0, SRCCOPY);		
 		PatBlt(m_hDCBack, 0, 0, m_tRect.right, m_tRect.bottom, WHITENESS);
 	}
 
@@ -74,9 +75,11 @@ void CMainGame::Render()
 
 void CMainGame::Release()
 {
+	CBmpManager::DestroyInstance();
 	CKeyManager::Destroy_Instance();
 	CLineManager::DestroyInstance();
 	CObjectManager::DestroyInstance();
 	CSceneManager::DestroyInstance();
 	CScrollManager::Destroy_Instance();
+	ReleaseDC(g_hWnd, m_hDC);
 }

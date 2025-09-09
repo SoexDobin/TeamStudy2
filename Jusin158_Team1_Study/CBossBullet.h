@@ -2,11 +2,12 @@
 
 #include "CObject.h"
 
-class CBullet : public CObject
+class CBossBullet : public CObject
 {
+private:
 public:
-	CBullet();
-	virtual ~CBullet();
+	CBossBullet();
+	virtual ~CBossBullet();
 
 public:
 	void	Initialize()					override;
@@ -15,6 +16,4 @@ public:
 	void	Render(HDC _hDC)				override;
 	void	Release()						override;
 	void	OnCollision(CObject* _pColObj, Vector2 _vColSize)	override;
-private:
-	ULONGLONG	m_ullTime;
 };

@@ -2,7 +2,7 @@
 #include "CMonster.h"
 #include "CScrollManager.h"
 
-CMonster::CMonster()
+CMonster::CMonster() : fPlayerX(0.f), fPlayerY(0.f)
 {
 }
 

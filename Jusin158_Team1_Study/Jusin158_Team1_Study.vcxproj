@@ -132,6 +132,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="CAbstractFactory.h" />
+    <ClInclude Include="CBossBullet.h" />
+    <ClInclude Include="CBmpManager.h" />
+    <ClInclude Include="CBmpObject.h" />
     <ClInclude Include="CBullet.h" />
     <ClInclude Include="CCollisionManager.h" />
     <ClInclude Include="CFirstBoss.h" />
@@ -141,6 +144,7 @@
     <ClInclude Include="CLineManager.h" />
     <ClInclude Include="CMainGame.h" />
     <ClInclude Include="CMonster.h" />
+    <ClInclude Include="CMonsterFromBoss.h" />
     <ClInclude Include="CMouse.h" />
     <ClInclude Include="CObject.h" />
     <ClInclude Include="CObjectManager.h" />
@@ -164,6 +168,9 @@
     <ClInclude Include="Vector2.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CBossBullet.cpp" />
+    <ClCompile Include="CBmpManager.cpp" />
+    <ClCompile Include="CBmpObject.cpp" />
     <ClCompile Include="CBullet.cpp" />
     <ClCompile Include="CCollisionManager.cpp" />
     <ClCompile Include="CFirstBoss.cpp" />
@@ -173,6 +180,7 @@
     <ClCompile Include="CLineManager.cpp" />
     <ClCompile Include="CMainGame.cpp" />
     <ClCompile Include="CMonster.cpp" />
+    <ClCompile Include="CMonsterFromBoss.cpp" />
     <ClCompile Include="CMouse.cpp" />
     <ClCompile Include="CObject.cpp" />
     <ClCompile Include="CObjectManager.cpp" />
