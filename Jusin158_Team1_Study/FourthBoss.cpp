@@ -2,19 +2,28 @@
 #include "FourthBoss.h"
 #include "CObjectManager.h"
 #include "CLineManager.h"
+#include "CMonster.h"
+#include "CScrollManager.h"
 
 FourthBoss::FourthBoss()
 {
+
 }
 
 FourthBoss::~FourthBoss()
 {
+
 }
 
 void FourthBoss::Initialize()
 {
-	m_vPivot.y = CObjectManager::GetInstance()->GetPlayer()->back()->GetPivot().y ; //좌표 불러오기
-	m_vSize = { 300.f, 300.f };
+	m_vPivot={2300.f, 150.f};
+	m_vSize = {300.f, 300.f};
+
+	m_fSpeed = 10.f;
+    //m_vPivot.y = CObjectManager::GetInstance()->GetPlayer()->back()->GetPivot().y ; //좌표 불러오기
+
+	m_uTime = GetTickCount();
 }
 
 int FourthBoss::Update()
@@ -22,17 +31,27 @@ int FourthBoss::Update()
 	if (m_bDestroy)
 		return OBJ_DESTROY;
 
-	m_vPivot.x -= m_fSpeed;
-
-	float fY(0.f);
-
-	if (CLineManager::GetInstance()->Collision_Bottom_Line(m_vPivot.x, m_vPivot.y, &fY, m_vSize.x / 2.f))
-	{
-		m_vPivot.y = fY;
-	}
-
 	__super::UpdateRect();
 
+	if (m_uTime + 10000 < GetTickCount())
+	{
+		Vector2 m_vPrePivot = CObjectManager::GetInstance()->GetPlayer()->back()->GetPivot();
+
+		float fWidth(0.f), fHeight(0.f), fDiagonal(0.f);
+
+		fWidth = m_vPivot.x - (CObjectManager::GetInstance()->GetPlayer()->back()->GetPivot().x);
+		fHeight = m_vPivot.y - (CObjectManager::GetInstance()->GetPlayer()->back()->GetPivot().y);
+		fDiagonal = sqrtf(fWidth * fWidth + fHeight * fHeight);
+		float fRadian = acosf(fWidth / fDiagonal);
+		if (CObjectManager::GetInstance()->GetPlayer()->back()->GetPivot().y > m_vPivot.y)
+		{
+			fRadian = 2.f * 3.14f - fRadian;
+		}
+		m_vPivot.x -= m_fSpeed * cosf(fRadian);
+		m_vPivot.y += m_fSpeed * sinf(fRadian);
+
+		m_uTime = GetTickCount();
+	}
 	return OBJ_NOEVENT;
 }
 
@@ -43,9 +62,9 @@ void FourthBoss::LateUpdate()
 
 void FourthBoss::Render(HDC _hDC)
 {
-	Ellipse(_hDC, m_tRect.left, m_tRect.top, m_tRect.right, m_tRect.bottom);
+	int iScrollx = (int)CScrollManager::Get_Instance()->Get_ScrollX();
+	Ellipse(_hDC, m_tRect.left+iScrollx, m_tRect.top, m_tRect.right+iScrollx, m_tRect.bottom);
 }
-
 void FourthBoss::Release()
 {
 }

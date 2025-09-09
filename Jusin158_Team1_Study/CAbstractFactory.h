@@ -3,7 +3,7 @@
 #include "CObject.h"
 
 template<typename T>
-class AbstractFactory
+class CAbstractFactory
 {
 	public:
 		static CObject* Create()
