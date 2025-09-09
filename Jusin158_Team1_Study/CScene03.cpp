@@ -22,6 +22,7 @@ void CScene03::Initialize()
 	CObjectManager::GetInstance()->AddObject(MONSTER, CAbstractFactory<CMonster>::Create(2700.f, 300.f));
 	m_MonsterList.push_back(CObjectManager::GetInstance()->GetMonsterList()->back());
 	m_pBoss = CObjectManager::GetInstance()->GetMonsterList()->back();
+	m_pBoss->SetHp(500);
 }
 int CScene03::Update()
 {
