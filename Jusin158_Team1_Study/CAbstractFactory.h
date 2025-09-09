@@ -22,4 +22,13 @@ class CAbstractFactory
 
 			return pObject;
 		}
+		static CObject* Create(float fX, float fY, float fAngle)
+		{
+			CObject* pObject = new T;
+			pObject->Initialize();
+			pObject->SetPivot(Vector2(fX, fY));
+			pObject->SetAngle(fAngle);
+
+			return pObject;
+		}
 };
