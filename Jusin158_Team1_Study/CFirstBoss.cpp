@@ -101,14 +101,14 @@ void CFirstBoss::FirstPattern()
 	int iMonSize = CObjectManager::GetInstance()->GetMonsterList()->size();
 	if(iMonSize < 10)
 	{
-		CObjectManager::GetInstance()->GetMonsterList()->push_back(AbstractFactory<CMonsterFromBoss>::Create(m_vPivot.x, m_vPivot.y));
+		CObjectManager::GetInstance()->GetMonsterList()->push_back(CAbstractFactory<CMonsterFromBoss>::Create(m_vPivot.x, m_vPivot.y));
 	}
 }
 void CFirstBoss::SecondPattern()
 {
 	float fDegree = CheckDegree();
-	CObjectManager::GetInstance()->GetBulletList()->push_back(AbstractFactory<CBossBullet>::Create(m_vPivot.x, m_vPivot.y + m_vSize.y + 5.f / 2, fDegree));
-	CObjectManager::GetInstance()->GetBulletList()->push_back(AbstractFactory<CBossBullet>::Create(m_vPivot.x, m_vPivot.y + m_vSize.y + 5.f / 2, 3.14f * 7 / 4));
+	CObjectManager::GetInstance()->GetBulletList()->push_back(CAbstractFactory<CBossBullet>::Create(m_vPivot.x, m_vPivot.y + m_vSize.y + 5.f / 2, fDegree));
+	CObjectManager::GetInstance()->GetBulletList()->push_back(CAbstractFactory<CBossBullet>::Create(m_vPivot.x, m_vPivot.y + m_vSize.y + 5.f / 2, 3.14f * 7 / 4));
 }
 
 float CFirstBoss::CheckDegree()

@@ -15,7 +15,7 @@ CScene01::~CScene01()
 void CScene01::Initialize()
 {
 	CLineManager::GetInstance()->LoadDataOne();
-	CObjectManager::GetInstance()->AddObject(MONSTER, AbstractFactory<CFirstBoss>::Create(488.f, 222.f));
+	CObjectManager::GetInstance()->AddObject(MONSTER, CAbstractFactory<CFirstBoss>::Create(488.f, 222.f));
 	m_MonsterList.push_back(CObjectManager::GetInstance()->GetMonsterList()->back());
 	m_pPlayer = CObjectManager::GetInstance()->GetPlayer()->back();
 }
