@@ -7,7 +7,7 @@
 #include "CObjectManager.h"
 #include "FourthBoss.h"
 
-CScene04::CScene04() : m_MonsterIDX(1)
+CScene04::CScene04() : m_MonsterIDX(1), m_bStart(false), m_bDead(false), m_bKillCount(false)
 {
 
 }
@@ -18,37 +18,52 @@ CScene04::~CScene04()
 void CScene04::Initialize()
 {
 	CLineManager::GetInstance()->LoadDataFour();
-	m_dTime = GetTickCount64();
 	m_pPlayer = CObjectManager::GetInstance()->GetPlayer()->back();
+	//for (int i = 1; i < m_MonsterIDX; i++)
+	//{
+	//	CObjectManager::GetInstance()->AddObject(MONSTER, CAbstractFactory<CMonster>::Create(300.f * i, 500.f));
+	//	m_MonsterList.push_back(CObjectManager::GetInstance()->GetMonsterList()->back());
+	//}
+	m_pBoss = CObjectManager::GetInstance()->AddObject(FOURTHBOSS, CAbstractFactory<FourthBoss>::Create());
 
+	m_dTime = GetTickCount64();
 }
+
 int CScene04::Update()
 {
+	
+
 
 	if (m_bDead == true)
 		return OBJ_DESTROY;
 
-	if (m_pBoss == nullptr)
+	if (m_pBoss == nullptr || m_pBoss->GetDestroy())
 	{
 		m_bDead = true;
 	}
 
-		if (m_dTime + 2000 <  GetTickCount64()&&m_MonsterIDX<6)
-		{
-			CObjectManager::GetInstance()->AddObject(MONSTER, CAbstractFactory<CMonster>::Create(300.f*m_MonsterIDX, 500.f));
-			m_MonsterList.push_back(CObjectManager::GetInstance()->GetMonsterList()->back());
-			m_MonsterIDX++;
+		//if (m_dTime + 2000 <  GetTickCount64()&&m_MonsterIDX<6)
+		//{
+		//	CObjectManager::GetInstance()->AddObject(MONSTER, CAbstractFactory<CMonster>::Create(300.f*m_MonsterIDX, 500.f));
+		//	m_MonsterList.push_back(CObjectManager::GetInstance()->GetMonsterList()->back());
+		//	m_MonsterIDX++;
+		//
+		//
+		//	m_dTime = GetTickCount64();
+		//
+		//}
 
-
-			m_dTime = GetTickCount64();
-
-		}
-
-	if (m_MonsterList.empty()==true)
+	if (m_dTime + 2000 < GetTickCount64() && m_MonsterIDX < 6)
 	{
-		CObjectManager::GetInstance()->AddObject(FOURTHBOSS, CAbstractFactory<FourthBoss>::Create());
+		CObjectManager::GetInstance()->AddObject(MONSTER, CAbstractFactory<CMonster>::Create(300.f * m_MonsterIDX, 500.f));
+		m_MonsterList.push_back(CObjectManager::GetInstance()->GetMonsterList()->back());
+		m_MonsterIDX++;
+
+		m_dTime = GetTickCount64();
 	}
-	//이거 한 번만 생성되게 수정해야 함!
+
+
+
 	return OBJ_NOEVENT;
 }
 void CScene04::LateUpdate()

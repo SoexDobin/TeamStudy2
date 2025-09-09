@@ -24,6 +24,7 @@ void CMonster::Initialize()
 int CMonster::Update()
 {
 	if (m_bDestroy)
+
 		return OBJ_DESTROY;
 
 	m_vPivot.y -= m_fSpeed;
