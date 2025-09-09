@@ -1,50 +1,51 @@
 #include "pch.h"
-#include "CBullet.h"
+#include "CBossBullet.h"
 #include "CScrollManager.h"
 
-CBullet::CBullet()
+CBossBullet::CBossBullet()
 {
 }
 
-CBullet::~CBullet()
+CBossBullet::~CBossBullet()
 {
 	Release();
 }
 
-void CBullet::Initialize()
+void CBossBullet::Initialize()
 {
 	m_vSize = { 20.f, 20.f };
 
 	m_fSpeed = 7.f;
 }
 
-int CBullet::Update()
+int CBossBullet::Update()
 {
 	if (m_bDestroy)
 		return OBJ_DESTROY;
-	
+
 	__super::UpdateRect();
 
-	m_vPivot.x += m_fSpeed;
+	m_vPivot.x += m_fSpeed * cosf(fAngle);
+	m_vPivot.y -= m_fSpeed * sin(fAngle);
 
 	return OBJ_NOEVENT;
 }
 
-void CBullet::LateUpdate()
+void CBossBullet::LateUpdate()
 {
 }
 
-void CBullet::Render(HDC _hDC)
+void CBossBullet::Render(HDC _hDC)
 {
 	int iScrollX = (int)CScrollManager::Get_Instance()->Get_ScrollX();
 	Ellipse(_hDC, m_tRect.left + iScrollX, m_tRect.top, m_tRect.right + iScrollX, m_tRect.bottom);
 }
 
-void CBullet::Release()
+void CBossBullet::Release()
 {
 }
 
-void CBullet::OnCollision(CObject* _pColObj, Vector2 _vColSize)
+void CBossBullet::OnCollision(CObject* _pColObj, Vector2 _vColSize)
 {
 	SetDestroy();
 }

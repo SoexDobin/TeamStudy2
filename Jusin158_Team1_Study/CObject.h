@@ -13,6 +13,7 @@ public:
 	Vector2				GetDir()		{ return m_vDir; }
 	const float&		GetSpeed()		{ return m_fSpeed; }
 	bool				GetCollision()  { return m_bCollision; }
+	float GetAngle() { return fAngle; }
 	
 	void	SetPivot(const Vector2& _vPivot)	{ m_vPivot = _vPivot; }
 	void	SetSize(const Vector2& _vSize)		{ m_vSize = _vSize; }
@@ -20,6 +21,7 @@ public:
 	void	SetSpeed(const float& _fSpeed)		{ m_fSpeed = _fSpeed; }
 	void	SetCollision(const bool& _bCol)		{ m_bCollision = _bCol; }
 	void	SetDestroy()						{ m_bDestroy = true; }
+	void SetAngle(const float& _fAngle) { fAngle = _fAngle; }
 	//void	SetBullet(list<CObject*>* pBullet)	{ m_pBullet = pBullet; }
 
 public:
@@ -43,6 +45,7 @@ protected:
 
 	float			m_fSpeed;
 	bool			m_bDestroy;
+	float fAngle;
 
 private:
 	bool			m_bCollision;

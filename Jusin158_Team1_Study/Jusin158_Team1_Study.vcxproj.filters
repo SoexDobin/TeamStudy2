@@ -70,6 +70,9 @@
     <Filter Include="01. Object\01.Monster\01. FirstBoss">
       <UniqueIdentifier>{dd002064-a879-4a1d-ba2c-459815063d3b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="01. Object\01.Monster\MonsterFromBoss">
+      <UniqueIdentifier>{171249b1-5db6-4e0f-b884-d555ad1e9ba5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -162,6 +165,12 @@
     <ClInclude Include="CScene.h">
       <Filter>03. Scene</Filter>
     </ClInclude>
+    <ClInclude Include="CMonsterFromBoss.h">
+      <Filter>01. Object\01.Monster\MonsterFromBoss</Filter>
+    </ClInclude>
+    <ClInclude Include="CBossBullet.h">
+      <Filter>01. Object\02.Bullet</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Jusin158_Team1_Study.cpp">
@@ -244,6 +253,12 @@
     </ClCompile>
     <ClCompile Include="CScene.cpp">
       <Filter>03. Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="CMonsterFromBoss.cpp">
+      <Filter>01. Object\01.Monster\MonsterFromBoss</Filter>
+    </ClCompile>
+    <ClCompile Include="CBossBullet.cpp">
+      <Filter>01. Object\02.Bullet</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

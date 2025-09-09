@@ -19,6 +19,7 @@ enum OBJECT
 	BULLET,
 	//LINE,
 	MOUSE,
+	BOSS,
 
 	OBJ_END
 };
