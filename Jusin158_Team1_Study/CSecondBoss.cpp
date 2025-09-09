@@ -2,9 +2,15 @@
 #include "CSecondBoss.h"
 #include "CBullet.h"
 #include "CScrollManager.h"
+#include "CAbstractFactory.h"
+#include "CGuideMonster.h"
+#include "CMonster.h"
+#include "CObjectManager.h"
 
 CSecondBoss::CSecondBoss()
 {
+	m_lFirstskilltime = GetTickCount64();
+	m_lSecondskilltime = GetTickCount64();
 }
 
 CSecondBoss::~CSecondBoss()
@@ -43,6 +49,22 @@ void CSecondBoss::LateUpdate()
 	{
 		m_fSpeed *= -1.f;
 	}
+
+	if (m_lFirstskilltime + 7000 < GetTickCount64())
+	{
+		CObjectManager::GetInstance()->GetMonsterList()->push_back(CAbstractFactory<CGuideMonster>::Create(5000.f, 600.f));
+		CObjectManager::GetInstance()->GetMonsterList()->push_back(CAbstractFactory<CGuideMonster>::Create(5100.f, 600.f));
+		
+		m_lFirstskilltime = GetTickCount64();
+	}
+
+	if (m_lSecondskilltime + 15000 < GetTickCount64())
+	{
+		CObjectManager::GetInstance()->GetMonsterList()->push_back(CAbstractFactory<CMonster>::Create(4950.f, 300.f));
+	
+		m_lSecondskilltime = GetTickCount64();
+	}
+
 }
 
 void CSecondBoss::Render(HDC _hDC)

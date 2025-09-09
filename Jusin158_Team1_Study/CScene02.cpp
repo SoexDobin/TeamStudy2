@@ -40,10 +40,7 @@ void CScene02::Initialize()
 	m_MonsterList.push_back(CObjectManager::GetInstance()->GetMonsterList()->back());
 	CObjectManager::GetInstance()->AddObject(MONSTER, CAbstractFactory<CGuideMonster>::Create(1800.f, 200.f));
 	m_MonsterList.push_back(CObjectManager::GetInstance()->GetMonsterList()->back());
-	CObjectManager::GetInstance()->AddObject(MONSTER, CAbstractFactory<CGuideMonster>::Create(2000.f, 200.f));
-	m_MonsterList.push_back(CObjectManager::GetInstance()->GetMonsterList()->back());
-	CObjectManager::GetInstance()->AddObject(MONSTER, CAbstractFactory<CGuideMonster>::Create(2500.f, 200.f));
-	m_MonsterList.push_back(CObjectManager::GetInstance()->GetMonsterList()->back());
+	
 }
 int CScene02::Update()
 {
